@@ -22,10 +22,13 @@ public class CharacterControler : MonoBehaviour
     void Update()
     {
 
-        inputX = Input.GetAxis("Horizontal");
-        inputY = Input.GetAxis("Vertical");
+        inputX = Input.GetAxisRaw("Horizontal");
+        inputY = Input.GetAxisRaw("Vertical");
         direction = new Vector2(inputX, inputY);
         rb.velocity = direction.normalized * speed;
+
+        anim.SetFloat("DirectionX", inputX);
+        anim.SetFloat("DirectionY", inputY);
 
 
     }

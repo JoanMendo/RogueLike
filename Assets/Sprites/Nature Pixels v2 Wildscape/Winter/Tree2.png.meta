@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a651620f7e527314ab9770bf30eaea13
+guid: 1312436d1aaa7c84f9c09a83e6f05730
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,91 +95,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: spr_deco_tree_02_strip4_0
-      rect:
-        serializedVersion: 2
-        x: 5
-        y: 3
-        width: 18
-        height: 35
-      alignment: 9
-      pivot: {x: 0.5, y: 0.22}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ffb371db96d9c1346b1fa494ce4a3c5a
-      internalID: -23904392
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_deco_tree_02_strip4_1
-      rect:
-        serializedVersion: 2
-        x: 33
-        y: 3
-        width: 18
-        height: 35
-      alignment: 9
-      pivot: {x: 0.5, y: 0.22}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc1329e8836d28345b9c767b401cebf4
-      internalID: -103892852
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_deco_tree_02_strip4_2
-      rect:
-        serializedVersion: 2
-        x: 61
-        y: 3
-        width: 18
-        height: 33
-      alignment: 9
-      pivot: {x: 0.5, y: 0.22}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fd1f9f55f5ec38499452a6f30147bc2
-      internalID: -1760114057
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: spr_deco_tree_02_strip4_3
-      rect:
-        serializedVersion: 2
-        x: 90
-        y: 3
-        width: 16
-        height: 34
-      alignment: 9
-      pivot: {x: 0.5, y: 0.22}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea1cb0e81e566b743a1674721e93cd3b
-      internalID: 1750861097
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
@@ -190,11 +106,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      spr_deco_tree_02_strip4_0: -23904392
-      spr_deco_tree_02_strip4_1: -103892852
-      spr_deco_tree_02_strip4_2: -1760114057
-      spr_deco_tree_02_strip4_3: 1750861097
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
