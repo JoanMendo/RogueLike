@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -43,12 +43,12 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +95,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spr_deco_mushroom_red_01_strip4_0
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2
+        width: 10
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5393ed42308f2884796e58c80ff6f382
+      internalID: 417694985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_deco_mushroom_red_01_strip4_1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 2
+        width: 10
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b508a35341392a44b79230a9f274708
+      internalID: -247513104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_deco_mushroom_red_01_strip4_2
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 2
+        width: 10
+        height: 11
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db6e26a6b85e1640b92df9b8cd99460
+      internalID: -683535289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spr_deco_mushroom_red_01_strip4_3
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 2
+        width: 10
+        height: 12
+      alignment: 9
+      pivot: {x: 0.5, y: 0.35}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f26d1e15d52993f4eb382e72ebb80d92
+      internalID: -1220980346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -106,7 +190,11 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      spr_deco_mushroom_red_01_strip4_0: 417694985
+      spr_deco_mushroom_red_01_strip4_1: -247513104
+      spr_deco_mushroom_red_01_strip4_2: -683535289
+      spr_deco_mushroom_red_01_strip4_3: -1220980346
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
