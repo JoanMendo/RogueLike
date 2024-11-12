@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
-public class TilemapScroller : MonoBehaviour
+public class SeaScroll : MonoBehaviour
 {
     // Velocidad de desplazamiento en los ejes X e Y
     public float scrollSpeedX = 0.1f;
