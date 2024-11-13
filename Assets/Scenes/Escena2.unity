@@ -157,7 +157,7 @@ MonoBehaviour:
   tileCenterGrass: {fileID: 11400000, guid: c553c1363f5587a4bb5caa37042e63f4, type: 2}
   tileTopGrass: {fileID: 11400000, guid: 51c7c96597e72b041a84881bc85a1a0c, type: 2}
   tileBottomGrass: {fileID: 11400000, guid: b194422986ba87a4aa371bd4b4dca915, type: 2}
-  tileLeftGrass: {fileID: 11400000, guid: ecac8aff9c2341348857128a805b464e, type: 2}
+  tileLeftGrass: {fileID: 11400000, guid: 7b48b10e2dacbdb48a0f7e75b0e41139, type: 2}
   tileRightGrass: {fileID: 11400000, guid: 8a7eb6b74398f4d4cb66524983e02b20, type: 2}
   tileTopLeftGrass: {fileID: 11400000, guid: 1ba1da938cb737e429c240d71b7cbddf, type: 2}
   tileTopRightGrass: {fileID: 11400000, guid: 046f8b4c78a4c6241a81c724ce3ea19e, type: 2}
@@ -169,11 +169,11 @@ MonoBehaviour:
   tileCliffRight: {fileID: 11400000, guid: 6530ecc0aa7ca584eb9080b84c0eb110, type: 2}
   tileCliffRightBottom: {fileID: 11400000, guid: c5bd92c8ab3c103499422e8587f7222d, type: 2}
   tileCliffLeftBottom: {fileID: 11400000, guid: e3104e031b4854948ac55df1e556e381, type: 2}
-  minWidth: 15
-  maxWidth: 30
-  minHeight: 0
-  maxHeight: 15
-  transitionHeight: 4
+  minWidth: 25
+  maxWidth: 50
+  minHeight: 14
+  maxHeight: 22
+  transitionHeight: 6
   heightChangeProbability: 0.5
 --- !u!483693784 &199702417
 TilemapRenderer:
@@ -275,6 +275,51 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
+  m_Father: {fileID: 576483152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &576483150
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 576483152}
+  - component: {fileID: 576483151}
+  m_Layer: 0
+  m_Name: Grid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!156049354 &576483151
+Grid:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576483150}
+  m_Enabled: 1
+  m_CellSize: {x: 1, y: 1, z: 0}
+  m_CellGap: {x: 0, y: 0, z: 0}
+  m_CellLayout: 0
+  m_CellSwizzle: 0
+--- !u!4 &576483152
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 576483150}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 199702419}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1978099849
@@ -374,4 +419,4 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 1978099852}
-  - {fileID: 199702419}
+  - {fileID: 576483152}

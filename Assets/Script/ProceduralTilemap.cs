@@ -66,10 +66,10 @@ public class ProceduralTilemap : MonoBehaviour
             bottomHeights[x] = bottomHeights[x - 1];
 
             // Decidir aleatoriamente si aumentar o disminuir la altura
-            if (Random.value < heightChangeProbability)
-            {
+            if (Random.value < heightChangeProbability && x % 3 == 0 && x < width-6)
+            { 
                 int change = Random.Range(-1, 2); // -1, 0, 1
-                bottomHeights[x] = Mathf.Clamp(bottomHeights[x] + change, minHeight, maxHeight); //Clamp para que no se salga de los limites
+                bottomHeights[x] = Mathf.Clamp(bottomHeights[x] + change, -10, minHeight); //Clamp para que no se salga de los limites
                 change = Random.Range(-1, 2); // -1, 0, 1
                 topHeights[x] = Mathf.Clamp(topHeights[x] + change, minHeight, maxHeight);
                 Debug.Log("Top Height: " + topHeights[x]);
@@ -92,59 +92,34 @@ public class ProceduralTilemap : MonoBehaviour
                 if (y == bottomHeights[x])
                 {
 
-                    if (bottomHeights[x] < bottomHeights[x + 1])
-                    {
-                        tilemap.SetTile(tilePosition, tileCliffRightBottom);
-                    }
-                    else if (bottomHeights[x] > bottomHeights[x + 1])
-                    {
-                        tilemap.SetTile(tilePosition, tileCliffLeftBottom);
-                    }
-                    else
-                    {
-                        tilemap.SetTile(tilePosition, tileCliffBottom);
-                    }
+                   generateCliffTiles(tileCliffLeftBottom, tileCliff, tileCliffRightBottom, x, tilePosition);
                 }
 
                 else if (y < bottomHeights[x] + transitionHeight)
                 {
-                    if (bottomHeights[x] < bottomHeights[x + 1])
-                    {
-                        tilemap.SetTile(tilePosition, tileCliffLeft);
-                    }
-                    else if (bottomHeights[x] > bottomHeights[x + 1])
-                    {
-                        tilemap.SetTile(tilePosition, tileCliffRight);
-                    }
-                    else
-                    {
-                        tilemap.SetTile(tilePosition, tileCliff);
-                    }
+                    generateCliffTiles(tileCliffLeft, tileCliff, tileCliffRight, x, tilePosition);
                 }
 
                 else if (y == bottomHeights[x] + transitionHeight)
                 {
-                    if (bottomHeights[x] < bottomHeights[x + 1])
-                    {
-                        tilemap.SetTile(tilePosition, tileBottomRightGrass);
-                    }
-                    else if (bottomHeights[x] > bottomHeights[x + 1])
-                    {
-                        tilemap.SetTile(tilePosition, tileBottomLeftGrass);
-                    }
-                    else
-                    {
-                        tilemap.SetTile(tilePosition, tileBottomGrass);
-                    }
+                    generateCliffTiles(tileBottomLeftGrass, tileBottomGrass, tileBottomRightGrass, x, tilePosition);
                 }
 
                 else if (y > bottomHeights[x] + transitionHeight)
                 {
-                    if (y == topHeights[x])
+                    if (y == topHeights[x]-1)
                     {
-                        if (topHeights[x] < topHeights[x + 1])
+                        if (x == 0)
                         {
                             tilemap.SetTile(tilePosition, tileTopLeftGrass);
+                        }
+                        else if (topHeights[x] > topHeights[x - 1])
+                        {
+                            tilemap.SetTile(tilePosition, tileTopLeftGrass);
+                        }
+                        else if (x == topHeights.Length - 2)
+                        {
+                            tilemap.SetTile(tilePosition, tileTopRightGrass);
                         }
                         else if (topHeights[x] > topHeights[x + 1])
                         {
@@ -173,6 +148,30 @@ public class ProceduralTilemap : MonoBehaviour
                 }
                 
             }
+        }
+    }
+
+    void generateCliffTiles(TileBase left, TileBase middle, TileBase right, int x, Vector3Int tilePosition)
+    {
+        if (x == 0)
+        {
+            tilemap.SetTile(tilePosition, left);
+        }
+        else if (bottomHeights[x] < bottomHeights[x - 1])
+        {
+            tilemap.SetTile(tilePosition, left);
+        }
+        else if (x == bottomHeights.Length - 2)
+        {
+            tilemap.SetTile(tilePosition, right);
+        }
+        else if (bottomHeights[x] < bottomHeights[x + 1])
+        {
+            tilemap.SetTile(tilePosition, right);
+        }
+        else
+        {
+            tilemap.SetTile(tilePosition,middle);
         }
     }
 }
