@@ -7,9 +7,17 @@ public class ProceduralTilemap : MonoBehaviour
 {
     [Header("Tilemap Settings")]
     public Tilemap tilemap;
+    public Tilemap collider;
 
     [Header("Grass Tiles")]
     public TileBase tileCenterGrass;
+    public TileBase tileCenterGrass2;
+    public TileBase tileCenterGrass3;
+    public TileBase tileCenterGrass4;
+    public TileBase tileCenterGrass5;
+    public TileBase tileCenterGrass6;
+    public TileBase tileCenterGrass7;
+    public TileBase tileCenterGrass8;
     public TileBase tileTopGrass;
     public TileBase tileBottomGrass;
     public TileBase tileLeftGrass;
@@ -27,6 +35,13 @@ public class ProceduralTilemap : MonoBehaviour
     public TileBase tileCliffRightBottom;
     public TileBase tileCliffLeftBottom;
 
+    [Header("Collider Tiles")]
+
+    public TileBase leftUp;
+    public TileBase rightUp;
+    public TileBase leftDown;
+    public TileBase rightDown;
+
     [Header("Map Dimensions")]
     public int minWidth = 10;
     public int maxWidth = 20;
@@ -36,10 +51,15 @@ public class ProceduralTilemap : MonoBehaviour
 
     [Header("Generation Settings")]
     public float heightChangeProbability = 0.5f; // Probabilidad de cambio de altura en cada columna
+    [Header("Decorations")]
+    public GameObject[] bigDecorations;
+    public GameObject[] smallDecorations;
+
 
 
     private int[] bottomHeights;
     private int[] topHeights;
+    private List<Vector2> tilesPlanas = new List<Vector2>();
     private int  width;
 
 
@@ -47,6 +67,7 @@ public class ProceduralTilemap : MonoBehaviour
     {
         GenerateTilemap();
         PlaceTiles();
+        generateDecorations();
     }
 
     void GenerateTilemap()
@@ -92,17 +113,18 @@ public class ProceduralTilemap : MonoBehaviour
                 if (y == bottomHeights[x])
                 {
 
-                   generateCliffTiles(tileCliffLeftBottom, tileCliff, tileCliffRightBottom, x, tilePosition);
+                   generateCliffTiles(tileCliffLeftBottom, tileCliff, tileCliffRightBottom, x, tilePosition, true);
+                    
                 }
 
                 else if (y < bottomHeights[x] + transitionHeight)
                 {
-                    generateCliffTiles(tileCliffLeft, tileCliff, tileCliffRight, x, tilePosition);
+                    generateCliffTiles(tileCliffLeft, tileCliff, tileCliffRight, x, tilePosition, false);
                 }
 
                 else if (y == bottomHeights[x] + transitionHeight)
                 {
-                    generateCliffTiles(tileBottomLeftGrass, tileBottomGrass, tileBottomRightGrass, x, tilePosition);
+                    generateCliffTiles(tileBottomLeftGrass, tileBottomGrass, tileBottomRightGrass, x, tilePosition, false);
                 }
 
                 else if (y > bottomHeights[x] + transitionHeight)
@@ -111,39 +133,80 @@ public class ProceduralTilemap : MonoBehaviour
                     {
                         if (x == 0)
                         {
+                          
                             tilemap.SetTile(tilePosition, tileTopLeftGrass);
+                            collider.SetTile(tilePosition, leftUp);
                         }
                         else if (topHeights[x] > topHeights[x - 1])
                         {
                             tilemap.SetTile(tilePosition, tileTopLeftGrass);
+                            collider.SetTile(tilePosition, leftUp);
+
                         }
                         else if (x == topHeights.Length - 2)
                         {
                             tilemap.SetTile(tilePosition, tileTopRightGrass);
+                            collider.SetTile(tilePosition, rightUp);
                         }
                         else if (topHeights[x] > topHeights[x + 1])
                         {
                             tilemap.SetTile(tilePosition, tileTopRightGrass);
+                            collider.SetTile(tilePosition, rightUp);
                         }
                         else
                         {
                             tilemap.SetTile(tilePosition, tileTopGrass);
+                            tilePosition.y++;
+                            collider.SetTile(tilePosition, tileCliff);
                         }
                     }
 
                     else if (x == 0)
                     {
                         tilemap.SetTile(tilePosition, tileLeftGrass);
+                        tilePosition.x--;
+                        collider.SetTile(tilePosition, tileCliff);
                     }
-                    else if (x == width)
+                    else if (x == width-2)
                     {
                         tilemap.SetTile(tilePosition, tileRightGrass);
+                        tilePosition.x++;
+                        collider.SetTile(tilePosition, tileCliff);
                     }
                     
 
                     else
                     {
-                        tilemap.SetTile(tilePosition, tileCenterGrass);
+                        tilesPlanas.Add(new Vector2(x, y));
+                        float RandomTile = Random.Range(0, 80);
+                        switch (RandomTile)
+                        {
+                            
+                            case 2:
+                                tilemap.SetTile(tilePosition, tileCenterGrass2);
+                                break;
+                            case 3:
+                                tilemap.SetTile(tilePosition, tileCenterGrass3);
+                                break;
+                            case 4:
+                                tilemap.SetTile(tilePosition, tileCenterGrass4);
+                                break;
+                            case 5:
+                                tilemap.SetTile(tilePosition, tileCenterGrass5);
+                                break;
+                            case 6:
+                                tilemap.SetTile(tilePosition, tileCenterGrass6);
+                                break;
+                            case 7:
+                                tilemap.SetTile(tilePosition, tileCenterGrass7);
+                                break;
+                            case 8:
+                                tilemap.SetTile(tilePosition, tileCenterGrass8);
+                                break;
+                            default:
+                                tilemap.SetTile(tilePosition, tileCenterGrass);
+                                break;
+                        }
                     }
                 }
                 
@@ -151,27 +214,64 @@ public class ProceduralTilemap : MonoBehaviour
         }
     }
 
-    void generateCliffTiles(TileBase left, TileBase middle, TileBase right, int x, Vector3Int tilePosition)
+    void generateCliffTiles(TileBase left, TileBase middle, TileBase right, int x, Vector3Int tilePosition, bool placeWater)
     {
         if (x == 0)
         {
             tilemap.SetTile(tilePosition, left);
+            collider.SetTile(tilePosition, leftDown);
+
+
         }
         else if (bottomHeights[x] < bottomHeights[x - 1])
         {
             tilemap.SetTile(tilePosition, left);
+            collider.SetTile(tilePosition, leftDown);
+
         }
         else if (x == bottomHeights.Length - 2)
         {
             tilemap.SetTile(tilePosition, right);
+            collider.SetTile(tilePosition, rightDown);
         }
         else if (bottomHeights[x] < bottomHeights[x + 1])
         {
             tilemap.SetTile(tilePosition, right);
+            collider.SetTile(tilePosition, rightDown);
         }
         else
         {
             tilemap.SetTile(tilePosition,middle);
+            tilePosition.y--;
+            collider.SetTile(tilePosition, tileCliff);
+            if (placeWater)
+            {
+                
+                
+                tilemap.SetTile(tilePosition, tileCliffBottom);
+            }
+           
+        }
+    }
+
+    void generateDecorations()
+    {
+
+        foreach (Vector2 tile in tilesPlanas)
+        {
+            float random = Random.Range(0, 100);
+            if (random < 3)
+            {
+                int randomIndex = Random.Range(0, bigDecorations.Length);
+                GameObject decoration = Instantiate(bigDecorations[randomIndex], tile, Quaternion.identity);
+                decoration.transform.parent = transform;
+            }
+            else if (random < 6)
+            {
+                int randomIndex = Random.Range(0, smallDecorations.Length);
+                GameObject decoration = Instantiate(smallDecorations[randomIndex], tile, Quaternion.identity);
+                decoration.transform.parent = transform;
+            }
         }
     }
 }
