@@ -21,9 +21,13 @@ public class Proyectile : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" || collision.gameObject.tag == "Collider")
+        if (collision.gameObject.tag == "Enemy" )
         {
-            //collision.gameObject.GetComponent<Enemy>().TakeDamage(Damage);
+            collision.gameObject.GetComponent<SlimeMovement>().TakeDamage(Damage);
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Collider")
+        {
             Destroy(gameObject);
         }
     }

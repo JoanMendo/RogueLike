@@ -55,11 +55,14 @@ public class ProceduralTilemap : MonoBehaviour
     public GameObject[] bigDecorations;
     public GameObject[] smallDecorations;
 
-
+    [Header("Prefabs")]
+    public GameObject slimePrefab;
+    public GameObject CharacterPrefab;
 
     private int[] bottomHeights;
     private int[] topHeights;
     private List<Vector2> tilesPlanas = new List<Vector2>();
+    private List<Vector2> tilesNotUsed = new List<Vector2>();
     private int  width;
 
 
@@ -68,6 +71,7 @@ public class ProceduralTilemap : MonoBehaviour
         GenerateTilemap();
         PlaceTiles();
         generateDecorations();
+        generateEntities();
     }
 
     void GenerateTilemap()
@@ -93,8 +97,7 @@ public class ProceduralTilemap : MonoBehaviour
                 bottomHeights[x] = Mathf.Clamp(bottomHeights[x] + change, -10, minHeight); //Clamp para que no se salga de los limites
                 change = Random.Range(-1, 2); // -1, 0, 1
                 topHeights[x] = Mathf.Clamp(topHeights[x] + change, minHeight, maxHeight);
-                Debug.Log("Top Height: " + topHeights[x]);
-                Debug.Log("Bottom Height: " + bottomHeights[x]);
+
             }
         }
 
@@ -260,19 +263,41 @@ public class ProceduralTilemap : MonoBehaviour
 
         foreach (Vector2 tile in tilesPlanas)
         {
-            float random = Random.Range(0, 70);
+            float random = Random.Range(0, 90);
             if (random < 2)
             {
                 int randomIndex = Random.Range(0, bigDecorations.Length);
                 GameObject decoration = Instantiate(bigDecorations[randomIndex], tile, Quaternion.identity);
                 decoration.transform.parent = transform;
+                
+
             }
-            else if (random < 6)
+            else if (random < 4)
             {
                 int randomIndex = Random.Range(0, smallDecorations.Length);
                 GameObject decoration = Instantiate(smallDecorations[randomIndex], tile, Quaternion.identity);
                 decoration.transform.parent = transform;
+                
+            }
+            else
+            {
+               tilesNotUsed.Add(tile); 
             }
         }
+    }
+
+    void generateEntities()
+    {
+        Vector2 playerPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+        GameObject player = Instantiate(CharacterPrefab, playerPosition, Quaternion.identity);
+        GameObject.Find("Main Camera").GetComponent<CameraFollow>().player = player.transform;
+        tilesNotUsed.Remove(playerPosition);
+        for (int i = 0; i < Random.Range(3f, 5f); i++)
+        {
+            Vector2 slimePosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+            Instantiate(slimePrefab, slimePosition, Quaternion.identity);
+            tilesNotUsed.Remove(slimePosition);
+        }
+
     }
 }

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SlimeMovement : MonoBehaviour
+public class SlimeMovement : AEnemy
 {
     private Transform Player;
     private Rigidbody2D rb;
@@ -45,7 +45,7 @@ public class SlimeMovement : MonoBehaviour
         {
             float RandomX = Random.Range(-1f, 1f);
             float RandomY = Random.Range(-1f, 1f);
-            rb.AddForce(new Vector2(RandomX, RandomY) * jumpForce, ForceMode2D.Force);
+            rb.AddForce(new Vector2(RandomX, RandomY) * jumpForce * 2.3f, ForceMode2D.Force);
         }
 
         if (direction.x > 0)
@@ -60,4 +60,6 @@ public class SlimeMovement : MonoBehaviour
         
         yield return SlimeMovementCR();
     }
+
+    
 }
