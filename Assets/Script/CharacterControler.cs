@@ -11,8 +11,6 @@ public class CharacterControler : MonoBehaviour
     private Vector2 direction;
     public GameObject head;
     public GameObject body;
-    public GameObject arm1;
-    public GameObject arm2;
     public Sprite headForward;
     public Sprite headBackward;
     public Sprite headSideways;

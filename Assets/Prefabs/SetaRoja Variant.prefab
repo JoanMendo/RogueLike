@@ -56,8 +56,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: SetaRoja Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 6776045283636211940, guid: 039f516cbf5a4b44c8311fb6884a1aee, type: 3}
+      propertyPath: m_TagString
+      value: Decoration
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6776045283636211940, guid: 039f516cbf5a4b44c8311fb6884a1aee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -3471602781846713301}
   m_SourcePrefab: {fileID: 100100000, guid: 039f516cbf5a4b44c8311fb6884a1aee, type: 3}
+--- !u!1 &1663039413649973842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6776045283636211940, guid: 039f516cbf5a4b44c8311fb6884a1aee, type: 3}
+  m_PrefabInstance: {fileID: 5268389961661174454}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &-3471602781846713301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663039413649973842}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eed29fe8514aed4faa465a17838c81a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

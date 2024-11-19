@@ -177,6 +177,7 @@ public class ProceduralTilemap : MonoBehaviour
 
                     else
                     {
+                        if (x > 2 && x < width-2 && y > transitionHeight + 1 && y < topHeights[x] - 1) 
                         tilesPlanas.Add(new Vector2(x, y));
                         float RandomTile = Random.Range(0, 80);
                         switch (RandomTile)
@@ -259,8 +260,8 @@ public class ProceduralTilemap : MonoBehaviour
 
         foreach (Vector2 tile in tilesPlanas)
         {
-            float random = Random.Range(0, 100);
-            if (random < 3)
+            float random = Random.Range(0, 70);
+            if (random < 2)
             {
                 int randomIndex = Random.Range(0, bigDecorations.Length);
                 GameObject decoration = Instantiate(bigDecorations[randomIndex], tile, Quaternion.identity);
