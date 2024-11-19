@@ -9,13 +9,20 @@ public class CharacterControler : MonoBehaviour
     public float speed = 5.0f;
     private Rigidbody2D rb;
     private Vector2 direction;
-    private Animator anim;
+    public GameObject head;
+    public GameObject body;
+    public GameObject arm1;
+    public GameObject arm2;
+    public Sprite headForward;
+    public Sprite headBackward;
+    public Sprite headSideways;
+   
     void Start()
     {
         
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
-        anim.Play("Idle");
+       
+
     }
 
     // Update is called once per frame
@@ -27,8 +34,28 @@ public class CharacterControler : MonoBehaviour
         direction = new Vector2(inputX, inputY);
         rb.velocity = direction.normalized * speed;
 
-        anim.SetFloat("DirectionX", inputX);
-        anim.SetFloat("DirectionY", inputY);
+        if (inputX == 1 && inputY==0)
+        {
+            head.GetComponent<SpriteRenderer>().sprite = headSideways;
+            
+        }
+        else if (inputX == -1&&inputY == 0)
+        {
+            head.GetComponent<SpriteRenderer>().sprite = headSideways;
+            
+        }
+        else if  ( inputY == 1)
+        {
+            head.GetComponent<SpriteRenderer>().sprite = headBackward;
+            
+        }
+        else
+        {
+            head.GetComponent<SpriteRenderer>().sprite = headForward;
+            
+        }
+
+       
 
 
     }

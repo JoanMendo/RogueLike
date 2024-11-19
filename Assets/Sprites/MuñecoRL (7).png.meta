@@ -1,0 +1,752 @@
+fileFormatVersion: 2
+guid: 2f191b16b65598a47991c5cbceefbdea
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_0"
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 166
+        width: 22
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39959a14f000da34e89da6b950c2f65a
+      internalID: 172675867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_1"
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 166
+        width: 22
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38a69f60b315fcb479b31d3c29b14f24
+      internalID: -1837925715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_2"
+      rect:
+        serializedVersion: 2
+        x: 78
+        y: 166
+        width: 18
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cedae24e755bbf641878f736e05a9949
+      internalID: -408289832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_3"
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 164
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf65824c5f5112a4c8a14f5979b123c3
+      internalID: 1658042306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_4"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 164
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c44f97955191e74b9c5851feabbba4d
+      internalID: -1485321190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_5"
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 164
+        width: 22
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ab2f3a6ae53b514d8b06b3e7f464285
+      internalID: 178711661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_6"
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 142
+        width: 14
+        height: 20
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6f03fdbeb7c13c4cb4d38110668946b
+      internalID: 1258132193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_7"
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 148
+        width: 4
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f961c0441143a45ba7825a465f9604
+      internalID: -977214932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_8"
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 148
+        width: 4
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef0933a11b96e24418ff52950a487c85
+      internalID: -1649697342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_9"
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 150
+        width: 6
+        height: 4
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21d356bd9dc3cd94aa2e44a1c9ab98cb
+      internalID: -828846971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_10"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 135
+        width: 18
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eff1ae774a072e4a967c30179e4ddfb
+      internalID: -1037705936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_11"
+      rect:
+        serializedVersion: 2
+        x: 158
+        y: 141
+        width: 8
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 902cf39b4b25d6346bb257cd64584bf6
+      internalID: -116760071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_12"
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 141
+        width: 8
+        height: 12
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59fad7f3ce4d2c44900330ab29c8421
+      internalID: 588078558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_13"
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 143
+        width: 10
+        height: 8
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a62ea1ed42baed4fa927a65b488ae94
+      internalID: 1582708509
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_14"
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 69
+        width: 24
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41cb1d4314af084498620a91ef20713d
+      internalID: -2074531306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_15"
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 69
+        width: 24
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d45cc00818d47f04f9ca35188c6cf55a
+      internalID: -1372230621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_16"
+      rect:
+        serializedVersion: 2
+        x: 77
+        y: 69
+        width: 20
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32ddd62bfa363fe4eba6cfda8b29111f
+      internalID: -2065852090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_17"
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 68
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f55d520fdbade6a40b0261f7ca345b7e
+      internalID: -1238003774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_18"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 68
+        width: 26
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8d2d45406a05bd64da1ad21c0da52985
+      internalID: -932010177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_19"
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 68
+        width: 22
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 053f12b6df359d249b883a063f6e79fd
+      internalID: -87661693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_20"
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 45
+        width: 16
+        height: 22
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7df9a4ca6cd33c04da7150be2dad1eef
+      internalID: -1568485050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_21"
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 51
+        width: 6
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a03364f93b528419a4c4f13dd433d1
+      internalID: -226865843
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_22"
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 51
+        width: 6
+        height: 10
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ffa49c044e02841ac87a05aa8e2624
+      internalID: 1510902806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_23"
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 52
+        width: 8
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc937febc2164144f9a598dd73a7be14
+      internalID: -823662124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_24"
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 42
+        width: 21
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9061189ea380c064b812c5e80956747e
+      internalID: 864518776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_25"
+      rect:
+        serializedVersion: 2
+        x: 136
+        y: 39
+        width: 18
+        height: 24
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54e63fd313ae7ec42b89943edd73fde2
+      internalID: -361271801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_26"
+      rect:
+        serializedVersion: 2
+        x: 168
+        y: 38
+        width: 28
+        height: 29
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc274b707b6156b46ab5c36e68986e71
+      internalID: -109276900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_27"
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 47
+        width: 21
+        height: 11
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 675ad24bd999976458e8b316b0ecd9a5
+      internalID: -1051091439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "Mu\xF1ecoRL (7)_28"
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 10
+        width: 24
+        height: 25
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cfd79ea68416c640bb990ef3a6dd1c6
+      internalID: 304975823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      "Mu\xF1ecoRL (7)_0": 172675867
+      "Mu\xF1ecoRL (7)_1": -1837925715
+      "Mu\xF1ecoRL (7)_10": -1037705936
+      "Mu\xF1ecoRL (7)_11": -116760071
+      "Mu\xF1ecoRL (7)_12": 588078558
+      "Mu\xF1ecoRL (7)_13": 1582708509
+      "Mu\xF1ecoRL (7)_14": -2074531306
+      "Mu\xF1ecoRL (7)_15": -1372230621
+      "Mu\xF1ecoRL (7)_16": -2065852090
+      "Mu\xF1ecoRL (7)_17": -1238003774
+      "Mu\xF1ecoRL (7)_18": -932010177
+      "Mu\xF1ecoRL (7)_19": -87661693
+      "Mu\xF1ecoRL (7)_2": -408289832
+      "Mu\xF1ecoRL (7)_20": -1568485050
+      "Mu\xF1ecoRL (7)_21": -226865843
+      "Mu\xF1ecoRL (7)_22": 1510902806
+      "Mu\xF1ecoRL (7)_23": -823662124
+      "Mu\xF1ecoRL (7)_24": 864518776
+      "Mu\xF1ecoRL (7)_25": -361271801
+      "Mu\xF1ecoRL (7)_26": -109276900
+      "Mu\xF1ecoRL (7)_27": -1051091439
+      "Mu\xF1ecoRL (7)_28": 304975823
+      "Mu\xF1ecoRL (7)_3": 1658042306
+      "Mu\xF1ecoRL (7)_4": -1485321190
+      "Mu\xF1ecoRL (7)_5": 178711661
+      "Mu\xF1ecoRL (7)_6": 1258132193
+      "Mu\xF1ecoRL (7)_7": -977214932
+      "Mu\xF1ecoRL (7)_8": -1649697342
+      "Mu\xF1ecoRL (7)_9": -828846971
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
