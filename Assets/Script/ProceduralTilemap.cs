@@ -42,17 +42,6 @@ public class ProceduralTilemap : MonoBehaviour
     public TileBase leftDown;
     public TileBase rightDown;
 
-    [Header("Cloud Tiles")]
-
-    public TileBase LeftUpCloud;
-    public TileBase RightUpCloud;
-    public TileBase LeftDownCloud;
-    public TileBase RightDownCloud;
-    public TileBase CenterCloud;
-    public TileBase TopCloud;
-    public TileBase BottomCloud;
-    public TileBase LeftCloud;
-    public TileBase RightCloud;
 
     [Header("Map Dimensions")]
     public int minWidth = 10;
