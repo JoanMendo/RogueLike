@@ -10,23 +10,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6296251997217300, guid: 215d4111185102245823213e882cdf9f, type: 3}
       propertyPath: m_Size.x
-      value: 0.5036997
+      value: 0.9107709
       objectReference: {fileID: 0}
     - target: {fileID: 6296251997217300, guid: 215d4111185102245823213e882cdf9f, type: 3}
       propertyPath: m_Size.y
-      value: 0.25611624
+      value: 0.37132496
       objectReference: {fileID: 0}
     - target: {fileID: 6296251997217300, guid: 215d4111185102245823213e882cdf9f, type: 3}
       propertyPath: m_Offset.x
-      value: 0.0010007322
+      value: -0.015640497
       objectReference: {fileID: 0}
     - target: {fileID: 6296251997217300, guid: 215d4111185102245823213e882cdf9f, type: 3}
       propertyPath: m_Offset.y
-      value: 0.13953198
+      value: 0.08192763
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296251997217300, guid: 215d4111185102245823213e882cdf9f, type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.x
+      value: 0.5244255
       objectReference: {fileID: 0}
     - target: {fileID: 6296251997217300, guid: 215d4111185102245823213e882cdf9f, type: 3}
       propertyPath: m_SpriteTilingProperty.pivot.y
-      value: 0
+      value: 0.11535594
       objectReference: {fileID: 0}
     - target: {fileID: 6296251997217300, guid: 215d4111185102245823213e882cdf9f, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -96,6 +100,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 595433893, guid: 634fac72a2da6ad49afb880b16277449, type: 3}
+    - target: {fileID: 7488916932446104832, guid: 215d4111185102245823213e882cdf9f, type: 3}
+      propertyPath: m_Color.b
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488916932446104832, guid: 215d4111185102245823213e882cdf9f, type: 3}
+      propertyPath: m_Color.g
+      value: 0.764151
+      objectReference: {fileID: 0}
+    - target: {fileID: 7488916932446104832, guid: 215d4111185102245823213e882cdf9f, type: 3}
+      propertyPath: m_Color.r
+      value: 0.764151
+      objectReference: {fileID: 0}
     - target: {fileID: 8916901417952891949, guid: 215d4111185102245823213e882cdf9f, type: 3}
       propertyPath: m_Controller
       value: 

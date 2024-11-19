@@ -263,11 +263,20 @@ MonoBehaviour:
   rightUp: {fileID: 11400000, guid: ca31a6b8d06687546b2d5d9be2b506a5, type: 2}
   leftDown: {fileID: 11400000, guid: 85163215682d830489871afdfc3bc9af, type: 2}
   rightDown: {fileID: 11400000, guid: 4fdc83619d4a89d4e931afa4b6d4a158, type: 2}
+  LeftUpCloud: {fileID: 11400000, guid: a6ce6d0576fc71f45ba3aff5a4ce1f55, type: 2}
+  RightUpCloud: {fileID: 11400000, guid: 4ed5b33383111a741bbc3d339ac98232, type: 2}
+  LeftDownCloud: {fileID: 11400000, guid: efc038abb7154e54893839907b15006f, type: 2}
+  RightDownCloud: {fileID: 11400000, guid: 2d660eb36861b3f4e904a59342101040, type: 2}
+  CenterCloud: {fileID: 11400000, guid: ec98011a874c37049ae33ca990cb512f, type: 2}
+  TopCloud: {fileID: 11400000, guid: 9c55a74951b22214a87874cf2dbbbfbd, type: 2}
+  BottomCloud: {fileID: 11400000, guid: ab7abc5ff9ae12d44ae3431ae39a6089, type: 2}
+  LeftCloud: {fileID: 11400000, guid: 245ea984689428a46a28a8ce442aef07, type: 2}
+  RightCloud: {fileID: 11400000, guid: b60ecd411a0f6064e81746e00323ac29, type: 2}
   minWidth: 30
   maxWidth: 42
   minHeight: 18
   maxHeight: 24
-  transitionHeight: 4
+  transitionHeight: 6
   heightChangeProbability: 0.8
   bigDecorations:
   - {fileID: 3811946557148171284, guid: 215d4111185102245823213e882cdf9f, type: 3}
@@ -381,6 +390,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 576483152}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &542160248
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 542160249}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &542160249
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542160248}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10.9343195, y: 7.246486, z: -0.1458671}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &576483150
 GameObject:
@@ -64340,7 +64380,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 7
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -64669,3 +64709,4 @@ SceneRoots:
   - {fileID: 576483152}
   - {fileID: 1178748787}
   - {fileID: 99413808}
+  - {fileID: 542160249}

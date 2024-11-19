@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 8473269869556557906}
   m_Layer: 0
   m_Name: ShySlime
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -161,7 +161,7 @@ BoxCollider2D:
   m_Offset: {x: -0.031742096, y: 0.30108404}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4859944, y: 0.25}
+    pivot: {x: 0.5121363, y: 0.29657865}
     oldSize: {x: 2, y: 2}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5

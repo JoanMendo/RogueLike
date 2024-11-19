@@ -42,6 +42,18 @@ public class ProceduralTilemap : MonoBehaviour
     public TileBase leftDown;
     public TileBase rightDown;
 
+    [Header("Cloud Tiles")]
+
+    public TileBase LeftUpCloud;
+    public TileBase RightUpCloud;
+    public TileBase LeftDownCloud;
+    public TileBase RightDownCloud;
+    public TileBase CenterCloud;
+    public TileBase TopCloud;
+    public TileBase BottomCloud;
+    public TileBase LeftCloud;
+    public TileBase RightCloud;
+
     [Header("Map Dimensions")]
     public int minWidth = 10;
     public int maxWidth = 20;
@@ -295,9 +307,12 @@ public class ProceduralTilemap : MonoBehaviour
         for (int i = 0; i < Random.Range(3f, 5f); i++)
         {
             Vector2 slimePosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
-            Instantiate(slimePrefab, slimePosition, Quaternion.identity);
+            GameObject enemy = Instantiate(slimePrefab, slimePosition, Quaternion.identity);
+            GameManager.instance.enemyList.Add(enemy);
             tilesNotUsed.Remove(slimePosition);
         }
 
     }
+
+
 }

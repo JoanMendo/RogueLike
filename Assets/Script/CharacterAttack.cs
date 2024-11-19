@@ -42,8 +42,13 @@ public class CharacterAttack : MonoBehaviour
         Vector3 characterPosition = transform.position;
 
         // Calcular la dirección (normalizada)
-        Vector2 direction = (mousePosition - characterPosition).normalized;
-        return direction;
+        Vector2 vect = mousePosition - characterPosition;
+        Debug.Log(vect);
+        Vector2 direction = (vect).normalized;
+        Debug.Log(direction);
+        Vector2 normalized = vect / (Mathf.Sqrt(vect.x * vect.x + vect.y * vect.y));
+        Debug.Log(normalized);
+        return normalized;
 
     }
 
