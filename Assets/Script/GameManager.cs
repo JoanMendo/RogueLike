@@ -18,4 +18,12 @@ public class GameManager : MonoBehaviour
     {
         
     }
+
+    public void checkList()
+    {
+        if (enemyList.Count == 0)
+        {
+            Debug.Log("You win");
+        }
+    }
 }

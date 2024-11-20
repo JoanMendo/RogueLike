@@ -7,7 +7,7 @@ public abstract class AEntity : MonoBehaviour
     public float health;
 
 
-    public void TakeDamage(float damage)
+    public virtual void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)

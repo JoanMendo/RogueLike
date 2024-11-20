@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Proyectile : MonoBehaviour
@@ -8,10 +9,13 @@ public class Proyectile : MonoBehaviour
     public float Speed;
     public float Damage;
     public GameObject deathParticle;
+    public GameObject floatingTextPrefab;
+    private GameObject Canvas;
     private Rigidbody2D rb;
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        Canvas = GameObject.Find("Canvas");
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class Proyectile : MonoBehaviour
         {
             collision.gameObject.GetComponent<SlimeMovement>().TakeDamage(Damage);
             Instantiate(deathParticle, transform.position, Quaternion.identity);
+            CreateFloatingText();
             Destroy(gameObject);
         }
         if (collision.gameObject.tag == "Collider" || collision.gameObject.tag == "Decoration")
@@ -33,5 +38,12 @@ public class Proyectile : MonoBehaviour
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+    }
+
+    public void CreateFloatingText()
+    {
+
+        var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, Canvas.transform);
+        go.GetComponent<TMP_Text>().text = Damage.ToString();
     }
 }

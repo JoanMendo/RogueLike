@@ -173,9 +173,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Direction: {x: 0, y: 0}
-  Speed: 12
-  Damage: 3
+  Speed: 13
+  Damage: 10
   deathParticle: {fileID: 5052562978784651109, guid: 084504dc509162f41868c834490f906a, type: 3}
+  floatingTextPrefab: {fileID: 3770082454262011570, guid: 89ec72c4b2634234581ad2f17ab328e7, type: 3}
 --- !u!1 &9028612474619947567
 GameObject:
   m_ObjectHideFlags: 0
