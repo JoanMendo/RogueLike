@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: -1325711532, guid: c9706025c8aa83a428a41095f51d77a0, type: 3}
+  m_Sprite: {fileID: -361271801, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -173,8 +173,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1415048395, guid: c9706025c8aa83a428a41095f51d77a0, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.8156863}
+  m_Sprite: {fileID: 864518776, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.69411767}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -237,7 +237,7 @@ MonoBehaviour:
   m_LightVolumeIntensity: 0
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
-  m_LightCookieSprite: {fileID: 1658042306, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
+  m_LightCookieSprite: {fileID: -932010177, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
   m_AlphaBlendOnOverlap: 0
@@ -419,9 +419,9 @@ MonoBehaviour:
   speed: 8
   head: {fileID: 6443113977058369832}
   body: {fileID: 3120080144153460475}
-  headForward: {fileID: -753676784, guid: c9706025c8aa83a428a41095f51d77a0, type: 3}
-  headBackward: {fileID: -1972397931, guid: c9706025c8aa83a428a41095f51d77a0, type: 3}
-  headSideways: {fileID: 591084346, guid: c9706025c8aa83a428a41095f51d77a0, type: 3}
+  headForward: {fileID: -1238003774, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
+  headBackward: {fileID: -932010177, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
+  headSideways: {fileID: -87661693, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
 --- !u!50 &8789008030942561966
 Rigidbody2D:
   serializedVersion: 4

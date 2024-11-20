@@ -10,14 +10,8 @@ public class ProceduralTilemap : MonoBehaviour
     public Tilemap collider;
 
     [Header("Grass Tiles")]
-    public TileBase tileCenterGrass;
-    public TileBase tileCenterGrass2;
-    public TileBase tileCenterGrass3;
-    public TileBase tileCenterGrass4;
-    public TileBase tileCenterGrass5;
-    public TileBase tileCenterGrass6;
-    public TileBase tileCenterGrass7;
-    public TileBase tileCenterGrass8;
+    public TileBase[] centerGrassDecoration;
+    public TileBase centerGrass;
     public TileBase tileTopGrass;
     public TileBase tileBottomGrass;
     public TileBase tileLeftGrass;
@@ -183,34 +177,14 @@ public class ProceduralTilemap : MonoBehaviour
                     {
                         if (x > 2 && x < width-2 && y > transitionHeight + 1 && y < topHeights[x] - 1) 
                         tilesPlanas.Add(new Vector2(x, y));
-                        float RandomTile = Random.Range(0, 80);
-                        switch (RandomTile)
+                        int RandomTile = Random.Range(0, 60);
+                        if (RandomTile < centerGrassDecoration.Length)
                         {
-                            
-                            case 2:
-                                tilemap.SetTile(tilePosition, tileCenterGrass2);
-                                break;
-                            case 3:
-                                tilemap.SetTile(tilePosition, tileCenterGrass3);
-                                break;
-                            case 4:
-                                tilemap.SetTile(tilePosition, tileCenterGrass4);
-                                break;
-                            case 5:
-                                tilemap.SetTile(tilePosition, tileCenterGrass5);
-                                break;
-                            case 6:
-                                tilemap.SetTile(tilePosition, tileCenterGrass6);
-                                break;
-                            case 7:
-                                tilemap.SetTile(tilePosition, tileCenterGrass7);
-                                break;
-                            case 8:
-                                tilemap.SetTile(tilePosition, tileCenterGrass8);
-                                break;
-                            default:
-                                tilemap.SetTile(tilePosition, tileCenterGrass);
-                                break;
+                            tilemap.SetTile(tilePosition, centerGrassDecoration[RandomTile]);
+                        }
+                        else
+                        {
+                            tilemap.SetTile(tilePosition, centerGrass);
                         }
                     }
                 }
@@ -264,7 +238,7 @@ public class ProceduralTilemap : MonoBehaviour
 
         foreach (Vector2 tile in tilesPlanas)
         {
-            float random = Random.Range(0, 90);
+            float random = Random.Range(0, 120);
             if (random < 2)
             {
                 int randomIndex = Random.Range(0, bigDecorations.Length);
@@ -273,7 +247,7 @@ public class ProceduralTilemap : MonoBehaviour
                 
 
             }
-            else if (random < 4)
+            else if (random < 6)
             {
                 int randomIndex = Random.Range(0, smallDecorations.Length);
                 GameObject decoration = Instantiate(smallDecorations[randomIndex], tile, Quaternion.identity);

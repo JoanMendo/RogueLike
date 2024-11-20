@@ -7,6 +7,7 @@ public class Proyectile : MonoBehaviour
     public Vector2 Direction;
     public float Speed;
     public float Damage;
+    public GameObject deathParticle;
     private Rigidbody2D rb;
     void Start()
     {
@@ -24,10 +25,12 @@ public class Proyectile : MonoBehaviour
         if (collision.gameObject.tag == "Enemy" )
         {
             collision.gameObject.GetComponent<SlimeMovement>().TakeDamage(Damage);
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Collider")
+        if (collision.gameObject.tag == "Collider" || collision.gameObject.tag == "Decoration")
         {
+            Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }
