@@ -21,7 +21,6 @@ public class CharacterControler : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         GameManager.instance.player = this.gameObject;
 
-
     }
 
     // Update is called once per frame

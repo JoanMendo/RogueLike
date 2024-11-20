@@ -33,7 +33,7 @@ public class Proyectile : MonoBehaviour
             CreateFloatingText();
             Destroy(gameObject);
         }
-        if (collision.gameObject.tag == "Collider" || collision.gameObject.tag == "Decoration")
+        if (collision.gameObject.tag == "Collider" )
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);

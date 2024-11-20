@@ -6,4 +6,15 @@ public class AEnemy : AEntity
 {
     public float damage;
 
+    public override void TakeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            GameManager.instance.enemyList.Remove(gameObject);
+            GameManager.instance.checkList();
+            Destroy(gameObject);
+        }
+
+    }
 }

@@ -61,17 +61,7 @@ public class SlimeMovement : AEnemy
         yield return SlimeMovementCR();
     }
 
-    public override void TakeDamage(float damage)
-    {
-        health -= damage;
-        if (health <= 0)
-        {
-            GameManager.instance.enemyList.Remove(gameObject);
-            GameManager.instance.checkList();
-            Destroy(gameObject);
-        }
-
-    }
+   
 
 
 }

@@ -11,18 +11,9 @@ public class GameManager : MonoBehaviour
     public List<GameObject> enemyList = new List<GameObject>();
     public GameObject Cloud;
     private GameObject cloud;
-    
-
     void Awake()
-    {
-        
+    {  
         instance = this;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void checkList()
@@ -37,7 +28,7 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator CloudToPlayer()
     {
-        //Que la nube se deslice hasta la posicion de ljugador
+        //Que la nube se deslice hasta la posicion del jugador
         while (Vector3.Distance(cloud.transform.position, player.transform.position) > 0.1f)
         {
             cloud.transform.position = Vector3.MoveTowards(cloud.transform.position, player.transform.position, 0.1f);

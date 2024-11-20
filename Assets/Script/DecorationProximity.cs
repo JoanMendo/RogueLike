@@ -10,8 +10,6 @@ public class DecorationProximity : MonoBehaviour
         checkNear();
     }
 
-  
-
     //Methd to destroy itself if other objects with the same tag are close
  
     private void checkNear()
