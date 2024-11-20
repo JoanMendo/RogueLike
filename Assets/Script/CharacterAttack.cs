@@ -16,7 +16,7 @@ public class CharacterAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !OnCooldown)
+        if (Input.GetMouseButtonDown(0) && !OnCooldown) //Si pulsa el click derecho y el cooldown no está activo
         {
             Attack();
             StartCoroutine(Cooldown());
@@ -27,7 +27,7 @@ public class CharacterAttack : MonoBehaviour
     {
 
         GameObject proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
-        proyectile.GetComponent<Proyectile>().Direction = detectCursorPosition();
+        proyectile.GetComponent<Proyectile>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
 
 
     }
@@ -43,16 +43,12 @@ public class CharacterAttack : MonoBehaviour
 
         // Calcular la dirección (normalizada)
         Vector2 vect = mousePosition - characterPosition;
-        Debug.Log(vect);
-        Vector2 direction = (vect).normalized;
-        Debug.Log(direction);
         Vector2 normalized = vect / (Mathf.Sqrt(vect.x * vect.x + vect.y * vect.y));
-        Debug.Log(normalized);
         return normalized;
 
     }
 
-    public IEnumerator Cooldown()
+    public IEnumerator Cooldown() //Cooldown del arma
     {
         OnCooldown = true;
         yield return new WaitForSeconds(AttackSpeed);

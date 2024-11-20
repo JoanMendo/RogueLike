@@ -60,6 +60,8 @@ public class ProceduralTilemap : MonoBehaviour
     private List<Vector2> tilesNotUsed = new List<Vector2>();
     private int  width;
 
+    
+
 
     private void Start()
     {
@@ -71,6 +73,7 @@ public class ProceduralTilemap : MonoBehaviour
 
     void GenerateTilemap()
     {
+        //GameManager.instance.levelPositions = (Vector2)transform.position;
         width = Random.Range(minWidth, maxWidth + 1);  //Ancho aleatorio de todo el tilemap
 
         

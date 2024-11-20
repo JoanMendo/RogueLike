@@ -61,7 +61,7 @@ public class SlimeMovement : AEnemy
         yield return SlimeMovementCR();
     }
 
-    public void TakeDamage()
+    public override void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
