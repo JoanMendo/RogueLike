@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class AEntity : MonoBehaviour
 {
     public float health;
+    public float speed;
 
 
     public virtual void TakeDamage(float damage)

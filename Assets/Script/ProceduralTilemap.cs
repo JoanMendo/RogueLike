@@ -1,13 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UIElements;
 
 public class ProceduralTilemap : MonoBehaviour
 {
     [Header("Tilemap Settings")]
     public Tilemap tilemap;
     public Tilemap collider;
+    public GameObject levelPrefab;
 
     [Header("Grass Tiles")]
     public TileBase[] centerGrassDecoration;
@@ -60,29 +63,34 @@ public class ProceduralTilemap : MonoBehaviour
     private List<Vector2> tilesNotUsed = new List<Vector2>();
     private int  width;
 
-    
+
+
+
 
 
     private void Start()
     {
+       
+        
         GenerateTilemap();
         PlaceTiles();
         generateDecorations();
         generateEntities();
+        GameManager.instance.currentLevel = gameObject;
     }
 
     void GenerateTilemap()
     {
-        //GameManager.instance.levelPositions = (Vector2)transform.position;
-        width = Random.Range(minWidth, maxWidth + 1);  //Ancho aleatorio de todo el tilemap
 
-        
+        width = Random.Range(minWidth, maxWidth + 1);  //Ancho aleatorio de todo el tilemap
         bottomHeights = new int[width]; //Definimos el array de alturas con ell width total
         topHeights = new int[width]; //Definimos el array de alturas con ell width total
         bottomHeights[0] = 0;
         topHeights[0] = Random.Range(minHeight, maxHeight + 1); //Definimos la primera columna, que es necesario antes del bucle que hay a continuación
 
-        
+
+        GameManager.instance.levelPositions.Add(transform.position);
+
         for (int x = 1; x < width; x++) 
         {
             topHeights[x] = topHeights[x - 1]; //EMpezamos el bucle en 1, ya que la primera columna ya la hemos definido y sino daria error
@@ -110,6 +118,8 @@ public class ProceduralTilemap : MonoBehaviour
             for (int y = bottomHeights[x]; y < topHeights[x]; y++)
             {
                 Vector3Int tilePosition = new Vector3Int(x, y, 0);
+                
+
 
                 if (y == bottomHeights[x])
                 {
@@ -200,16 +210,13 @@ public class ProceduralTilemap : MonoBehaviour
     {
         if (x == 0)
         {
-            tilemap.SetTile(tilePosition, left);
+            tilemap.SetTile(tilePosition, left);   
             collider.SetTile(tilePosition, leftDown);
-
-
         }
         else if (bottomHeights[x] < bottomHeights[x - 1])
         {
             tilemap.SetTile(tilePosition, left);
             collider.SetTile(tilePosition, leftDown);
-
         }
         else if (x == bottomHeights.Length - 2)
         {
@@ -227,12 +234,9 @@ public class ProceduralTilemap : MonoBehaviour
             tilePosition.y--;
             collider.SetTile(tilePosition, tileCliff);
             if (placeWater)
-            {
-                
-                
+            {  
                 tilemap.SetTile(tilePosition, tileCliffBottom);
-            }
-           
+            } 
         }
     }
 
@@ -245,17 +249,19 @@ public class ProceduralTilemap : MonoBehaviour
             if (random < 2)
             {
                 int randomIndex = Random.Range(0, bigDecorations.Length);
-                GameObject decoration = Instantiate(bigDecorations[randomIndex], tile, Quaternion.identity);
+                GameObject decoration = Instantiate(bigDecorations[randomIndex], tile , Quaternion.identity);
                 decoration.transform.parent = transform;
-                
+                decoration.transform.position += (Vector3)tilemap.transform.position;
+
 
             }
             else if (random < 6)
             {
                 int randomIndex = Random.Range(0, smallDecorations.Length);
-                GameObject decoration = Instantiate(smallDecorations[randomIndex], tile, Quaternion.identity);
+                GameObject decoration = Instantiate(smallDecorations[randomIndex], tile , Quaternion.identity);
                 decoration.transform.parent = transform;
-                
+                decoration.transform.position += (Vector3)tilemap.transform.position;
+
             }
             else
             {
@@ -267,18 +273,31 @@ public class ProceduralTilemap : MonoBehaviour
     void generateEntities()
     {
         Vector2 playerPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
-        GameObject player = Instantiate(CharacterPrefab, playerPosition, Quaternion.identity);
-        GameObject.Find("Main Camera").GetComponent<CameraFollow>().player = player.transform;
+        if (GameManager.instance.player == null)
+        {
+            GameObject player = Instantiate(CharacterPrefab, playerPosition, Quaternion.identity);
+            GameObject.Find("Main Camera").GetComponent<CameraFollow>().player = player.transform;
+            player.transform.position += (Vector3)tilemap.transform.position;
+        }
+       
         tilesNotUsed.Remove(playerPosition);
         for (int i = 0; i < Random.Range(3f, 5f); i++)
         {
             Vector2 slimePosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
             GameObject enemy = Instantiate(slimePrefab, slimePosition, Quaternion.identity);
+            enemy.transform.position += (Vector3)tilemap.transform.position;
             GameManager.instance.enemyList.Add(enemy);
             tilesNotUsed.Remove(slimePosition);
         }
 
     }
+
+    public void makeNewLevel(float distanceX, float distanceY)
+    {
+        GameObject Level = Instantiate(levelPrefab, new Vector3(transform.parent.parent.position.x + distanceX, transform.parent.parent.position.y + distanceY, 0), Quaternion.identity);
+    }
+
+
 
 
 }

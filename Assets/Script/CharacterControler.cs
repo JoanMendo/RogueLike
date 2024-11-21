@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterControler : MonoBehaviour
+public class CharacterControler : AEntity
 {
     private float inputX;
     private float inputY;
-    public float speed = 5.0f;
     private Rigidbody2D rb;
     private Vector2 direction;
     public GameObject head;

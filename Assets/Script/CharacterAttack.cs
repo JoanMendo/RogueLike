@@ -7,7 +7,7 @@ public class CharacterAttack : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Proyectile;
     public float AttackSpeed;
-    private bool OnCooldown = false;
+    public bool OnCooldown = false;
     void Start()
     {
 

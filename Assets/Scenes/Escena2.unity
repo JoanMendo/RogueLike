@@ -250,6 +250,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   levelPositions: []
+  currentLevel: {fileID: 0}
   enemyList: []
   Cloud: {fileID: 5120792602394802410, guid: 0509393c171f8f343ab453e82f5a7790, type: 3}
 --- !u!1 &1148984406
@@ -631,6 +632,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: levelPrefab
+      value: 
+      objectReference: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
     - target: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: m_Name
       value: Level
@@ -641,7 +646,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3705229365739810345, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7.335888
+      value: -13.2
       objectReference: {fileID: 0}
     - target: {fileID: 3705229365739810345, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: m_LocalPosition.z
