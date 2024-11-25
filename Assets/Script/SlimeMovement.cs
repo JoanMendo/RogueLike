@@ -29,7 +29,6 @@ public class SlimeMovement : AEnemy
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
-
     }
 
     public IEnumerator SlimeMovementCR()
