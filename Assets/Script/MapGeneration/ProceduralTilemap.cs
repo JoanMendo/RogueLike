@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.UIElements;
+
 
 public class ProceduralTilemap : MonoBehaviour
 {
@@ -294,7 +294,7 @@ public class ProceduralTilemap : MonoBehaviour
     public void makeNewLevel(Vector2 offset)
     {
 
-        GameObject Level = Instantiate(levelPrefab, new Vector3(transform.parent.parent.position.x + offset.x, transform.parent.parent.position.y + offset.y, 0), Quaternion.identity);
+        Instantiate(levelPrefab, new Vector3(transform.parent.parent.position.x + offset.x, transform.parent.parent.position.y + offset.y, 0), Quaternion.identity);
        
     }
 

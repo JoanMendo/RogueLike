@@ -14,9 +14,7 @@ public class SlimeMovement : AEnemy
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(SlimeMovementCR());
-       
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -36,8 +34,7 @@ public class SlimeMovement : AEnemy
         float randomWait = Random.Range(1.5f, 3f);
         yield return new WaitForSeconds(randomWait);
         if (Vector3.Distance(transform.position, Player.position) < minDistanceFromPlayer)
-        {
-           
+        {   
             rb.AddForce(direction.normalized * jumpForce * 2.3f, ForceMode2D.Force);
         }
         else

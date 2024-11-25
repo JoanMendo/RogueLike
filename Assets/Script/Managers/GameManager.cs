@@ -38,8 +38,6 @@ public class GameManager : MonoBehaviour
             cloud.transform.position = Vector3.MoveTowards(cloud.transform.position, player.transform.position + new Vector3(0, -0.2f, 0), 0.15f);
             yield return new WaitForSeconds(0.01f);
         }
-
-        //CloudFreezesPlayer(player);
         
         Vector2 newPosition = currentLevel.GetComponent<ProceduralTilemap>().playerPosition;
         while (Vector3.Distance(cloud.transform.position, newPosition) > 0.2f)
@@ -49,13 +47,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         Destroy(cloud);
-
-
-
-
     }
-
-    
 
     public void createRandomOffset()
     {
