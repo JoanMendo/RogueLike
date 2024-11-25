@@ -63,20 +63,19 @@ public class ProceduralTilemap : MonoBehaviour
     private List<Vector2> tilesNotUsed = new List<Vector2>();
     private int  width;
 
-
+    public Vector2 playerPosition;
 
 
 
 
     private void Start()
-    {
-       
-        
+    { 
         GenerateTilemap();
         PlaceTiles();
         generateDecorations();
         generateEntities();
         GameManager.instance.currentLevel = gameObject;
+        levelPrefab  = GameManager.instance.levelPrefab;
     }
 
     void GenerateTilemap()
@@ -272,29 +271,31 @@ public class ProceduralTilemap : MonoBehaviour
 
     void generateEntities()
     {
-        Vector2 playerPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+        playerPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+        playerPosition += (Vector2)tilemap.transform.position;
         if (GameManager.instance.player == null)
         {
             GameObject player = Instantiate(CharacterPrefab, playerPosition, Quaternion.identity);
             GameObject.Find("Main Camera").GetComponent<CameraFollow>().player = player.transform;
-            player.transform.position += (Vector3)tilemap.transform.position;
         }
        
         tilesNotUsed.Remove(playerPosition);
         for (int i = 0; i < Random.Range(3f, 5f); i++)
         {
             Vector2 slimePosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+            slimePosition += (Vector2)tilemap.transform.position;
             GameObject enemy = Instantiate(slimePrefab, slimePosition, Quaternion.identity);
-            enemy.transform.position += (Vector3)tilemap.transform.position;
             GameManager.instance.enemyList.Add(enemy);
             tilesNotUsed.Remove(slimePosition);
         }
 
     }
 
-    public void makeNewLevel(float distanceX, float distanceY)
+    public void makeNewLevel(Vector2 offset)
     {
-        GameObject Level = Instantiate(levelPrefab, new Vector3(transform.parent.parent.position.x + distanceX, transform.parent.parent.position.y + distanceY, 0), Quaternion.identity);
+
+        GameObject Level = Instantiate(levelPrefab, new Vector3(transform.parent.parent.position.x + offset.x, transform.parent.parent.position.y + offset.y, 0), Quaternion.identity);
+       
     }
 
 

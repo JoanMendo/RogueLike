@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 373283ac0e0d6e5449a1d9cb615376dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  levelPrefab: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
   player: {fileID: 0}
   levelPositions: []
   currentLevel: {fileID: 0}
@@ -635,7 +636,11 @@ PrefabInstance:
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: levelPrefab
       value: 
-      objectReference: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      objectReference: {fileID: 0}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: transitionHeight
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: m_Name
       value: Level

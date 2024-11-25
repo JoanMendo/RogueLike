@@ -2,9 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-using UnityEngine;
-using UnityEngine.Tilemaps;
-
 public class SeaScroll : MonoBehaviour
 {
     // Velocidad de desplazamiento en los ejes X e Y
@@ -34,12 +31,12 @@ public class SeaScroll : MonoBehaviour
        
         if (tilemapTransform.position.x > initialX + 5)
         {
-            tilemapTransform.position = new Vector3(-5, tilemapTransform.position.y, tilemapTransform.position.z);
+            tilemapTransform.position = new Vector3(initialX, tilemapTransform.position.y, tilemapTransform.position.z);
         }
         
         if (tilemapTransform.position.y > initialY + 3)
         {
-            tilemapTransform.position = new Vector3(tilemapTransform.position.x, -3, tilemapTransform.position.z);
+            tilemapTransform.position = new Vector3(tilemapTransform.position.x, initialY, tilemapTransform.position.z);
         }
         tilemapTransform.position += new Vector3(offsetX, offsetY, 0);
     }
