@@ -22,7 +22,7 @@ public class BombaMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < 5f)
+        if (Vector2.Distance(transform.position, player.transform.position) < 8f)
         {
             direction = ((Vector2)player.transform.position - (Vector2)transform.position).normalized;
            
@@ -39,6 +39,15 @@ public class BombaMovement : MonoBehaviour
 
         anim.SetFloat("DirectionX", inputX);
         anim.SetFloat("DirectionY", inputY);
+
+        if (direction.x > 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+        else
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
 
 
     }
