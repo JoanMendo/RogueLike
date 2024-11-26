@@ -25,5 +25,9 @@ public class CameraFollow : MonoBehaviour
             // Actualiza la posición de la cámara
             transform.position = smoothedPosition;
         }
+        else
+        {
+            player = GameObject.FindGameObjectWithTag("Player").transform;
+        }
     }
 }
