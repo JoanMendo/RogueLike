@@ -9,6 +9,7 @@ public class AEnemy : AEntity
     public override void TakeDamage(float damage)
     {
         health -= damage;
+        CreateFloatingText(damage);
         if (health <= 0)
         {
             GameManager.instance.enemyList.Remove(gameObject);

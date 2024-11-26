@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BombaMovement : MonoBehaviour
+public class BombaMovement : AEnemy
 {
     private GameObject player;
     private float inputX;

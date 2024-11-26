@@ -57,7 +57,15 @@ public class SlimeMovement : AEnemy
         yield return SlimeMovementCR();
     }
 
-   
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.gameObject.GetComponent<AEntity>().TakeDamage(damage);
+        }
+    }
+
+
 
 
 }

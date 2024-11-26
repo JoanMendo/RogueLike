@@ -416,8 +416,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7154bc22f0fc65142bd4d2208de98879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
+  health: 1000
   speed: 8
+  floatingTextPrefab: {fileID: 3770082454262011570, guid: 89ec72c4b2634234581ad2f17ab328e7, type: 3}
   head: {fileID: 6443113977058369832}
   body: {fileID: 3120080144153460475}
   headForward: {fileID: -1238003774, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
