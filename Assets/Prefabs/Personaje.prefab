@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d28dda13abf984d881949de14f390d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  direction: {x: 0, y: 1}
   speed: 0.05
   time: 1
 --- !u!1 &4743781867479553050
@@ -364,7 +365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07d28dda13abf984d881949de14f390d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.13
+  direction: {x: 0, y: 1}
+  speed: 0.1
   time: 1.2
 --- !u!1 &8479267826887906556
 GameObject:
@@ -416,7 +418,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7154bc22f0fc65142bd4d2208de98879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 1000
+  health: 100000
   speed: 8
   floatingTextPrefab: {fileID: 3770082454262011570, guid: 89ec72c4b2634234581ad2f17ab328e7, type: 3}
   head: {fileID: 6443113977058369832}

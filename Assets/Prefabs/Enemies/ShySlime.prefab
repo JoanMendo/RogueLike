@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 1144681403482526343}
   - component: {fileID: 1744527973473765811}
   - component: {fileID: 8473269869556557906}
+  - component: {fileID: 5781244689801995277}
   m_Layer: 0
   m_Name: ShySlime
   m_TagString: Enemy
@@ -250,3 +251,19 @@ MonoBehaviour:
   - {x: 0.5, y: -0.5, z: 0}
   - {x: 0.5, y: 0.5, z: 0}
   - {x: -0.5, y: 0.5, z: 0}
+--- !u!114 &5781244689801995277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743015752381285158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d73d9ed92908ce49bba46612bfe8d74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  topLeftCorner: {fileID: 772784517924765876, guid: 7e4161d04444c64419fd8bfd6a306f1b, type: 3}
+  topRightCorner: {fileID: 6044221642273218777, guid: 6cda7b19d2e4ca84cb2379c88a4815b0, type: 3}
+  bottomLeftCorner: {fileID: 7726249003264685255, guid: 9c9b0c1c04fab654d94f7141a23387f9, type: 3}
+  bottomRightCorner: {fileID: 4336701318443605182, guid: 84c620eeeafc4d848855b388585b7706, type: 3}

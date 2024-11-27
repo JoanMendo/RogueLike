@@ -2,8 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UpAndDownAnimation : MonoBehaviour
+public class movementDirection : MonoBehaviour
 {
+    public Vector2 direction;
     public float speed = 5.0f;
     public float time = 1.2f;
 
@@ -16,7 +17,7 @@ public class UpAndDownAnimation : MonoBehaviour
     void Update()
     {
 
-        transform.position = new Vector3(transform.position.x, transform.position.y + speed * Time.deltaTime, transform.position.z);
+        transform.localPosition += new Vector3(direction.x, direction.y, 0) * speed * Time.deltaTime;
     }
 
     public IEnumerator ChangeDirection()

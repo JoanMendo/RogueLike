@@ -11,9 +11,10 @@ public class CornersUI : MonoBehaviour
     public GameObject bottomRightCorner;// Esquina inferior derecha
 
 
+
     private void Start()
     {
-        
+        SetTarget(gameObject);
     }
     
     // Método para establecer el objeto objetivo
@@ -22,15 +23,17 @@ public class CornersUI : MonoBehaviour
         if (target.TryGetComponent<BoxCollider2D>(out BoxCollider2D boxCollider))
         {
             // Actualiza las posiciones de las esquinas
-            UpdateCorners(boxCollider);
+            createCorners(boxCollider);
         }
     }
 
-    private void UpdateCorners(BoxCollider2D boxCollider)
+    private void createCorners(BoxCollider2D boxCollider)
     {
+        GameObject cornerGroup = new GameObject("CornerGroup");
+        cornerGroup.transform.SetParent(transform);
         // Obtén las posiciones del collider en coordenadas del mundo
         Vector2 center = boxCollider.transform.position + (Vector3)boxCollider.offset;
-        Vector2 extents = boxCollider.size / 2.0f;
+        Vector2 extents = (boxCollider.size * boxCollider.transform.localScale)/2;
 
         // Calcula las esquinas en base al centro y las dimensiones del collider
         Vector2 topLeft = new Vector2(center.x - extents.x, center.y + extents.y);
@@ -39,22 +42,29 @@ public class CornersUI : MonoBehaviour
         Vector2 bottomRight = new Vector2(center.x + extents.x, center.y - extents.y);
 
         // Asigna las posiciones a los objetos de las esquinas
-        topLeftCorner.transform.position = topLeft;
-        topRightCorner.transform.position = topRight;
-        bottomLeftCorner.transform.position = bottomLeft;
-        bottomRightCorner.transform.position = bottomRight;
+        GameObject topLeftInstance = Instantiate(topLeftCorner, topLeft, Quaternion.identity, cornerGroup.transform);
+        GameObject topRightInstance = Instantiate(topRightCorner, topRight, Quaternion.identity, cornerGroup.transform);
+        GameObject bottomLeftInstance = Instantiate(bottomLeftCorner, bottomLeft, Quaternion.identity, cornerGroup.transform);
+        GameObject bottomRightInstance= Instantiate(bottomRightCorner, bottomRight, Quaternion.identity, cornerGroup.transform);
 
-        // Asegúrate de que las esquinas estén visibles
-        SetCornersActive(true);
+        float scaleFactor = ( boxCollider.transform.localScale.x + boxCollider.transform.localScale.y)/2.5f;
+
+
+        topLeftInstance.transform.localScale *= scaleFactor;
+        topRightInstance.transform.localScale *= scaleFactor;
+        bottomLeftInstance.transform.localScale *= scaleFactor;
+        bottomRightInstance.transform.localScale *= scaleFactor;
+
+
+        topLeftInstance.GetComponent<movementDirection>().direction = (topLeft - center).normalized;
+        topRightInstance.GetComponent<movementDirection>().direction = (topRight - center).normalized;
+        bottomLeftInstance.GetComponent<movementDirection>().direction = (bottomLeft - center).normalized;
+        bottomRightInstance.GetComponent<movementDirection>().direction = (bottomRight - center).normalized;
+
+
     }
 
-    private void SetCornersActive(bool isActive)
-    {
-        topLeftCorner.SetActive(isActive);
-        topRightCorner.SetActive(isActive);
-        bottomLeftCorner.SetActive(isActive);
-        bottomRightCorner.SetActive(isActive);
-    }
+
 
 
 }
