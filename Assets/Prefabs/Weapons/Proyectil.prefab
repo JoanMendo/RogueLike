@@ -76,7 +76,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 4
+  m_SortingOrder: 3
   m_Sprite: {fileID: -109276900, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -172,11 +172,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3d4d30cf7235b43b90fc1b7831e552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Damage: 10
   Direction: {x: 0, y: 0}
   Speed: 13
-  Damage: 10
   deathParticle: {fileID: 5052562978784651109, guid: 084504dc509162f41868c834490f906a, type: 3}
-  floatingTextPrefab: {fileID: 3770082454262011570, guid: 89ec72c4b2634234581ad2f17ab328e7, type: 3}
 --- !u!1 &9028612474619947567
 GameObject:
   m_ObjectHideFlags: 0

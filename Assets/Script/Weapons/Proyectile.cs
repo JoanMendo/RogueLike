@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class Proyectile : MonoBehaviour
+public class Proyectile : AWeapon
 {
-    public Vector2 Direction;
+
     public float Speed;
-    public float Damage;
     public GameObject deathParticle;
     
 
@@ -28,7 +27,7 @@ public class Proyectile : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy" )
         {
-            collision.gameObject.GetComponent<SlimeMovement>().TakeDamage(Damage);
+            collision.gameObject.GetComponent<AEnemy>().TakeDamage(Damage);
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
@@ -38,6 +37,4 @@ public class Proyectile : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-
 }

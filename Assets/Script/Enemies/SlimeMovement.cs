@@ -5,7 +5,7 @@ using UnityEngine;
 public class SlimeMovement : AEnemy
 {
     private Transform Player;
-    private Rigidbody2D rb;
+
     private Vector2 direction;
     public float jumpForce = 1000f;
     public float minDistanceFromPlayer = 6f;

@@ -522,6 +522,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef8678370c09f84d9e1344a57300183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Proyectile: {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
-  AttackSpeed: 1
+  Proyectile: {fileID: 3917519921938480130, guid: f7182bc2ac7d3344c980871d47d91024, type: 3}
+  AttackSpeed: 0.005
   OnCooldown: 0

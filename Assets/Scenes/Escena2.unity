@@ -636,7 +636,7 @@ PrefabInstance:
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: levelPrefab
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: transitionHeight
       value: 5
