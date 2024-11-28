@@ -88,7 +88,8 @@ public class ProceduralTilemap : MonoBehaviour
         topHeights[0] = Random.Range(minHeight, maxHeight + 1); //Definimos la primera columna, que es necesario antes del bucle que hay a continuación
 
 
-        GameManager.instance.levelPositions.Add(transform.position);
+        //Add the grandparent of this object to the levelPositions list
+        GameManager.instance.levelPositions.Add(transform.parent.parent.position);
 
         for (int x = 1; x < width; x++) 
         {
@@ -297,8 +298,6 @@ public class ProceduralTilemap : MonoBehaviour
         Instantiate(levelPrefab, new Vector3(transform.parent.parent.position.x + offset.x, transform.parent.parent.position.y + offset.y, 0), Quaternion.identity);
        
     }
-
-
 
 
 }

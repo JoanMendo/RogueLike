@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
         }
         
         Vector2 newPosition = currentLevel.GetComponent<ProceduralTilemap>().playerPosition;
+
         while (Vector3.Distance(cloud.transform.position, newPosition) > 0.2f)
         {
             cloud.transform.position = Vector3.MoveTowards(cloud.transform.position, newPosition, 0.15f);
@@ -51,9 +52,10 @@ public class GameManager : MonoBehaviour
 
     public void createRandomOffset()
     {
-
+        bool isRepeated;
         do
         {
+            isRepeated = false;
             float random = Random.Range(1, 5);
             switch (random)
             {
@@ -69,11 +71,19 @@ public class GameManager : MonoBehaviour
                 case 4:
                     offset = new Vector2(0, -50); // Abajo
                     break;
-                default:
-                    offset = new Vector2(0, 50);
-                    break;
             }
-        } while (levelPositions.Contains((Vector2)currentLevel.transform.position + offset));
+            
+            foreach (Vector2 position in levelPositions)
+            {
+                if (Vector2.Distance(position, (Vector2)currentLevel.transform.parent.parent.position + offset) < 0.2f)
+                {
+                    isRepeated = true;
+                    break;
+                }
+            }
+
+
+        } while (isRepeated);
 
         currentLevel.GetComponent<ProceduralTilemap>().makeNewLevel(offset);
 

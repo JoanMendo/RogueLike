@@ -9,12 +9,14 @@ public abstract class AEntity : MonoBehaviour
     public float speed;
     private GameObject Canvas;
     public GameObject floatingTextPrefab;
+    private GameObject floatingText;
+    private float currentDamage;
+
 
     public void Awake()
     {
         Canvas = GameObject.Find("Canvas");
     }
-
 
     public virtual void TakeDamage(float damage)
     {
@@ -24,13 +26,22 @@ public abstract class AEntity : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
     public void CreateFloatingText(float Damage)
     {
+        if (floatingText == null)
+        {
+            floatingText = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, Canvas.transform);
+            currentDamage = Damage;
+            floatingText.GetComponent<TMP_Text>().text = ((int)currentDamage).ToString();
 
-        var go = Instantiate(floatingTextPrefab, transform.position, Quaternion.identity, Canvas.transform);
-        go.GetComponent<TMP_Text>().text = Damage.ToString();
+        }
+        else
+        {
+            currentDamage += Damage;
+            floatingText.GetComponent<TMP_Text>().text = ((int)currentDamage).ToString();
+        }
     }
 
+    
 }
