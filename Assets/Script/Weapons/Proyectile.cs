@@ -8,8 +8,6 @@ public class Proyectile : AWeapon
 
     public float Speed;
     public GameObject deathParticle;
-    
-
     private Rigidbody2D rb;
     void Awake()
     {

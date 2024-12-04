@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0892b13c7b25744d8570a80508abf29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   speed: 0
   floatingTextPrefab: {fileID: 3770082454262011570, guid: 89ec72c4b2634234581ad2f17ab328e7, type: 3}
   damage: 25
