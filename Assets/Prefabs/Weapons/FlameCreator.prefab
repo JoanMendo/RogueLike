@@ -27,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4705967126535347389}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.684491, y: 0.17740396, z: -0.17740388, w: 0.6844909}
-  m_LocalPosition: {x: 19.462437, y: -17.797932, z: -0.33793053}
+  m_LocalRotation: {x: -0.35856476, y: 0.60945165, z: 0.35856476, w: 0.60945165}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6254627235253758699}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -60.94, y: 90, z: -90}
+  m_LocalEulerAnglesHint: {x: -60.94, y: 90, z: 0}
 --- !u!198 &9143684442469577755
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -978,7 +978,7 @@ ParticleSystem:
     m_BurstCount: 0
     m_Bursts: []
   SizeModule:
-    enabled: 0
+    enabled: 1
     curve:
       serializedVersion: 2
       minMaxState: 1
@@ -4857,7 +4857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6254627235253758699}
   - component: {fileID: 6770288273745225392}
-  - component: {fileID: 7423360426031178177}
+  - component: {fileID: 3441281916184877202}
   m_Layer: 0
   m_Name: FlameCollision
   m_TagString: Untagged
@@ -4874,8 +4874,8 @@ Transform:
   m_GameObject: {fileID: 8297974012970451114}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5099887, y: -0.48980758, z: 0.4898077, w: 0.5099887}
-  m_LocalPosition: {x: -0.39537364, y: -0.19593501, z: 1.0594662}
-  m_LocalScale: {x: 0.9999999, y: 0.9999999, z: 1}
+  m_LocalPosition: {x: -0.39, y: 0.24, z: 1.13}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7308512816774622734}
@@ -4894,7 +4894,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 0.4
   Direction: {x: 0, y: 0}
---- !u!60 &7423360426031178177
+--- !u!60 &3441281916184877202
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4923,7 +4923,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4938,9 +4938,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 6.72027, y: 1.8201137}
-      - {x: -1.2840414, y: 0.31507093}
-      - {x: -1.2234836, y: -0.40943512}
-      - {x: 6.8266273, y: -1.4503405}
-      - {x: 6.9357443, y: 0.12457806}
+    - - {x: -0.07514572, y: -0.0030349009}
+      - {x: 0, y: 1}
+      - {x: -0.95105654, y: 0.30901697}
+      - {x: -0.5877852, y: -0.80901706}
+      - {x: 0.58778536, y: -0.80901694}
+      - {x: 0.9510565, y: 0.30901712}
   m_UseDelaunayMesh: 0

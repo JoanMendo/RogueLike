@@ -43,9 +43,9 @@ public class CharacterAttack : MonoBehaviour
                 ParticleSystem.GetComponentInChildren<Collider2D>().enabled = false;
             }
         }
-        float flamesDirection = Mathf.Atan2(detectCursorPosition().x, detectCursorPosition().y) * Mathf.Rad2Deg;
-        ParticleSystem.transform.rotation = Quaternion.Euler(flamesDirection - 90f, 90, 0 );
-        ParticleSystem.startRotation = flamesDirection * Mathf.Deg2Rad - 90;
+        float flamesDirection = Mathf.Atan2(detectCursorPosition().x, detectCursorPosition().y) * Mathf.Rad2Deg - 90;
+        ParticleSystem.transform.rotation = Quaternion.Euler(flamesDirection, 90, 0 );
+        ParticleSystem.startRotation = flamesDirection * Mathf.Deg2Rad;
 
     }
 
