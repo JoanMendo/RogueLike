@@ -10,8 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1799336808150426143}
   - component: {fileID: 6800222725276762444}
+  - component: {fileID: 5198185099304867185}
+  - component: {fileID: 6643446517833773277}
   m_Layer: 0
-  m_Name: Square
+  m_Name: life
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -26,11 +28,11 @@ Transform:
   m_GameObject: {fileID: 2758786594708775308}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.007, y: 0.133, z: 0}
-  m_LocalScale: {x: 0.68946964, y: 0.13294502, z: 0.44315}
+  m_LocalPosition: {x: -0.495, y: 1.098, z: 0}
+  m_LocalScale: {x: 0.829356, y: 0.13031475, z: 0.61804134}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 154321962589556733}
+  m_Father: {fileID: 3226324788453566953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6800222725276762444
 SpriteRenderer:
@@ -72,8 +74,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 5
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
+  m_SortingOrder: 4
+  m_Sprite: {fileID: 316969935, guid: bd12f7527b878844f8430d29dee2fccb, type: 3}
   m_Color: {r: 0.7735849, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,6 +86,33 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &5198185099304867185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758786594708775308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d28dda13abf984d881949de14f390d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  direction: {x: 0, y: 1}
+  speed: 0.1
+  time: 2
+--- !u!114 &6643446517833773277
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2758786594708775308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 902e571ffa151b04c9fb190cbcd6e4fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6743015752381285158
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,6 +148,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1799336808150426143}
   - {fileID: 154321962589556733}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -347,7 +377,7 @@ GameObject:
   - component: {fileID: 7761317829277842078}
   - component: {fileID: 1176785140737275250}
   m_Layer: 0
-  m_Name: redbar_00
+  m_Name: lifeContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -362,11 +392,10 @@ Transform:
   m_GameObject: {fileID: 9047432628985757124}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.05, y: 0.992, z: 0}
-  m_LocalScale: {x: 1.4010224, y: 1.2350103, z: 1.6243738}
+  m_LocalPosition: {x: -0.079, y: 1.289, z: 0}
+  m_LocalScale: {x: 1.2028898, y: 1.0603551, z: 1.3946549}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1799336808150426143}
+  m_Children: []
   m_Father: {fileID: 3226324788453566953}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7761317829277842078

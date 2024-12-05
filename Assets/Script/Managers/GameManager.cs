@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class GameManager : MonoBehaviour
 {
@@ -11,7 +12,6 @@ public class GameManager : MonoBehaviour
     public GameObject currentLevel;
     public List<GameObject> enemyList = new List<GameObject>();
     public GameObject Cloud;
-
     private GameObject cloud;
     private Vector2 offset;
 
@@ -40,7 +40,8 @@ public class GameManager : MonoBehaviour
         }
         
         Vector2 newPosition = currentLevel.GetComponent<ProceduralTilemap>().playerPosition;
-
+        //Add one to teh cloud and the player sorting order
+        player.GetComponent<SortingGroup>().sortingOrder = 4;
         while (Vector3.Distance(cloud.transform.position, newPosition) > 0.2f)
         {
             cloud.transform.position = Vector3.MoveTowards(cloud.transform.position, newPosition, 0.15f);
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         Destroy(cloud);
+        player.GetComponent<SortingGroup>().sortingOrder = 3;
     }
 
     public void createRandomOffset()
