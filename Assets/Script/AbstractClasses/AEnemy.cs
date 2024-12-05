@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class AEnemy : AEntity
@@ -7,10 +8,13 @@ public class AEnemy : AEntity
     public float damage;
     protected Rigidbody2D rb;
     private bool isDead = false;
+    private bool canTakeDamage = true;
     public override void TakeDamage(float damage)
     {
-        if (isDead) return;
+        if (isDead || !canTakeDamage) return;
         health -= damage;
+        canTakeDamage = false;
+        StartCoroutine(Cooldown());
         CreateFloatingText(damage);
         if (health <= 0)
         {
@@ -32,5 +36,12 @@ public class AEnemy : AEntity
             GameManager.instance.checkList();
             Destroy(gameObject);
         }
+    }
+
+    public IEnumerator Cooldown()
+    {
+
+        yield return new WaitForSeconds(0.1f);
+        canTakeDamage = true;
     }
 }

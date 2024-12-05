@@ -27,14 +27,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4705967126535347389}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.35856476, y: 0.60945165, z: 0.35856476, w: 0.60945165}
+  m_LocalRotation: {x: -0.55665606, y: -0.43604362, z: -0.4360436, w: -0.55665606}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6254627235253758699}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -60.94, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: -346.145, y: 90, z: 90}
 --- !u!198 &9143684442469577755
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -554,7 +554,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: -6.0388393
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -667,7 +667,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 19.11488
+    angle: 27.3
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -810,7 +810,7 @@ ParticleSystem:
           m_PostInfinity: 2
           m_RotationOrder: 4
     arc:
-      value: 271.45
+      value: 28.58
       mode: 0
       spread: 0
       speed:
@@ -4857,7 +4857,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6254627235253758699}
   - component: {fileID: 6770288273745225392}
-  - component: {fileID: 3441281916184877202}
+  - component: {fileID: 6057827206372457988}
   m_Layer: 0
   m_Name: FlameCollision
   m_TagString: Untagged
@@ -4873,13 +4873,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8297974012970451114}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5099887, y: -0.48980758, z: 0.4898077, w: 0.5099887}
+  m_LocalRotation: {x: 0.7070872, y: 0.0052617504, z: -0.0052616256, w: 0.7070873}
   m_LocalPosition: {x: -0.39, y: 0.24, z: 1.13}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7308512816774622734}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: -0.853}
 --- !u!114 &6770288273745225392
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4892,9 +4892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3801f84f06288c742879cfe7adeba8e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 0.4
+  Damage: 3
   Direction: {x: 0, y: 0}
---- !u!60 &3441281916184877202
+--- !u!60 &6057827206372457988
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -4923,7 +4923,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -4938,10 +4938,11 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.07514572, y: -0.0030349009}
-      - {x: 0, y: 1}
-      - {x: -0.95105654, y: 0.30901697}
-      - {x: -0.5877852, y: -0.80901706}
-      - {x: 0.58778536, y: -0.80901694}
-      - {x: 0.9510565, y: 0.30901712}
+    - - {x: 3.3264847, y: 4.0410843}
+      - {x: 1.1684688, y: 4.512937}
+      - {x: 0.79775053, y: 3.8146245}
+      - {x: 0.53574246, y: 0.34583583}
+      - {x: 0.3992343, y: -1.2903508}
+      - {x: 1.084321, y: -1.4938717}
+      - {x: 3.3759527, y: 3.1280525}
   m_UseDelaunayMesh: 0

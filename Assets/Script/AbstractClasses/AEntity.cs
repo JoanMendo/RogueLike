@@ -40,8 +40,7 @@ public abstract class AEntity : MonoBehaviour
         {
             currentDamage += Damage;
             floatingText.GetComponent<TMP_Text>().text = ((int)currentDamage).ToString();
+            floatingText.GetComponent<TextMovement>().lifetime = 1f;
         }
     }
-
-    
 }
