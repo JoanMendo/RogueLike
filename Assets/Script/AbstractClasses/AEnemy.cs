@@ -15,7 +15,7 @@ public class AEnemy : AEntity
         health -= damage;
         canTakeDamage = false;
         StartCoroutine(Cooldown());
-        CreateFloatingText(damage);
+        //CreateFloatingText(damage);
         if (health <= 0)
         {
             Die();

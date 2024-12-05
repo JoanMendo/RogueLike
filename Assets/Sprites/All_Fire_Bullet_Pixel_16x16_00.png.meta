@@ -11734,12 +11734,12 @@ TextureImporter:
       name: All_Fire_Bullet_Pixel_16x16_00_651
       rect:
         serializedVersion: 2
-        x: 608
-        y: 80
-        width: 32
-        height: 32
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
+        x: 611
+        y: 83
+        width: 26
+        height: 24
+      alignment: 9
+      pivot: {x: 0.60594296, y: 0.18399937}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

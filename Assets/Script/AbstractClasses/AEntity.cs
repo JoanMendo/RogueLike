@@ -21,12 +21,13 @@ public abstract class AEntity : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         health -= damage;
-        CreateFloatingText(damage);
+        //CreateFloatingText(damage);
         if (health <= 0)
         {
             Destroy(gameObject);
         }
     }
+    /*
     public void CreateFloatingText(float Damage)
     {
         if (floatingText == null)
@@ -42,5 +43,5 @@ public abstract class AEntity : MonoBehaviour
             floatingText.GetComponent<TMP_Text>().text = ((int)currentDamage).ToString();
             floatingText.GetComponent<TextMovement>().lifetime = 1f;
         }
-    }
+    } */
 }

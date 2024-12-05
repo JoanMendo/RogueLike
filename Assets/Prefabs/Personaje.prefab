@@ -540,6 +540,10 @@ PrefabInstance:
       propertyPath: m_SortingOrder
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 1596317934656930720, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
+      propertyPath: m_RenderAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4705967126535347389, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
       propertyPath: m_Name
       value: FlameCreator
@@ -583,6 +587,10 @@ PrefabInstance:
     - target: {fileID: 7308512816774622734, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9143684442469577755, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9143684442469577755, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar

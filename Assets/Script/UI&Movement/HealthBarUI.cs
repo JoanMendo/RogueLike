@@ -20,6 +20,5 @@ public class HealthBarUI : MonoBehaviour
 
         transform.localScale = new Vector3(initialSize.x * parent.health / initialHealth, initialSize.y, initialSize.z);
 
-
     }
 }
