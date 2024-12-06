@@ -12,7 +12,12 @@ public class Proyectile : AWeapon
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        
 
+    }
+    private void Start()
+    {
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg);
     }
 
     // Update is called once per frame

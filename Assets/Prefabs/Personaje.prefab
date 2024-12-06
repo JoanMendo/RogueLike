@@ -525,9 +525,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Proyectile: {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
   ParticleSystem: {fileID: 4478115564396635282}
-  AttackSpeed: 0.02
+  AttackSpeed: 0.3
   OnCooldown: 0
-  isParticleSystem: 1
+  isParticleSystem: 0
 --- !u!1001 &4666172244876611721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -547,6 +547,10 @@ PrefabInstance:
     - target: {fileID: 4705967126535347389, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
       propertyPath: m_Name
       value: FlameCreator
+      objectReference: {fileID: 0}
+    - target: {fileID: 6057827206372457988, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7308512816774622734, guid: b18a3beefa9cad747b78a312b94ef200, type: 3}
       propertyPath: m_LocalPosition.x
