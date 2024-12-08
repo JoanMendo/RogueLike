@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class BombaMovement : AEnemy
 {
+    public float explosionDistance;
+    public GameObject explosion;
     private GameObject player;
     private float inputX;
     private float inputY;
-    public float speed = 5.0f;
-    private Rigidbody2D rb;
     private Vector2 direction;
     private Animator anim;
     void Start()
@@ -22,7 +22,12 @@ public class BombaMovement : AEnemy
     // Update is called once per frame
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.transform.position) < 8f)
+        if (Vector2.Distance(transform.position, player.transform.position) < explosionDistance)
+        {
+            Explosion();
+
+        }
+        else if (Vector2.Distance(transform.position, player.transform.position) < 11f)
         {
             direction = ((Vector2)player.transform.position - (Vector2)transform.position).normalized;
            
@@ -40,15 +45,17 @@ public class BombaMovement : AEnemy
         anim.SetFloat("DirectionX", inputX);
         anim.SetFloat("DirectionY", inputY);
 
-        if (direction.x > 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        else
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
+    }
 
-
+    public void Explosion()
+    {
+        Instantiate(explosion, transform.position, Quaternion.identity);
+        if (player != null)
+        {
+            player.GetComponent<AEntity>().TakeDamage(damage);
+            Debug.Log(player.GetComponent<AEntity>().health);
+        }
+        health = 0;
+        TakeDamage(0);
     }
 }

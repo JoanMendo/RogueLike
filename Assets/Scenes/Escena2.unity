@@ -641,6 +641,18 @@ PrefabInstance:
       propertyPath: transitionHeight
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: enemiesPrefabs.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: enemiesPrefabs.Array.data[0]
+      value: 
+      objectReference: {fileID: 6743015752381285158, guid: 27bc09ba023158e489d9de2bb2c92703, type: 3}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: enemiesPrefabs.Array.data[1]
+      value: 
+      objectReference: {fileID: 6743015752381285158, guid: 34b7b7bf69a272045bbe4936cee8ca63, type: 3}
     - target: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: m_Name
       value: Level

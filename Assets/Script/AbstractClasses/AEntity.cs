@@ -7,15 +7,15 @@ public abstract class AEntity : MonoBehaviour
 {
     public float health;
     public float speed;
-    private GameObject Canvas;
+    /*private GameObject Canvas;
     public GameObject floatingTextPrefab;
-    private GameObject floatingText;
+    private GameObject floatingText;*/
     private float currentDamage;
 
 
     public void Awake()
     {
-        Canvas = GameObject.Find("Canvas");
+        //Canvas = GameObject.Find("Canvas");
     }
 
     public virtual void TakeDamage(float damage)

@@ -54,7 +54,7 @@ public class ProceduralTilemap : MonoBehaviour
     public GameObject[] smallDecorations;
 
     [Header("Prefabs")]
-    public GameObject slimePrefab;
+    public GameObject[] enemiesPrefabs;
     public GameObject CharacterPrefab;
 
     private int[] bottomHeights;
@@ -283,11 +283,11 @@ public class ProceduralTilemap : MonoBehaviour
         tilesNotUsed.Remove(playerPosition);
         for (int i = 0; i < Random.Range(3f, 5f); i++)
         {
-            Vector2 slimePosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
-            slimePosition += (Vector2)tilemap.transform.position;
-            GameObject enemy = Instantiate(slimePrefab, slimePosition, Quaternion.identity);
+            Vector2 enemyPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+            enemyPosition += (Vector2)tilemap.transform.position;
+            GameObject enemy = Instantiate(enemiesPrefabs[Random.Range(0, enemiesPrefabs.Length)], enemyPosition, Quaternion.identity);
             GameManager.instance.enemyList.Add(enemy);
-            tilesNotUsed.Remove(slimePosition);
+            tilesNotUsed.Remove(enemyPosition);
         }
 
     }
