@@ -65,9 +65,6 @@ public class ProceduralTilemap : MonoBehaviour
 
     public Vector2 playerPosition;
 
-
-
-
     private void Start()
     { 
         GenerateTilemap();
@@ -87,7 +84,6 @@ public class ProceduralTilemap : MonoBehaviour
         bottomHeights[0] = 0;
         topHeights[0] = Random.Range(minHeight, maxHeight + 1); //Definimos la primera columna, que es necesario antes del bucle que hay a continuación
 
-
         //Add the grandparent of this object to the levelPositions list
         GameManager.instance.levelPositions.Add(transform.parent.parent.position);
 
@@ -106,8 +102,6 @@ public class ProceduralTilemap : MonoBehaviour
 
             }
         }
-
-      
     }
 
     void PlaceTiles()
@@ -118,8 +112,6 @@ public class ProceduralTilemap : MonoBehaviour
             for (int y = bottomHeights[x]; y < topHeights[x]; y++)
             {
                 Vector3Int tilePosition = new Vector3Int(x, y, 0);
-                
-
 
                 if (y == bottomHeights[x])
                 {
@@ -184,7 +176,6 @@ public class ProceduralTilemap : MonoBehaviour
                         tilePosition.x++;
                         collider.SetTile(tilePosition, tileCliff);
                     }
-                    
 
                     else
                     {
@@ -201,7 +192,6 @@ public class ProceduralTilemap : MonoBehaviour
                         }
                     }
                 }
-                
             }
         }
     }

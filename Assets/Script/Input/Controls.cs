@@ -35,6 +35,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CharacterAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""88155323-79c0-47e8-9f4b-3e8492a687ba"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -147,6 +156,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""CharacterMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0bf672ef-37ac-4da6-be02-d2885df17a55"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CharacterAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ccbb2e4-8aef-4daf-b71d-f22c1d19a0cb"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CharacterAttack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -156,6 +187,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Move
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_CharacterMovement = m_Move.FindAction("CharacterMovement", throwIfNotFound: true);
+        m_Move_CharacterAttack = m_Move.FindAction("CharacterAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -218,11 +250,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Move;
     private List<IMoveActions> m_MoveActionsCallbackInterfaces = new List<IMoveActions>();
     private readonly InputAction m_Move_CharacterMovement;
+    private readonly InputAction m_Move_CharacterAttack;
     public struct MoveActions
     {
         private @Controls m_Wrapper;
         public MoveActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @CharacterMovement => m_Wrapper.m_Move_CharacterMovement;
+        public InputAction @CharacterAttack => m_Wrapper.m_Move_CharacterAttack;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -235,6 +269,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CharacterMovement.started += instance.OnCharacterMovement;
             @CharacterMovement.performed += instance.OnCharacterMovement;
             @CharacterMovement.canceled += instance.OnCharacterMovement;
+            @CharacterAttack.started += instance.OnCharacterAttack;
+            @CharacterAttack.performed += instance.OnCharacterAttack;
+            @CharacterAttack.canceled += instance.OnCharacterAttack;
         }
 
         private void UnregisterCallbacks(IMoveActions instance)
@@ -242,6 +279,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CharacterMovement.started -= instance.OnCharacterMovement;
             @CharacterMovement.performed -= instance.OnCharacterMovement;
             @CharacterMovement.canceled -= instance.OnCharacterMovement;
+            @CharacterAttack.started -= instance.OnCharacterAttack;
+            @CharacterAttack.performed -= instance.OnCharacterAttack;
+            @CharacterAttack.canceled -= instance.OnCharacterAttack;
         }
 
         public void RemoveCallbacks(IMoveActions instance)
@@ -262,5 +302,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     public interface IMoveActions
     {
         void OnCharacterMovement(InputAction.CallbackContext context);
+        void OnCharacterAttack(InputAction.CallbackContext context);
     }
 }

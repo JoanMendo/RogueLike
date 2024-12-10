@@ -13,7 +13,8 @@ public class CharacterControler : AEntity
     public Sprite headForward;
     public Sprite headBackward;
     public Sprite headSideways;
-   
+    private Controls movementControls;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
