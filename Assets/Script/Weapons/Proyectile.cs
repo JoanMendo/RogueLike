@@ -13,14 +13,12 @@ public class Proyectile : AWeapon
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        
-
     }
     private void Start()
     {
+        //Se hace esto para que la sombra quede bien posicionada, independientemente de la rotación del proyectil
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg);
-        GameObject shadow = Instantiate(Shadow, new Vector3(transform.position.x, transform.position.y -1, transform.position.x), transform.rotation, transform);
-        //Make the y bigger if the rotation is either 90 or 270, and smaller if it is 0 or 180. The min is 1, and for each degree between the lower and the max the width gets a bit bigger.
+        GameObject shadow = Instantiate(Shadow, new Vector3(transform.position.x, transform.position.y - 1, transform.position.x), transform.rotation, transform);
         shadow.transform.localScale = new Vector3(2f, 1f + Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.z * Mathf.Deg2Rad)), 1);
 
     }

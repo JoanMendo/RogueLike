@@ -53,7 +53,6 @@ public class BombaMovement : AEnemy
         if (player != null)
         {
             player.GetComponent<AEntity>().TakeDamage(damage);
-            Debug.Log(player.GetComponent<AEntity>().health);
         }
         health = 0;
         TakeDamage(0);

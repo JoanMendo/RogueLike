@@ -421,7 +421,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100000
   speed: 8
-  floatingTextPrefab: {fileID: 3770082454262011570, guid: 89ec72c4b2634234581ad2f17ab328e7, type: 3}
   head: {fileID: 6443113977058369832}
   body: {fileID: 3120080144153460475}
   headForward: {fileID: -1238003774, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
@@ -523,7 +522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef8678370c09f84d9e1344a57300183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Proyectile: {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
+  Proyectile: {fileID: 3917519921938480130, guid: 5e0c6fbf3d356ed4c8016820c79bd3df, type: 3}
   ParticleSystem: {fileID: 4478115564396635282}
   AttackSpeed: 0.3
   OnCooldown: 0
