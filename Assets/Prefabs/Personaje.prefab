@@ -526,7 +526,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 4478115564396635282}
   AttackSpeed: 0.3
   OnCooldown: 0
-  isParticleSystem: 0
+  isParticleSystem: 1
 --- !u!1001 &4666172244876611721
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -29,6 +29,8 @@ public class ProceduralTilemap : MonoBehaviour
     public TileBase tileCliffBottom;
     public TileBase tileCliffLeft;
     public TileBase tileCliffRight;
+    public TileBase tileCliffLeftBottomConector;
+    public TileBase tileCliffRightBottomConector;
     public TileBase tileCliffRightBottom;
     public TileBase tileCliffLeftBottom;
 
@@ -111,47 +113,47 @@ public class ProceduralTilemap : MonoBehaviour
         {
             for (int y = bottomHeights[x]; y < topHeights[x]; y++)
             {
-                Vector3Int tilePosition = new Vector3Int(x, y, 0);
+                Vector3Int tilePosition = new Vector3Int(x, y, 0);  //Vectpr3Int para la posición de cada tile, ha de ser este tipo de variable
 
-                if (y == bottomHeights[x])
+                if (y == bottomHeights[x] && transitionHeight != 0) //Si estamos en la parte inferior de la columna
                 {
 
                    generateCliffTiles(tileCliffLeftBottom, tileCliff, tileCliffRightBottom, x, tilePosition, true);
                     
                 }
 
-                else if (y < bottomHeights[x] + transitionHeight)
+                else if (y < bottomHeights[x] + transitionHeight) //Si estamos en el acantilado
                 {
                     generateCliffTiles(tileCliffLeft, tileCliff, tileCliffRight, x, tilePosition, false);
                 }
 
-                else if (y == bottomHeights[x] + transitionHeight)
+                else if (y == bottomHeights[x] + transitionHeight) //Si estamos en la transición de acantilado a hierba
                 {
                     generateCliffTiles(tileBottomLeftGrass, tileBottomGrass, tileBottomRightGrass, x, tilePosition, false);
                 }
 
-                else if (y > bottomHeights[x] + transitionHeight)
+                else if (y > bottomHeights[x] + transitionHeight) //Si estamos en la hierba
                 {
-                    if (y == topHeights[x]-1)
+                    if (y == topHeights[x]-1) 
                     {
-                        if (x == 0)
+                        if (x == 0) //Si es la ultima casilla de la primera columna
                         {
                           
                             tilemap.SetTile(tilePosition, tileTopLeftGrass);
                             collider.SetTile(tilePosition, leftUp);
                         }
-                        else if (topHeights[x] > topHeights[x - 1])
+                        else if (topHeights[x] > topHeights[x - 1]) //Si la altura de esta columna es superior a la anterior
                         {
                             tilemap.SetTile(tilePosition, tileTopLeftGrass);
                             collider.SetTile(tilePosition, leftUp);
 
                         }
-                        else if (x == topHeights.Length - 2)
+                        else if (x == topHeights.Length - 2)  // Si es la columna final
                         {
                             tilemap.SetTile(tilePosition, tileTopRightGrass);
                             collider.SetTile(tilePosition, rightUp);
                         }
-                        else if (topHeights[x] > topHeights[x + 1])
+                        else if (topHeights[x] > topHeights[x + 1]) //Si la altura de esta columna es superior a la siguiente
                         {
                             tilemap.SetTile(tilePosition, tileTopRightGrass);
                             collider.SetTile(tilePosition, rightUp);
@@ -164,20 +166,20 @@ public class ProceduralTilemap : MonoBehaviour
                         }
                     }
 
-                    else if (x == 0)
+                    else if (x == 0) //Si es la primera columna
                     {
                         tilemap.SetTile(tilePosition, tileLeftGrass);
                         tilePosition.x--;
                         collider.SetTile(tilePosition, tileCliff);
                     }
-                    else if (x == width-2)
+                    else if (x == width-2) //Si es la ultima columna
                     {
                         tilemap.SetTile(tilePosition, tileRightGrass);
                         tilePosition.x++;
                         collider.SetTile(tilePosition, tileCliff);
                     }
 
-                    else
+                    else //Se añade la hierba normal y se guarda la posicion par añadir decoraciones o spawns de enemigos
                     {
                         if (x > 2 && x < width-2 && y > transitionHeight + 1 && y < topHeights[x] - 1) 
                         tilesPlanas.Add(new Vector2(x, y));
@@ -200,23 +202,46 @@ public class ProceduralTilemap : MonoBehaviour
     {
         if (x == 0)
         {
-            tilemap.SetTile(tilePosition, left);   
+            tilemap.SetTile(tilePosition, left);
             collider.SetTile(tilePosition, leftDown);
+            if (placeWater)
+            {
+                tilePosition.y--;
+                tilemap.SetTile(tilePosition, tileCliffLeftBottomConector);
+            }
+            
         }
         else if (bottomHeights[x] < bottomHeights[x - 1])
         {
             tilemap.SetTile(tilePosition, left);
             collider.SetTile(tilePosition, leftDown);
+            if (placeWater)
+            {
+                tilePosition.y--;
+                tilemap.SetTile(tilePosition, tileCliffLeftBottomConector);
+            }
         }
         else if (x == bottomHeights.Length - 2)
         {
             tilemap.SetTile(tilePosition, right);
             collider.SetTile(tilePosition, rightDown);
+            if (placeWater)
+            {
+                tilePosition.y--;
+                tilemap.SetTile(tilePosition, tileCliffRightBottomConector);
+            }
+           
         }
         else if (bottomHeights[x] < bottomHeights[x + 1])
         {
             tilemap.SetTile(tilePosition, right);
             collider.SetTile(tilePosition, rightDown);
+            if (placeWater)
+            {
+                tilePosition.y--;
+                tilemap.SetTile(tilePosition, tileCliffRightBottomConector);
+            }
+
         }
         else
         {
