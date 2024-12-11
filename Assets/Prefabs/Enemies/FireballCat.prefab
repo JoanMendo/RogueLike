@@ -226,9 +226,9 @@ GameObject:
   - component: {fileID: 7847516175372768950}
   - component: {fileID: 1144681403482526343}
   - component: {fileID: 1744527973473765811}
-  - component: {fileID: 1451452490762478932}
   - component: {fileID: 2658728138497512632}
   - component: {fileID: 7205983252307167911}
+  - component: {fileID: -6553905726933468750}
   m_Layer: 0
   m_Name: FireballCat
   m_TagString: Enemy
@@ -294,7 +294,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 1499062114, guid: 728108ca451310b4eb5049f439bc93e0, type: 3}
+  m_Sprite: {fileID: 157949921, guid: 841fe3b3eadebef4584e094bdb6082dd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -398,23 +398,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &1451452490762478932
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6743015752381285158}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4ff6042c37569b4384df888421dd3e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 12
-  speed: 7
-  damage: 20
-  explosionDistance: 1
-  explosion: {fileID: 1797108991048080313, guid: d82afdfba40363b428a0cf894000b03d, type: 3}
 --- !u!114 &2658728138497512632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -477,3 +460,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f34ab81b31fc73d4c81154678899db6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-6553905726933468750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743015752381285158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc7702de95731414abdcfc78a765f567, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 40
+  speed: 0
+  damage: 20
+  attackDistance: 13
+  fireball: {fileID: 3917519921938480130, guid: b2b2290efcaf0374c80d2d10e37f37f2, type: 3}
+  catAttackSpeed: 5

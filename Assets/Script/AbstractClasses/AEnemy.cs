@@ -8,26 +8,14 @@ public class AEnemy : AEntity
     public float damage;
     protected Rigidbody2D rb;
     private bool isDead = false;
-    private bool canTakeDamage = true;
-    public override void TakeDamage(float damage)
-    {
-        if (isDead || !canTakeDamage) return;
-        health -= damage;
-        canTakeDamage = false;
-        StartCoroutine(Cooldown());
-        //CreateFloatingText(damage);
-        if (health <= 0)
-        {
-            Die();
-        }
-    }
+
 
     public void Knockback(Vector2 direction, float force)
     {
         rb.AddForce(direction * force, ForceMode2D.Impulse);
     }
 
-    public void Die()
+    public override void Die()
     {
         if (!isDead)
         {
@@ -38,10 +26,4 @@ public class AEnemy : AEntity
         }
     }
 
-    public IEnumerator Cooldown()
-    {
-
-        yield return new WaitForSeconds(0.1f);
-        canTakeDamage = true;
-    }
 }

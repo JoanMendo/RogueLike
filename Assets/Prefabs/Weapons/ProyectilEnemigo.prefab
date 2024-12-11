@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6640071472173339799}
   - component: {fileID: 8953186945050893457}
   m_Layer: 0
-  m_Name: Proyectil
+  m_Name: ProyectilEnemigo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 19.023, y: 13.765, z: 0}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
   Damage: 10
   Direction: {x: 0, y: 0}
   Speed: 13
-  TargetTag: Enemy
+  TargetTag: Player
   deathParticle: {fileID: 5052562978784651109, guid: 084504dc509162f41868c834490f906a, type: 3}
   Shadow: {fileID: 6772470970792517178, guid: ce26b19fb96ed8b4ba35a5c3dd0377db, type: 3}
 --- !u!95 &8953186945050893457

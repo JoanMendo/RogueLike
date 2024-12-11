@@ -7,6 +7,7 @@ public class Proyectile : AWeapon
 {
 
     public float Speed;
+    public string TargetTag;
     public GameObject deathParticle;
     private Rigidbody2D rb;
     public GameObject Shadow;
@@ -31,9 +32,9 @@ public class Proyectile : AWeapon
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" )
+        if (collision.gameObject.tag == TargetTag )
         {
-            collision.gameObject.GetComponent<AEnemy>().TakeDamage(Damage);
+            collision.gameObject.GetComponent<AEntity>().TakeDamage(Damage);
             Instantiate(deathParticle, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }

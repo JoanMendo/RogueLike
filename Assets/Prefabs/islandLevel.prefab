@@ -32323,6 +32323,8 @@ MonoBehaviour:
   tileCliffBottom: {fileID: 11400000, guid: e87abc16389cac142b6029220407842e, type: 2}
   tileCliffLeft: {fileID: 11400000, guid: f8a1d3aff65a7ea419f96e949e770c7d, type: 2}
   tileCliffRight: {fileID: 11400000, guid: 6530ecc0aa7ca584eb9080b84c0eb110, type: 2}
+  tileCliffLeftBottomConector: {fileID: 0}
+  tileCliffRightBottomConector: {fileID: 0}
   tileCliffRightBottom: {fileID: 11400000, guid: 8104dff46fd888d43a04cb99467fc222, type: 2}
   tileCliffLeftBottom: {fileID: 11400000, guid: 171720543c82b7e4d93eb680f5277f84, type: 2}
   leftUp: {fileID: 11400000, guid: c92c39187f2073e47ae6a2d69eba757d, type: 2}
@@ -32353,6 +32355,11 @@ MonoBehaviour:
   - {fileID: 6776045283636211940, guid: c5c4ed2d0be410d42afc45e0db4791ab, type: 3}
   - {fileID: 6776045283636211940, guid: 363729bd461b334478bd6059275415cc, type: 3}
   - {fileID: 6776045283636211940, guid: b292080beb525654987b381527419e1c, type: 3}
+  - {fileID: 6776045283636211940, guid: b3ec032560a260447861df4c84be018f, type: 3}
+  - {fileID: 6776045283636211940, guid: 2ab642b396be71041a1fda63c6097e85, type: 3}
+  - {fileID: 6776045283636211940, guid: 67ca7b5e126aeee43832567b37647ca4, type: 3}
+  - {fileID: 6776045283636211940, guid: 8952251504818a54ba9a45a931812a5e, type: 3}
+  - {fileID: 6776045283636211940, guid: feb2967c18917d748b96d220ab2b3364, type: 3}
   enemiesPrefabs:
   - {fileID: 6743015752381285158, guid: 27bc09ba023158e489d9de2bb2c92703, type: 3}
   - {fileID: 6743015752381285158, guid: 34b7b7bf69a272045bbe4936cee8ca63, type: 3}
@@ -32361,6 +32368,7 @@ MonoBehaviour:
   - {fileID: 6743015752381285158, guid: 407893627186a55439996be31471d2ee, type: 3}
   - {fileID: 6743015752381285158, guid: 27bc09ba023158e489d9de2bb2c92703, type: 3}
   - {fileID: 6743015752381285158, guid: 366a4ae3df9129f4483ee7e4788af449, type: 3}
+  - {fileID: 6743015752381285158, guid: 2fe313093424233468e26c149bf6977a, type: 3}
   CharacterPrefab: {fileID: 8479267826887906556, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
   playerPosition: {x: 0, y: 0}
 --- !u!1 &2861734582964327152

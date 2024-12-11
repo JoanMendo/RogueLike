@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class HealthBarUI : MonoBehaviour
 {
-    private AEnemy parent;
+    private AEntity parent;
     private float initialHealth;
     private Vector3 initialSize;
     void Start()
     {
-        parent = transform.parent.GetComponent<AEnemy>();
+        parent = transform.parent.GetComponent<AEntity>();
         initialHealth = parent.health;
         initialSize = transform.localScale;
     }

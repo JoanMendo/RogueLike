@@ -643,7 +643,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.size
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: smallDecorations.Array.size
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: tileCliffLeftBottomConector
@@ -678,9 +682,37 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 6743015752381285158, guid: e3569944bee785145958bd9138482060, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: enemiesPrefabs.Array.data[7]
+      value: 
+      objectReference: {fileID: 6743015752381285158, guid: 2fe313093424233468e26c149bf6977a, type: 3}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: enemiesPrefabs.Array.data[8]
+      value: 
+      objectReference: {fileID: 6743015752381285158, guid: 13966514871ef234d9ce40c5ef5477ae, type: 3}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: tileCliffRightBottomConector
       value: 
       objectReference: {fileID: 11400000, guid: 8a4e403dc1808ce4eb4bd0aa71a66e64, type: 2}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: smallDecorations.Array.data[9]
+      value: 
+      objectReference: {fileID: 6776045283636211940, guid: b3ec032560a260447861df4c84be018f, type: 3}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: smallDecorations.Array.data[10]
+      value: 
+      objectReference: {fileID: 6776045283636211940, guid: 2ab642b396be71041a1fda63c6097e85, type: 3}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: smallDecorations.Array.data[11]
+      value: 
+      objectReference: {fileID: 6776045283636211940, guid: 67ca7b5e126aeee43832567b37647ca4, type: 3}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: smallDecorations.Array.data[12]
+      value: 
+      objectReference: {fileID: 6776045283636211940, guid: 8952251504818a54ba9a45a931812a5e, type: 3}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: smallDecorations.Array.data[13]
+      value: 
+      objectReference: {fileID: 6776045283636211940, guid: feb2967c18917d748b96d220ab2b3364, type: 3}
     - target: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: m_Name
       value: Level

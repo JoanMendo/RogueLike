@@ -16,7 +16,7 @@ public class BombaMovement : AEnemy
         player = GameObject.FindGameObjectWithTag("Player");
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
-        anim.Play("Idle");
+
     }
 
     // Update is called once per frame
