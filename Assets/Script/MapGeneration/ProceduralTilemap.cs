@@ -73,6 +73,7 @@ public class ProceduralTilemap : MonoBehaviour
         PlaceTiles();
         generateDecorations();
         generateEntities();
+        GameManager.instance.previousLevel = GameManager.instance.currentLevel;
         GameManager.instance.currentLevel = gameObject;
         levelPrefab  = GameManager.instance.levelPrefab;
     }
@@ -304,7 +305,6 @@ public class ProceduralTilemap : MonoBehaviour
             GameManager.instance.enemyList.Add(enemy);
             tilesNotUsed.Remove(enemyPosition);
         }
-
     }
 
     public void makeNewLevel(Vector2 offset)

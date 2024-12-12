@@ -477,4 +477,4 @@ MonoBehaviour:
   damage: 20
   attackDistance: 13
   fireball: {fileID: 3917519921938480130, guid: b2b2290efcaf0374c80d2d10e37f37f2, type: 3}
-  catAttackSpeed: 5
+  catAttackSpeed: 0.5
