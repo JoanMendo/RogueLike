@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
         if (enemyList.Count == 0)
         {
             createRandomOffset();
-            Instantiate(Cloud, new Vector3(player.transform.position.x, player.transform.position.y + 15, 0), Quaternion.identity);
+           
         }
     }
 
@@ -65,6 +65,6 @@ public class GameManager : MonoBehaviour
         } while (isRepeated);
 
         currentLevel.GetComponent<ProceduralTilemap>().makeNewLevel(offset);
-
+        Instantiate(Cloud, new Vector3(player.transform.position.x, player.transform.position.y + 15, 0), Quaternion.identity);
     }
 }

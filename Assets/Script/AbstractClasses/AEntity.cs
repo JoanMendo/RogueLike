@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public abstract class AEntity : MonoBehaviour
 {
@@ -9,11 +10,13 @@ public abstract class AEntity : MonoBehaviour
     public float speed;
     private bool isDead = false;
     private bool canTakeDamage = true;
+    public UnityEvent onTakeDamage;
 
     public virtual void TakeDamage(float damage)
     {
         if (isDead || !canTakeDamage) return;
         health -= damage;
+        onTakeDamage.Invoke();
         canTakeDamage = false;
         StartCoroutine(damageCooldown());
         if (health <= 0)

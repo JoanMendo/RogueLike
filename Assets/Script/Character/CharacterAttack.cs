@@ -27,7 +27,6 @@ public class CharacterAttack : MonoBehaviour
             }
             else if (!isParticlePlaying) 
             {
-                Debug.Log("Playing");
                 isParticlePlaying = true;
                 ParticleSystem.Play();
                 

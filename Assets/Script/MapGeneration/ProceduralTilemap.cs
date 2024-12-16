@@ -66,6 +66,8 @@ public class ProceduralTilemap : MonoBehaviour
     private int  width;
 
     public Vector2 playerPosition;
+    public Vector2 cloudStartPosition;
+    public Vector2 cloudEndPosition;
 
     private void Start()
     { 
@@ -258,7 +260,7 @@ public class ProceduralTilemap : MonoBehaviour
 
     void generateDecorations()
     {
-
+        
         foreach (Vector2 tile in tilesPlanas)
         {
             float random = Random.Range(0, 120);
@@ -283,7 +285,16 @@ public class ProceduralTilemap : MonoBehaviour
             {
                tilesNotUsed.Add(tile); 
             }
+            
         }
+        cloudStartPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+        cloudStartPosition += (Vector2)tilemap.transform.position;
+        Debug.Log(cloudStartPosition + "startTilemapPosition");
+        cloudEndPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+        cloudEndPosition += (Vector2)tilemap.transform.position;
+        Debug.Log(cloudEndPosition+  "finalTilemapPosition");
+        tilesNotUsed.Remove(cloudStartPosition);
+        tilesNotUsed.Remove(cloudEndPosition);
     }
 
     void generateEntities()

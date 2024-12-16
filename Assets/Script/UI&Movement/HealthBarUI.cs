@@ -14,11 +14,10 @@ public class HealthBarUI : MonoBehaviour
         initialSize = transform.localScale;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void updateHealthUI()
     {
-
         transform.localScale = new Vector3(initialSize.x * parent.health / initialHealth, initialSize.y, initialSize.z);
-
     }
+
 }

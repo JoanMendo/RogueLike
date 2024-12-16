@@ -637,6 +637,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 300
   speed: 8
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8559515299234805224}
+        m_TargetAssemblyTypeName: HealthBarUI, Assembly-CSharp
+        m_MethodName: updateHealthUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   head: {fileID: 6443113977058369832}
   body: {fileID: 3120080144153460475}
   headForward: {fileID: -1238003774, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}

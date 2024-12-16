@@ -474,6 +474,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   speed: 0
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2739468256926680327}
+        m_TargetAssemblyTypeName: HealthBarUI, Assembly-CSharp
+        m_MethodName: updateHealthUI
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   damage: 20
   attackDistance: 13
   fireball: {fileID: 3917519921938480130, guid: b2b2290efcaf0374c80d2d10e37f37f2, type: 3}
