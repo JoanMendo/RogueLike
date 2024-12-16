@@ -44,6 +44,7 @@ public class Cloud : MonoBehaviour
     private IEnumerator CloudMovement()
     {
         player.GetComponent<SortingGroup>().sortingOrder = 4;
+        GameManager.instance.disableAllClouds(gameObject);
         if (isAtStart)
         {
             while (Vector3.Distance(transform.position, finalPosition) > 0.5f)
@@ -64,8 +65,17 @@ public class Cloud : MonoBehaviour
             }
             isAtStart = true;
         }
+        if ((Vector3)GameManager.instance.currentLevel.GetComponent<ProceduralTilemap>().cloudEndPosition != finalPosition)
+        {
+            GameManager.instance.enableAllClouds();
+        }
+        else
+        {
+            gameObject.SetActive(false);
+        }
         player.GetComponent<SortingGroup>().sortingOrder = 3;
 
     }
+
 
 }

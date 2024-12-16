@@ -2,13 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class AEnemy : AEntity
 {
     public float damage;
     protected Rigidbody2D rb;
     private bool isDead = false;
-
+    public UnityEvent onDeath;
 
     public void Knockback(Vector2 direction, float force)
     {
@@ -19,6 +20,7 @@ public class AEnemy : AEntity
     {
         if (!isDead)
         {
+
             isDead = true;
             GameManager.instance.enemyList.Remove(gameObject);
             GameManager.instance.checkList();

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
+using System;
 
 public class GameManager : MonoBehaviour
 {
@@ -12,11 +13,13 @@ public class GameManager : MonoBehaviour
     public GameObject currentLevel;
     public GameObject previousLevel;
     public List<GameObject> enemyList = new List<GameObject>();
+    public List<GameObject> cloudList = new List<GameObject>();
     public GameObject Cloud;
     private Vector2 offset;
 
+
     void Awake()
-    {  
+    {
         instance = this;
     }
 
@@ -25,7 +28,7 @@ public class GameManager : MonoBehaviour
         if (enemyList.Count == 0)
         {
             createRandomOffset();
-           
+            enableAllClouds();
         }
     }
 
@@ -35,7 +38,7 @@ public class GameManager : MonoBehaviour
         do
         {
             isRepeated = false;
-            float random = Random.Range(1, 5);
+            float random = UnityEngine.Random.Range(1, 5);
             switch (random)
             {
                 case 1:
@@ -51,7 +54,7 @@ public class GameManager : MonoBehaviour
                     offset = new Vector2(0, -50); // Abajo
                     break;
             }
-            
+
             foreach (Vector2 position in levelPositions)
             {
                 if (Vector2.Distance(position, (Vector2)currentLevel.transform.parent.parent.position + offset) < 0.2f)
@@ -65,6 +68,26 @@ public class GameManager : MonoBehaviour
         } while (isRepeated);
 
         currentLevel.GetComponent<ProceduralTilemap>().makeNewLevel(offset);
-        Instantiate(Cloud, new Vector3(player.transform.position.x, player.transform.position.y + 15, 0), Quaternion.identity);
+        GameObject cloud = Instantiate(Cloud, new Vector3(player.transform.position.x, player.transform.position.y + 15, 0), Quaternion.identity);
+        cloudList.Add(cloud);
+    }
+
+    public void enableAllClouds()
+    {
+        foreach (GameObject cloud in cloudList)
+        {
+            cloud.SetActive(true);
+        }
+    }
+
+    public void disableAllClouds(GameObject currentCloud)
+    {
+        foreach (GameObject cloud in cloudList)
+        {
+            if (cloud != currentCloud)
+            {
+                cloud.SetActive(false);
+            }
+        }
     }
 }

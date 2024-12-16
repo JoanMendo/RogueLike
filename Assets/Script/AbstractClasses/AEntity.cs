@@ -11,6 +11,7 @@ public abstract class AEntity : MonoBehaviour
     private bool isDead = false;
     private bool canTakeDamage = true;
     public UnityEvent onTakeDamage;
+    public UnityEvent onDeath;
 
     public virtual void TakeDamage(float damage)
     {
