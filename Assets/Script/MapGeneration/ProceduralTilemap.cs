@@ -9,6 +9,7 @@ public class ProceduralTilemap : MonoBehaviour
 {
     [Header("Tilemap Settings")]
     public Tilemap tilemap;
+    public Tilemap groundDecoration;
     public Tilemap collider;
     public GameObject levelPrefab;
 
@@ -33,6 +34,22 @@ public class ProceduralTilemap : MonoBehaviour
     public TileBase tileCliffRightBottomConector;
     public TileBase tileCliffRightBottom;
     public TileBase tileCliffLeftBottom;
+
+    [Header("Ground Tiles")]
+
+    public TileBase tileGround;
+    public TileBase tileGroundLeft;
+    public TileBase tileGroundRight;
+    public TileBase tileGroundTop;
+    public TileBase tileGroundBottom;
+    public TileBase tileGroundTopLeft;
+    public TileBase tileGroundTopRight;
+    public TileBase tileGroundBottomLeft;
+    public TileBase tileGroundBottomRight;
+    public TileBase tileGroundTopLeftCorner;
+    public TileBase tileGroundTopRightCorner;
+    public TileBase tileGroundBottomLeftCorner;
+    public TileBase tileGroundBottomRightCorner;
 
     [Header("Collider Tiles")]
 

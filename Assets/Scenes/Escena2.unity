@@ -644,6 +644,10 @@ PrefabInstance:
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: bigDecorations.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.size
       value: 5
       objectReference: {fileID: 0}
@@ -655,6 +659,10 @@ PrefabInstance:
       propertyPath: tileCliffLeftBottomConector
       value: 
       objectReference: {fileID: 11400000, guid: 58925cf61940f6949a70601aacefe7ad, type: 2}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: bigDecorations.Array.data[7]
+      value: 
+      objectReference: {fileID: 8053754494144456917, guid: 39c716c81f7f353419cde665e772db4c, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[0]
       value: 
