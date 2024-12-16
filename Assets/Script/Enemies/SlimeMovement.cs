@@ -5,12 +5,16 @@ using UnityEngine;
 public class SlimeMovement : AEnemy
 {
     private Transform Player;
-
+    private SpriteRenderer sr;
     private Vector2 direction;
-    public float jumpForce = 1000f;
-    public float minDistanceFromPlayer = 6f;
+    private float jumpForce;
+    private float minDistanceFromPlayer;
+    public ShySlime[] shySlimes;
     void Start()
     {
+        sr = GetComponent<SpriteRenderer>();
+        int randomSlime = Random.Range(0, shySlimes.Length);
+        SetSlime(shySlimes[randomSlime]);
         Player = GameObject.FindGameObjectWithTag("Player").transform;
         rb = GetComponent<Rigidbody2D>();
         StartCoroutine(SlimeMovementCR());
@@ -63,6 +67,15 @@ public class SlimeMovement : AEnemy
         {
             collision.gameObject.GetComponent<AEntity>().TakeDamage(damage);
         }
+    }
+
+    public void SetSlime(ShySlime slime)
+    {
+        health = slime.health;
+        damage = slime.damage;
+        jumpForce = slime.jumpForce;
+        minDistanceFromPlayer = slime.minDistanceFromPlayer;
+        sr.color = slime.color;
     }
 
 

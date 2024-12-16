@@ -474,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 40
   speed: 0
+  isDead: 0
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -490,6 +491,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   damage: 20
-  attackDistance: 13
+  attackDistance: 12
   fireball: {fileID: 3917519921938480130, guid: b2b2290efcaf0374c80d2d10e37f37f2, type: 3}
   catAttackSpeed: 0.5

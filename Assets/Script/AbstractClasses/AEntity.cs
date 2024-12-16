@@ -8,10 +8,10 @@ public abstract class AEntity : MonoBehaviour
 {
     public float health;
     public float speed;
-    private bool isDead = false;
+    public bool isDead = false;
     private bool canTakeDamage = true;
     public UnityEvent onTakeDamage;
-    public UnityEvent onDeath;
+
 
     public virtual void TakeDamage(float damage)
     {
@@ -28,7 +28,6 @@ public abstract class AEntity : MonoBehaviour
 
     public IEnumerator damageCooldown()
     {
-
         yield return new WaitForSeconds(0.1f);
         canTakeDamage = true;
     }

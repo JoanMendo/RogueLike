@@ -252,7 +252,9 @@ MonoBehaviour:
   player: {fileID: 0}
   levelPositions: []
   currentLevel: {fileID: 0}
+  previousLevel: {fileID: 0}
   enemyList: []
+  cloudList: []
   Cloud: {fileID: 5120792602394802410, guid: 0509393c171f8f343ab453e82f5a7790, type: 3}
 --- !u!1 &1148984406
 GameObject:
@@ -643,7 +645,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.size
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: smallDecorations.Array.size
@@ -656,19 +658,19 @@ PrefabInstance:
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[0]
       value: 
-      objectReference: {fileID: 6743015752381285158, guid: 27bc09ba023158e489d9de2bb2c92703, type: 3}
+      objectReference: {fileID: 6743015752381285158, guid: 34b7b7bf69a272045bbe4936cee8ca63, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[1]
       value: 
-      objectReference: {fileID: 6743015752381285158, guid: 34b7b7bf69a272045bbe4936cee8ca63, type: 3}
+      objectReference: {fileID: 6743015752381285158, guid: 1c9d3f772bba90c48a35ad2e20596a0c, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[2]
       value: 
-      objectReference: {fileID: 6743015752381285158, guid: 366a4ae3df9129f4483ee7e4788af449, type: 3}
+      objectReference: {fileID: 6743015752381285158, guid: 2fe313093424233468e26c149bf6977a, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[3]
       value: 
-      objectReference: {fileID: 6743015752381285158, guid: 407893627186a55439996be31471d2ee, type: 3}
+      objectReference: {fileID: 6743015752381285158, guid: 1c9d3f772bba90c48a35ad2e20596a0c, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[4]
       value: 
@@ -676,11 +678,11 @@ PrefabInstance:
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[5]
       value: 
-      objectReference: {fileID: 6743015752381285158, guid: ee6d42adb5ad110489c00194c5a27824, type: 3}
+      objectReference: {fileID: 6743015752381285158, guid: 2fe313093424233468e26c149bf6977a, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[6]
       value: 
-      objectReference: {fileID: 6743015752381285158, guid: e3569944bee785145958bd9138482060, type: 3}
+      objectReference: {fileID: 6743015752381285158, guid: 2fe313093424233468e26c149bf6977a, type: 3}
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: enemiesPrefabs.Array.data[7]
       value: 

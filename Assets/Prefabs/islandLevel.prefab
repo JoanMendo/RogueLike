@@ -32361,16 +32361,15 @@ MonoBehaviour:
   - {fileID: 6776045283636211940, guid: 8952251504818a54ba9a45a931812a5e, type: 3}
   - {fileID: 6776045283636211940, guid: feb2967c18917d748b96d220ab2b3364, type: 3}
   enemiesPrefabs:
-  - {fileID: 6743015752381285158, guid: 27bc09ba023158e489d9de2bb2c92703, type: 3}
   - {fileID: 6743015752381285158, guid: 34b7b7bf69a272045bbe4936cee8ca63, type: 3}
-  - {fileID: 6743015752381285158, guid: e3569944bee785145958bd9138482060, type: 3}
-  - {fileID: 6743015752381285158, guid: ee6d42adb5ad110489c00194c5a27824, type: 3}
-  - {fileID: 6743015752381285158, guid: 407893627186a55439996be31471d2ee, type: 3}
-  - {fileID: 6743015752381285158, guid: 27bc09ba023158e489d9de2bb2c92703, type: 3}
-  - {fileID: 6743015752381285158, guid: 366a4ae3df9129f4483ee7e4788af449, type: 3}
   - {fileID: 6743015752381285158, guid: 2fe313093424233468e26c149bf6977a, type: 3}
+  - {fileID: 6743015752381285158, guid: 1c9d3f772bba90c48a35ad2e20596a0c, type: 3}
+  - {fileID: 6743015752381285158, guid: 1c9d3f772bba90c48a35ad2e20596a0c, type: 3}
+  - {fileID: 6743015752381285158, guid: 1c9d3f772bba90c48a35ad2e20596a0c, type: 3}
   CharacterPrefab: {fileID: 8479267826887906556, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
   playerPosition: {x: 0, y: 0}
+  cloudStartPosition: {x: 0, y: 0}
+  cloudEndPosition: {x: 0, y: 0}
 --- !u!1 &2861734582964327152
 GameObject:
   m_ObjectHideFlags: 0

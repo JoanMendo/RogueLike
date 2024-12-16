@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 1744527973473765811}
   - component: {fileID: 8473269869556557906}
   m_Layer: 0
-  m_Name: ShySlimeVerde
+  m_Name: ShySlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -194,7 +194,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: -706637841, guid: 60c1d54789cab944eaaeb4543bc416fb, type: 3}
-  m_Color: {r: 0.028301954, g: 1, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -239,6 +239,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   speed: 0
+  isDead: 0
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -255,8 +256,13 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   damage: 25
-  jumpForce: 1000
-  minDistanceFromPlayer: 10
+  shySlimes:
+  - {fileID: 11400000, guid: 8663a22677f08844d9c6a8cd36f5e2f3, type: 2}
+  - {fileID: 11400000, guid: f04931e1b52afee4793178247d207855, type: 2}
+  - {fileID: 11400000, guid: ad4219aece990b049ae08aaf18e9428f, type: 2}
+  - {fileID: 11400000, guid: b6db9cfa24004914a90854f6cd0926e4, type: 2}
+  - {fileID: 11400000, guid: ff2677c060393c244809fc762668bd36, type: 2}
+  - {fileID: 11400000, guid: bf74196319ad73d4795f8befd155239e, type: 2}
 --- !u!61 &1144681403482526343
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -346,7 +352,7 @@ MonoBehaviour:
   m_BlendStyleIndex: 0
   m_FalloffIntensity: 0.5
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 2
+  m_Intensity: 5
   m_LightVolumeIntensity: 1
   m_LightVolumeIntensityEnabled: 0
   m_ApplyToSortingLayers: 00000000
