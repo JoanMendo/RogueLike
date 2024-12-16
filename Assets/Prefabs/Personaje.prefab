@@ -635,8 +635,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7154bc22f0fc65142bd4d2208de98879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 150
+  health: 1500
   speed: 8
+  isDead: 0
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -652,9 +653,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
   head: {fileID: 6443113977058369832}
   body: {fileID: 3120080144153460475}
   headForward: {fileID: -1238003774, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
@@ -760,7 +758,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 4478115564396635282}
   AttackSpeed: 0.3
   OnCooldown: 0
-  isParticleSystem: 1
+  isParticleSystem: 0
 --- !u!61 &2421754605827438287
 BoxCollider2D:
   m_ObjectHideFlags: 0

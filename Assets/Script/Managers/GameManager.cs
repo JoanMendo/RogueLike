@@ -77,6 +77,7 @@ public class GameManager : MonoBehaviour
         foreach (GameObject cloud in cloudList)
         {
             cloud.SetActive(true);
+            cloud.GetComponent<Cloud>().enableCloud();
         }
     }
 
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour
         {
             if (cloud != currentCloud)
             {
-                cloud.SetActive(false);
+                cloud.GetComponent<Cloud>().disableCloud();
             }
         }
     }

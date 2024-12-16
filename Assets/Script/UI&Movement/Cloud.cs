@@ -10,8 +10,10 @@ public class Cloud : MonoBehaviour
     private GameObject player;
     private Coroutine coroutine;
     private bool isAtStart = true;
+    private Animator animator;
     void Start()
     {
+        animator = GetComponent<Animator>();
         player = GameManager.instance.player;
         initialPosition = GameManager.instance.previousLevel.GetComponent<ProceduralTilemap>().cloudStartPosition;
         finalPosition = GameManager.instance.currentLevel.GetComponent<ProceduralTilemap>().cloudEndPosition;
@@ -50,7 +52,7 @@ public class Cloud : MonoBehaviour
             while (Vector3.Distance(transform.position, finalPosition) > 0.5f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, finalPosition, 0.15f);
-                player.transform.position = transform.position + new Vector3(0, -0.2f, 0);
+                player.transform.position = transform.position + new Vector3(0, -0.6f, 0);
                 yield return new WaitForSeconds(0.01f);
             }
             isAtStart = false;
@@ -60,7 +62,7 @@ public class Cloud : MonoBehaviour
             while (Vector3.Distance(transform.position, initialPosition) > 0.4f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, initialPosition, 0.15f);
-                player.transform.position = transform.position + new Vector3(0, -0.2f, 0);
+                player.transform.position = transform.position + new Vector3(0, -0.6f, 0);
                 yield return new WaitForSeconds(0.01f);
             }
             isAtStart = true;
@@ -71,11 +73,34 @@ public class Cloud : MonoBehaviour
         }
         else
         {
-            gameObject.SetActive(false);
+            disableCloud();
         }
         player.GetComponent<SortingGroup>().sortingOrder = 3;
 
     }
+
+    public void disableCloud()
+    {
+        
+        StartCoroutine(disableAnimation());
+    }
+
+    public void enableCloud()
+    {
+        GetComponent<Collider2D>().enabled = true;
+        animator.Play("cloudEnable");
+    }
+
+    public IEnumerator disableAnimation()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        animator.Play("cloudDisable");
+        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        gameObject.SetActive(false);
+
+    }
+
+
 
 
 }

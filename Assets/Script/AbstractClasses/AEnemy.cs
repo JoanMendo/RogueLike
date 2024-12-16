@@ -22,8 +22,9 @@ public class AEnemy : AEntity
 
             isDead = true;
             GameManager.instance.enemyList.Remove(gameObject);
-            GameManager.instance.checkList();
             Destroy(gameObject);
+            GameManager.instance.checkList();
+            
         }
     }
 

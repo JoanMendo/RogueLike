@@ -304,12 +304,16 @@ public class ProceduralTilemap : MonoBehaviour
             }
             
         }
-        cloudStartPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
-        cloudStartPosition += (Vector2)tilemap.transform.position;
-        Debug.Log(cloudStartPosition + "startTilemapPosition");
-        cloudEndPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
-        cloudEndPosition += (Vector2)tilemap.transform.position;
-        Debug.Log(cloudEndPosition+  "finalTilemapPosition");
+        do
+        {
+            cloudStartPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+            cloudStartPosition += (Vector2)tilemap.transform.position;
+
+            cloudEndPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
+            cloudEndPosition += (Vector2)tilemap.transform.position;
+        } while (Vector2.Distance(cloudStartPosition, cloudEndPosition) < 5f);
+       
+
         tilesNotUsed.Remove(cloudStartPosition);
         tilesNotUsed.Remove(cloudEndPosition);
     }
