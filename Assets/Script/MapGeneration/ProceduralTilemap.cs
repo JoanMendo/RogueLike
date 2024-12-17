@@ -101,8 +101,8 @@ public class ProceduralTilemap : MonoBehaviour
     {
 
         width = Random.Range(minWidth, maxWidth + 1);  //Ancho aleatorio de todo el tilemap
-        bottomHeights = new int[width]; //Definimos el array de alturas con ell width total
-        topHeights = new int[width]; //Definimos el array de alturas con ell width total
+        bottomHeights = new int[width]; //Definimos el array de alturas con el width total
+        topHeights = new int[width]; 
         bottomHeights[0] = 0;
         topHeights[0] = Random.Range(minHeight, maxHeight + 1); //Definimos la primera columna, que es necesario antes del bucle que hay a continuación
 
@@ -201,7 +201,7 @@ public class ProceduralTilemap : MonoBehaviour
 
                     else //Se añade la hierba normal y se guarda la posicion par añadir decoraciones o spawns de enemigos
                     {
-                        if (x > 2 && x < width-2 && y > transitionHeight + 1 && y < topHeights[x] - 1) 
+                        if (x > 2 && x < width-2 && y > transitionHeight + 2 && y < topHeights[x] - 2) 
                         tilesPlanas.Add(new Vector2(x, y));
                         int RandomTile = Random.Range(0, 60);
                         if (RandomTile < centerGrassDecoration.Length)
@@ -345,6 +345,4 @@ public class ProceduralTilemap : MonoBehaviour
         Instantiate(levelPrefab, new Vector3(transform.parent.parent.position.x + offset.x, transform.parent.parent.position.y + offset.y, 0), Quaternion.identity);
        
     }
-
-
 }

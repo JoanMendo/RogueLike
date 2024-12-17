@@ -636,6 +636,14 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: maxWidth
+      value: 56
+      objectReference: {fileID: 0}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+      propertyPath: maxHeight
+      value: 28
+      objectReference: {fileID: 0}
+    - target: {fileID: 102776621197591250, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
       propertyPath: levelPrefab
       value: 
       objectReference: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}

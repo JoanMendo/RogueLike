@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 1451452490762478932}
   - component: {fileID: 2658728138497512632}
   - component: {fileID: 7205983252307167911}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BombaCat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -412,6 +412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 12
   speed: 7
+  isDead: 0
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -427,13 +428,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
   damage: 50
-  onDeath:
-    m_PersistentCalls:
-      m_Calls: []
   explosionDistance: 1
   explosion: {fileID: 1797108991048080313, guid: d82afdfba40363b428a0cf894000b03d, type: 3}
 --- !u!114 &2658728138497512632

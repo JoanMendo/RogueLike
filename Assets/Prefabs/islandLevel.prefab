@@ -32296,6 +32296,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 2328744247896773526}
+  groundDecoration: {fileID: 0}
   collider: {fileID: 3624084022631775002}
   levelPrefab: {fileID: 1332445938349526750}
   centerGrassDecoration:
@@ -32327,14 +32328,27 @@ MonoBehaviour:
   tileCliffRightBottomConector: {fileID: 0}
   tileCliffRightBottom: {fileID: 11400000, guid: 8104dff46fd888d43a04cb99467fc222, type: 2}
   tileCliffLeftBottom: {fileID: 11400000, guid: 171720543c82b7e4d93eb680f5277f84, type: 2}
+  tileGround: {fileID: 0}
+  tileGroundLeft: {fileID: 0}
+  tileGroundRight: {fileID: 0}
+  tileGroundTop: {fileID: 0}
+  tileGroundBottom: {fileID: 0}
+  tileGroundTopLeft: {fileID: 0}
+  tileGroundTopRight: {fileID: 0}
+  tileGroundBottomLeft: {fileID: 0}
+  tileGroundBottomRight: {fileID: 0}
+  tileGroundTopLeftCorner: {fileID: 0}
+  tileGroundTopRightCorner: {fileID: 0}
+  tileGroundBottomLeftCorner: {fileID: 0}
+  tileGroundBottomRightCorner: {fileID: 0}
   leftUp: {fileID: 11400000, guid: c92c39187f2073e47ae6a2d69eba757d, type: 2}
   rightUp: {fileID: 11400000, guid: ca31a6b8d06687546b2d5d9be2b506a5, type: 2}
   leftDown: {fileID: 11400000, guid: 85163215682d830489871afdfc3bc9af, type: 2}
   rightDown: {fileID: 11400000, guid: 4fdc83619d4a89d4e931afa4b6d4a158, type: 2}
   minWidth: 30
-  maxWidth: 42
+  maxWidth: 56
   minHeight: 18
-  maxHeight: 24
+  maxHeight: 28
   transitionHeight: 6
   heightChangeProbability: 0.8
   bigDecorations:

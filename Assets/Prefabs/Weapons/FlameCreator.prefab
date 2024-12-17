@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4705967126535347389}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5725035, y: 0.41501775, z: 0.41501775, w: 0.5725035}
-  m_LocalPosition: {x: 0, y: 0.91, z: 0}
+  m_LocalPosition: {x: -1.84, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3632,8 +3632,8 @@ ParticleSystem:
   CollisionModule:
     enabled: 0
     serializedVersion: 4
-    type: 0
-    collisionMode: 0
+    type: 1
+    collisionMode: 1
     colliderForce: 0
     multiplyColliderForceByParticleSize: 0
     multiplyColliderForceByParticleSpeed: 0
@@ -3803,15 +3803,15 @@ ParticleSystem:
     radiusScale: 1
     collidesWith:
       serializedVersion: 2
-      m_Bits: 4294967295
+      m_Bits: 128
     maxCollisionShapes: 256
     quality: 0
     voxelSize: 0.5
-    collisionMessages: 0
+    collisionMessages: 1
     collidesWithDynamic: 1
     interiorCollisions: 0
   TriggerModule:
-    enabled: 1
+    enabled: 0
     serializedVersion: 2
     inside: 1
     outside: 0
@@ -4947,11 +4947,14 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 3.3264847, y: 4.0410843}
-      - {x: 1.1684688, y: 4.512937}
-      - {x: 0.79775053, y: 3.8146245}
-      - {x: 0.53574246, y: 0.34583583}
+    - - {x: 3.523242, y: 4.1079054}
+      - {x: 1.1032348, y: 4.8691874}
+      - {x: 0.27807724, y: 3.9441822}
+      - {x: -0.26491767, y: 0.62091076}
+      - {x: -0.15256572, y: -0.73606896}
       - {x: 0.3992343, y: -1.2903508}
-      - {x: 1.084321, y: -1.4938717}
-      - {x: 3.3759527, y: 3.1280525}
+      - {x: 1.0612658, y: -1.3107202}
+      - {x: 1.5693974, y: -0.63635516}
+      - {x: 2.4158623, y: 0.8177355}
+      - {x: 3.4871438, y: 3.1254828}
   m_UseDelaunayMesh: 0

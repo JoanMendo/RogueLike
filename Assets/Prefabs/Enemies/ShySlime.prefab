@@ -128,7 +128,7 @@ GameObject:
   - component: {fileID: 1144681403482526343}
   - component: {fileID: 1744527973473765811}
   - component: {fileID: 8473269869556557906}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ShySlime
   m_TagString: Enemy
   m_Icon: {fileID: 0}

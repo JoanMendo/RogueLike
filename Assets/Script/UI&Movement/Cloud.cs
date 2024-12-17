@@ -95,7 +95,7 @@ public class Cloud : MonoBehaviour
     {
         GetComponent<Collider2D>().enabled = false;
         animator.Play("cloudDisable");
-        yield return new WaitForSeconds(animator.GetCurrentAnimatorStateInfo(0).length);
+        yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(false);
 
     }

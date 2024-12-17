@@ -229,7 +229,7 @@ GameObject:
   - component: {fileID: 2658728138497512632}
   - component: {fileID: 7205983252307167911}
   - component: {fileID: -6553905726933468750}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: FireballCat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
