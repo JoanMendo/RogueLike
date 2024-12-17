@@ -597,6 +597,7 @@ GameObject:
   - component: {fileID: 6196776725368720051}
   - component: {fileID: 2421754605827438287}
   - component: {fileID: 5942729024062292567}
+  - component: {fileID: 1939774721756839468}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Player
@@ -760,7 +761,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 4478115564396635282}
   AttackSpeed: 0.8
   OnCooldown: 0
-  isParticleSystem: 1
+  isParticleSystem: 0
 --- !u!61 &2421754605827438287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -833,9 +834,24 @@ MonoBehaviour:
   m_ActionEvents: []
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: 
+  m_DefaultActionMap: Move
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &1939774721756839468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479267826887906556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cbaa5378019ea48802305b42e5753b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: 6196776725368720051}
+  - {fileID: 784440404236561264}
 --- !u!1001 &4666172244876611721
 PrefabInstance:
   m_ObjectHideFlags: 0

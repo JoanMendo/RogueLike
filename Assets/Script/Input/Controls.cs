@@ -35,6 +35,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CharacterAttack"",
+                    ""type"": ""Button"",
+                    ""id"": ""5162ad79-894e-49c8-8753-ff50fa66b8b8"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -147,32 +156,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""CharacterMovement"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
-                }
-            ]
-        },
-        {
-            ""name"": ""Attack"",
-            ""id"": ""124763f4-b195-4925-a1ad-f35b38a7c848"",
-            ""actions"": [
-                {
-                    ""name"": ""Attack"",
-                    ""type"": ""Button"",
-                    ""id"": ""1eb9ac23-e486-4b3c-b769-1efc8bbdc7c7"",
-                    ""expectedControlType"": ""Button"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                }
-            ],
-            ""bindings"": [
+                },
                 {
                     ""name"": """",
-                    ""id"": ""bd71ff56-2140-4ff8-92d2-21a2530a7308"",
+                    ""id"": ""144e9eab-e194-4018-8b05-6a215a78797b"",
                     ""path"": ""<Mouse>/rightButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""Attack"",
+                    ""action"": ""CharacterAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -184,9 +176,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         // Move
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_CharacterMovement = m_Move.FindAction("CharacterMovement", throwIfNotFound: true);
-        // Attack
-        m_Attack = asset.FindActionMap("Attack", throwIfNotFound: true);
-        m_Attack_Attack = m_Attack.FindAction("Attack", throwIfNotFound: true);
+        m_Move_CharacterAttack = m_Move.FindAction("CharacterAttack", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -249,11 +239,13 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Move;
     private List<IMoveActions> m_MoveActionsCallbackInterfaces = new List<IMoveActions>();
     private readonly InputAction m_Move_CharacterMovement;
+    private readonly InputAction m_Move_CharacterAttack;
     public struct MoveActions
     {
         private @Controls m_Wrapper;
         public MoveActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @CharacterMovement => m_Wrapper.m_Move_CharacterMovement;
+        public InputAction @CharacterAttack => m_Wrapper.m_Move_CharacterAttack;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -266,6 +258,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CharacterMovement.started += instance.OnCharacterMovement;
             @CharacterMovement.performed += instance.OnCharacterMovement;
             @CharacterMovement.canceled += instance.OnCharacterMovement;
+            @CharacterAttack.started += instance.OnCharacterAttack;
+            @CharacterAttack.performed += instance.OnCharacterAttack;
+            @CharacterAttack.canceled += instance.OnCharacterAttack;
         }
 
         private void UnregisterCallbacks(IMoveActions instance)
@@ -273,6 +268,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CharacterMovement.started -= instance.OnCharacterMovement;
             @CharacterMovement.performed -= instance.OnCharacterMovement;
             @CharacterMovement.canceled -= instance.OnCharacterMovement;
+            @CharacterAttack.started -= instance.OnCharacterAttack;
+            @CharacterAttack.performed -= instance.OnCharacterAttack;
+            @CharacterAttack.canceled -= instance.OnCharacterAttack;
         }
 
         public void RemoveCallbacks(IMoveActions instance)
@@ -290,58 +288,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         }
     }
     public MoveActions @Move => new MoveActions(this);
-
-    // Attack
-    private readonly InputActionMap m_Attack;
-    private List<IAttackActions> m_AttackActionsCallbackInterfaces = new List<IAttackActions>();
-    private readonly InputAction m_Attack_Attack;
-    public struct AttackActions
-    {
-        private @Controls m_Wrapper;
-        public AttackActions(@Controls wrapper) { m_Wrapper = wrapper; }
-        public InputAction @Attack => m_Wrapper.m_Attack_Attack;
-        public InputActionMap Get() { return m_Wrapper.m_Attack; }
-        public void Enable() { Get().Enable(); }
-        public void Disable() { Get().Disable(); }
-        public bool enabled => Get().enabled;
-        public static implicit operator InputActionMap(AttackActions set) { return set.Get(); }
-        public void AddCallbacks(IAttackActions instance)
-        {
-            if (instance == null || m_Wrapper.m_AttackActionsCallbackInterfaces.Contains(instance)) return;
-            m_Wrapper.m_AttackActionsCallbackInterfaces.Add(instance);
-            @Attack.started += instance.OnAttack;
-            @Attack.performed += instance.OnAttack;
-            @Attack.canceled += instance.OnAttack;
-        }
-
-        private void UnregisterCallbacks(IAttackActions instance)
-        {
-            @Attack.started -= instance.OnAttack;
-            @Attack.performed -= instance.OnAttack;
-            @Attack.canceled -= instance.OnAttack;
-        }
-
-        public void RemoveCallbacks(IAttackActions instance)
-        {
-            if (m_Wrapper.m_AttackActionsCallbackInterfaces.Remove(instance))
-                UnregisterCallbacks(instance);
-        }
-
-        public void SetCallbacks(IAttackActions instance)
-        {
-            foreach (var item in m_Wrapper.m_AttackActionsCallbackInterfaces)
-                UnregisterCallbacks(item);
-            m_Wrapper.m_AttackActionsCallbackInterfaces.Clear();
-            AddCallbacks(instance);
-        }
-    }
-    public AttackActions @Attack => new AttackActions(this);
     public interface IMoveActions
     {
         void OnCharacterMovement(InputAction.CallbackContext context);
-    }
-    public interface IAttackActions
-    {
-        void OnAttack(InputAction.CallbackContext context);
+        void OnCharacterAttack(InputAction.CallbackContext context);
     }
 }

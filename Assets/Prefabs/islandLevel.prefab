@@ -32346,7 +32346,7 @@ MonoBehaviour:
   leftDown: {fileID: 11400000, guid: 85163215682d830489871afdfc3bc9af, type: 2}
   rightDown: {fileID: 11400000, guid: 4fdc83619d4a89d4e931afa4b6d4a158, type: 2}
   minWidth: 30
-  maxWidth: 56
+  maxWidth: 47
   minHeight: 18
   maxHeight: 28
   transitionHeight: 6

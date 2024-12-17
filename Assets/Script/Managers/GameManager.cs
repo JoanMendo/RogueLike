@@ -42,16 +42,16 @@ public class GameManager : MonoBehaviour
             switch (random)
             {
                 case 1:
-                    offset = new Vector2(50, 0); //Derecha
+                    offset = new Vector2(55, 0); //Derecha
                     break;
                 case 2:
-                    offset = new Vector2(-50, 0); // Izquierda
+                    offset = new Vector2(-55, 0); // Izquierda
                     break;
                 case 3:
-                    offset = new Vector2(0, 50); // Arriba
+                    offset = new Vector2(0, 55); // Arriba
                     break;
                 case 4:
-                    offset = new Vector2(0, -50); // Abajo
+                    offset = new Vector2(0, -55); // Abajo
                     break;
             }
 

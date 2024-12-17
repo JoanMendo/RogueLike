@@ -8,8 +8,6 @@ public class AEnemy : AEntity
 {
     public float damage;
     protected Rigidbody2D rb;
-
-
     public void Knockback(Vector2 direction, float force)
     {
         rb.AddForce(direction * force, ForceMode2D.Impulse);
@@ -19,13 +17,10 @@ public class AEnemy : AEntity
     {
         if (!isDead)
         {
-
             isDead = true;
             GameManager.instance.enemyList.Remove(gameObject);
             Destroy(gameObject);
             GameManager.instance.checkList();
-            
         }
     }
-
 }

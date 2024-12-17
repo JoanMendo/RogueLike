@@ -20,10 +20,23 @@ public class CharacterAttack : MonoBehaviour
     private void Start()
     {
         attackControls = GetComponent<PlayerInput>();
-        attack = attackControls.actions["Attack"];
+        attack = attackControls.actions["CharacterAttack"];
         attack.performed += OnAttackPerformed;
         attack.canceled += OnAttackCanceled;
     }
+
+    private void OnDisable()
+    {
+        attack.performed -= OnAttackPerformed;
+        attack.canceled -= OnAttackCanceled;
+    }
+
+    private void OnEnable()
+    {
+        attack.performed += OnAttackPerformed;
+        attack.canceled += OnAttackCanceled;
+    }
+
 
     void OnAttackPerformed(InputAction.CallbackContext context)
     {
@@ -58,7 +71,6 @@ public class CharacterAttack : MonoBehaviour
 
     public void CreateProyectile()
     {
-
         GameObject proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
         proyectile.GetComponent<AWeapon>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
     }
@@ -67,7 +79,7 @@ public class CharacterAttack : MonoBehaviour
 
     public Vector2 detectCursorPosition()
     {
-        Vector3 mousePosition = Input.mousePosition; // Posición del mouse en la pantalla
+        Vector3 mousePosition = Mouse.current.position.ReadValue(); // Posición del mouse en la pantalla
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition); // Convertirla a coordenadas del mundo
         Vector3 characterPosition = transform.position;
         Vector2 vect = mousePosition - characterPosition;

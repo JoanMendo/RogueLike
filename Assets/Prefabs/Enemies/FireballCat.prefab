@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 2658728138497512632}
   - component: {fileID: 7205983252307167911}
   - component: {fileID: -6553905726933468750}
+  - component: {fileID: 5778649075590502169}
   m_Layer: 7
   m_Name: FireballCat
   m_TagString: Enemy
@@ -493,4 +494,18 @@ MonoBehaviour:
   damage: 20
   attackDistance: 12
   fireball: {fileID: 3917519921938480130, guid: b2b2290efcaf0374c80d2d10e37f37f2, type: 3}
-  catAttackSpeed: 0.5
+  catAttackSpeed: 1
+--- !u!114 &5778649075590502169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6743015752381285158}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54cbaa5378019ea48802305b42e5753b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scripts:
+  - {fileID: -6553905726933468750}

@@ -1,4 +1,5 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering;
@@ -11,6 +12,9 @@ public class Cloud : MonoBehaviour
     private Coroutine coroutine;
     private bool isAtStart = true;
     private Animator animator;
+
+
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -47,6 +51,7 @@ public class Cloud : MonoBehaviour
     {
         player.GetComponent<SortingGroup>().sortingOrder = 4;
         GameManager.instance.disableAllClouds(gameObject);
+        EventManager.OnStartLoading();
         if (isAtStart)
         {
             while (Vector3.Distance(transform.position, finalPosition) > 0.5f)
@@ -76,12 +81,11 @@ public class Cloud : MonoBehaviour
             disableCloud();
         }
         player.GetComponent<SortingGroup>().sortingOrder = 3;
-
+        EventManager.OnEndLoading();
     }
 
     public void disableCloud()
     {
-        
         StartCoroutine(disableAnimation());
     }
 
@@ -99,8 +103,4 @@ public class Cloud : MonoBehaviour
         gameObject.SetActive(false);
 
     }
-
-
-
-
 }

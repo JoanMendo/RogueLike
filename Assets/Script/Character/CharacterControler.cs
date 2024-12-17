@@ -25,6 +25,23 @@ public class CharacterControler : AEntity
 
     }
 
+    public void OnDisable()
+    {
+        movement.performed -= OnMovementPerformed;
+        movement.canceled -= OnMovementCanceled;
+    }
+
+
+    public void OnEnable()
+    {
+        movement.performed += OnMovementPerformed;
+        movement.canceled += OnMovementCanceled;
+    }
+    private void Update()
+    {
+        rb.velocity = direction.normalized * speed;
+    }
+
 
 
     public void OnMovementPerformed(InputAction.CallbackContext context)
