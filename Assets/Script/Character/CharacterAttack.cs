@@ -67,7 +67,7 @@ public class CharacterAttack : MonoBehaviour
 
     public Vector2 detectCursorPosition()
     {
-        Vector3 mousePosition = Mouse.current.position.ReadValue(); // Posición del mouse en la pantalla
+        Vector3 mousePosition = Input.mousePosition; // Posición del mouse en la pantalla
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition); // Convertirla a coordenadas del mundo
         Vector3 characterPosition = transform.position;
         Vector2 vect = mousePosition - characterPosition;

@@ -125,61 +125,6 @@
                     "action": "CharacterMovement",
                     "isComposite": false,
                     "isPartOfComposite": true
-                },
-                {
-                    "name": "MovementMobile",
-                    "id": "d9da45be-c543-4a2c-975d-4b43e9b3d06b",
-                    "path": "2DVector",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CharacterMovement",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "8666d5a6-8d55-4d73-a64d-814ac1b6cfb6",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CharacterMovement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "68871759-517d-41bc-99cc-3d535a31f730",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CharacterMovement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "left",
-                    "id": "c9553448-3e22-4fd9-b410-fbd7fa2b179b",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CharacterMovement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "right",
-                    "id": "bd7ca06b-a2c2-4775-a6e1-8cadd76f01ea",
-                    "path": "",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CharacterMovement",
-                    "isComposite": false,
-                    "isPartOfComposite": true
                 }
             ]
         },
@@ -202,17 +147,6 @@
                     "name": "",
                     "id": "bd71ff56-2140-4ff8-92d2-21a2530a7308",
                     "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ffc9c795-2d1f-48cb-983f-5827e7045423",
-                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
