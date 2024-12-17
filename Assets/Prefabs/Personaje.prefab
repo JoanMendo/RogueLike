@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 2891210189510119810}
   - component: {fileID: 6196776725368720051}
   - component: {fileID: 2421754605827438287}
+  - component: {fileID: 5942729024062292567}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Player
@@ -636,7 +637,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 250
-  speed: 8
+  speed: 9
   isDead: 0
   onTakeDamage:
     m_PersistentCalls:
@@ -655,9 +656,10 @@ MonoBehaviour:
         m_CallState: 2
   head: {fileID: 6443113977058369832}
   body: {fileID: 3120080144153460475}
-  headForward: {fileID: -1238003774, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
-  headBackward: {fileID: -932010177, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
-  headSideways: {fileID: -87661693, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
+  heads:
+  - {fileID: -87661693, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
+  - {fileID: -932010177, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
+  - {fileID: -1238003774, guid: 2f191b16b65598a47991c5cbceefbdea, type: 3}
 --- !u!50 &8789008030942561966
 Rigidbody2D:
   serializedVersion: 4
@@ -758,7 +760,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 4478115564396635282}
   AttackSpeed: 0.8
   OnCooldown: 0
-  isParticleSystem: 0
+  isParticleSystem: 1
 --- !u!61 &2421754605827438287
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -804,6 +806,36 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5292464, y: 0.52084017}
   m_EdgeRadius: 0
+--- !u!114 &5942729024062292567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8479267826887906556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: d38d9d2a83a323746bd0e09f585f149e, type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: 
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1001 &4666172244876611721
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterAttack : MonoBehaviour
 {
@@ -11,41 +12,48 @@ public class CharacterAttack : MonoBehaviour
     public bool OnCooldown = false;
     public bool isParticleSystem = false;
     private bool isParticlePlaying = false;
+    private PlayerInput attackControls;
+    private InputAction attack;
 
     // Update is called once per frame
-    void Update()
+
+    private void Start()
     {
-        if (Input.GetMouseButton(0)) //Si pulsa el click derecho y el cooldown no está activo
+        attackControls = GetComponent<PlayerInput>();
+        attack = attackControls.actions["Attack"];
+        attack.performed += OnAttackPerformed;
+        attack.canceled += OnAttackCanceled;
+    }
+
+    void OnAttackPerformed(InputAction.CallbackContext context)
+    {
+        if (!isParticleSystem)
         {
-            if (!isParticleSystem)
+            if (!OnCooldown) //Si pulsa el click derecho y el cooldown no está activo
             {
-                if (!OnCooldown) //Si pulsa el click derecho y el cooldown no está activo
-                {
-                    CreateProyectile();
-                    StartCoroutine(Cooldown());
-                }
-            }
-            else if (!isParticlePlaying) 
-            {
-                isParticlePlaying = true;
-                ParticleSystem.Play();
-                
-                ParticleSystem.GetComponentInChildren<Collider2D>().enabled = true;
+                CreateProyectile();
+                StartCoroutine(Cooldown());
             }
         }
-        else
+        else if (!isParticlePlaying)
         {
-            if (isParticleSystem)
-            {
-                isParticlePlaying = false;
-                ParticleSystem.Stop();
-                ParticleSystem.GetComponentInChildren<Collider2D>().enabled = false;
-            }
+            isParticlePlaying = true;
+            ParticleSystem.Play();
+            ParticleSystem.GetComponentInChildren<Collider2D>().enabled = true;
         }
         float flamesDirection = Mathf.Atan2(detectCursorPosition().x, detectCursorPosition().y) * Mathf.Rad2Deg - 90;
-        ParticleSystem.transform.rotation = Quaternion.Euler(flamesDirection, 90, 90 );
+        ParticleSystem.transform.rotation = Quaternion.Euler(flamesDirection, 90, 90);
         ParticleSystem.startRotation = flamesDirection * Mathf.Deg2Rad;
+    }
 
+    private void OnAttackCanceled(InputAction.CallbackContext context)
+    {
+        if (isParticleSystem)
+        {
+            isParticlePlaying = false;
+            ParticleSystem.Stop();
+            ParticleSystem.GetComponentInChildren<Collider2D>().enabled = false;
+        }
     }
 
     public void CreateProyectile()
@@ -59,7 +67,7 @@ public class CharacterAttack : MonoBehaviour
 
     public Vector2 detectCursorPosition()
     {
-        Vector3 mousePosition = Input.mousePosition; // Posición del mouse en la pantalla
+        Vector3 mousePosition = Mouse.current.position.ReadValue(); // Posición del mouse en la pantalla
         mousePosition = Camera.main.ScreenToWorldPoint(mousePosition); // Convertirla a coordenadas del mundo
         Vector3 characterPosition = transform.position;
         Vector2 vect = mousePosition - characterPosition;

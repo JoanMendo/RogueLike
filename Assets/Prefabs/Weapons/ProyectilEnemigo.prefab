@@ -174,7 +174,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Damage: 10
   Direction: {x: 0, y: 0}
-  Speed: 13
+  Speed: 11
   TargetTag: Player
   deathParticle: {fileID: 5052562978784651109, guid: 084504dc509162f41868c834490f906a, type: 3}
   Shadow: {fileID: 6772470970792517178, guid: ce26b19fb96ed8b4ba35a5c3dd0377db, type: 3}

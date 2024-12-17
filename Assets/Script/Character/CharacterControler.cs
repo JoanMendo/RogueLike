@@ -1,55 +1,64 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class CharacterControler : AEntity
 {
-    private float inputX;
-    private float inputY;
     private Rigidbody2D rb;
     private Vector2 direction;
     public GameObject head;
     public GameObject body;
-    public Sprite headForward;
-    public Sprite headBackward;
-    public Sprite headSideways;
-    private Controls movementControls;
+    public Sprite [] heads;
+    private PlayerInput movementControls;
+    private InputAction movement;
+
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameManager.instance.player = this.gameObject;
+        GameManager.instance.player = gameObject;
+        movementControls = GetComponent<PlayerInput>();
+        movement = movementControls.actions["CharacterMovement"];
+        movement.performed += OnMovementPerformed;
+        movement.canceled += OnMovementCanceled;
+
     }
 
-    // Update is called once per frame
-    void Update()
+
+
+    public void OnMovementPerformed(InputAction.CallbackContext context)
     {
-
-        inputX = Input.GetAxisRaw("Horizontal");
-        inputY = Input.GetAxisRaw("Vertical");
-        direction = new Vector2(inputX, inputY);
+        direction = context.ReadValue<Vector2>();
         rb.velocity = direction.normalized * speed;
+        UpdateDirectionSprite();
+    }
 
-        if (inputX == 1 && inputY==0)
-        {
-            head.GetComponent<SpriteRenderer>().sprite = headSideways;
-            
-        }
-        else if (inputX == -1&&inputY == 0)
-        {
-            head.GetComponent<SpriteRenderer>().sprite = headSideways;
-            
-        }
-        else if  ( inputY == 1)
-        {
-            head.GetComponent<SpriteRenderer>().sprite = headBackward;
-            
-        }
-        else
-        {
-            head.GetComponent<SpriteRenderer>().sprite = headForward;
-            
-        }
+  public void OnMovementCanceled(InputAction.CallbackContext context)
+    {
+        direction = context.ReadValue<Vector2>();
+        rb.velocity = direction.normalized * speed;
+        
+        UpdateDirectionSprite();
+    }
 
+    private void UpdateDirectionSprite()
+    {
+        if (direction.x > 0) // Movimiento a la derecha
+        {
+            head.GetComponent<SpriteRenderer>().sprite = heads[0];
+        }
+        else if (direction.x < 0) // Movimiento a la izquierda
+        {
+            head.GetComponent<SpriteRenderer>().sprite = heads[0];
+        }
+        else if (direction.y > 0) // Movimiento hacia arriba
+        {
+            head.GetComponent<SpriteRenderer>().sprite = heads[1];
+        }
+        else if (direction.y < 0) // Movimiento hacia abajo
+        {
+            head.GetComponent<SpriteRenderer>().sprite = heads[2];
+        }
     }
 }
