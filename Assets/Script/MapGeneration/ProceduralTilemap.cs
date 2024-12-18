@@ -201,7 +201,7 @@ public class ProceduralTilemap : MonoBehaviour
 
                     else //Se añade la hierba normal y se guarda la posicion par añadir decoraciones o spawns de enemigos
                     {
-                        if (x > 2 && x < width-2 && y > transitionHeight + 2 && y < topHeights[x] - 2) 
+                        if (x > 2 && x < width-2 && y > transitionHeight + bottomHeights[x] + 1 && y < topHeights[x] - 2) 
                         tilesPlanas.Add(new Vector2(x, y));
                         int RandomTile = Random.Range(0, 60);
                         if (RandomTile < centerGrassDecoration.Length)

@@ -22,18 +22,18 @@ public class CharacterControler : AEntity
         movement = movementControls.actions["CharacterMovement"];
         movement.performed += OnMovementPerformed;
         movement.canceled += OnMovementCanceled;
-
     }
 
     public void OnDisable()
     {
+        direction = Vector2.zero;
         movement.performed -= OnMovementPerformed;
         movement.canceled -= OnMovementCanceled;
     }
 
-
     public void OnEnable()
     {
+        direction = Vector2.zero;
         movement.performed += OnMovementPerformed;
         movement.canceled += OnMovementCanceled;
     }
@@ -41,8 +41,6 @@ public class CharacterControler : AEntity
     {
         rb.velocity = direction.normalized * speed;
     }
-
-
 
     public void OnMovementPerformed(InputAction.CallbackContext context)
     {
@@ -55,7 +53,6 @@ public class CharacterControler : AEntity
     {
         direction = context.ReadValue<Vector2>();
         rb.velocity = direction.normalized * speed;
-        
         UpdateDirectionSprite();
     }
 

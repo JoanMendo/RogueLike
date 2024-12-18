@@ -637,7 +637,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7154bc22f0fc65142bd4d2208de98879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250
+  health: 250000
   speed: 9
   isDead: 0
   onTakeDamage:
@@ -761,7 +761,7 @@ MonoBehaviour:
   ParticleSystem: {fileID: 4478115564396635282}
   AttackSpeed: 0.8
   OnCooldown: 0
-  isParticleSystem: 0
+  isParticleSystem: 1
 --- !u!61 &2421754605827438287
 BoxCollider2D:
   m_ObjectHideFlags: 0

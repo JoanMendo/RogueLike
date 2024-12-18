@@ -25,8 +25,24 @@ public class CharacterAttack : MonoBehaviour
         attack.canceled += OnAttackCanceled;
     }
 
+    private void Update()
+    {
+        if (isParticleSystem)
+        {
+            float flamesDirection = Mathf.Atan2(detectCursorPosition().x, detectCursorPosition().y) * Mathf.Rad2Deg - 90;
+            ParticleSystem.transform.rotation = Quaternion.Euler(flamesDirection, 90, 90);
+            ParticleSystem.startRotation = flamesDirection * Mathf.Deg2Rad;
+        }
+    }
+
     private void OnDisable()
     {
+        if (isParticlePlaying)
+        {
+            isParticlePlaying = false;
+            ParticleSystem.Stop();
+            ParticleSystem.GetComponentInChildren<Collider2D>().enabled = false;
+        }
         attack.performed -= OnAttackPerformed;
         attack.canceled -= OnAttackCanceled;
     }
@@ -40,6 +56,7 @@ public class CharacterAttack : MonoBehaviour
 
     void OnAttackPerformed(InputAction.CallbackContext context)
     {
+        if (context.performed)
         if (!isParticleSystem)
         {
             if (!OnCooldown) //Si pulsa el click derecho y el cooldown no está activo
@@ -54,9 +71,6 @@ public class CharacterAttack : MonoBehaviour
             ParticleSystem.Play();
             ParticleSystem.GetComponentInChildren<Collider2D>().enabled = true;
         }
-        float flamesDirection = Mathf.Atan2(detectCursorPosition().x, detectCursorPosition().y) * Mathf.Rad2Deg - 90;
-        ParticleSystem.transform.rotation = Quaternion.Euler(flamesDirection, 90, 90);
-        ParticleSystem.startRotation = flamesDirection * Mathf.Deg2Rad;
     }
 
     private void OnAttackCanceled(InputAction.CallbackContext context)
@@ -75,8 +89,6 @@ public class CharacterAttack : MonoBehaviour
         proyectile.GetComponent<AWeapon>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
     }
 
-
-
     public Vector2 detectCursorPosition()
     {
         Vector3 mousePosition = Mouse.current.position.ReadValue(); // Posición del mouse en la pantalla
@@ -85,7 +97,6 @@ public class CharacterAttack : MonoBehaviour
         Vector2 vect = mousePosition - characterPosition;
         Vector2 normalized = vect / Mathf.Sqrt(vect.x * vect.x + vect.y * vect.y);
         return normalized;
-
     }
 
     public IEnumerator Cooldown() //Cooldown del arma
