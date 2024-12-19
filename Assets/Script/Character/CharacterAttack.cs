@@ -8,6 +8,7 @@ public class CharacterAttack : MonoBehaviour
     // Start is called before the first frame update
     public GameObject Proyectile;
     public ParticleSystem ParticleSystem;
+    public ScriptableObject weaponSO;
     public float AttackSpeed;
     public bool OnCooldown = false;
     public bool isParticleSystem = false;
@@ -86,8 +87,8 @@ public class CharacterAttack : MonoBehaviour
     public void CreateProyectile()
     {
         GameObject proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
-        proyectile.
         proyectile.GetComponent<AWeapon>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
+        proyectile.GetComponent<AWeapon>().weaponSO = weaponSO;
     }
 
     public Vector2 detectCursorPosition()

@@ -7,4 +7,5 @@ public abstract class AWeapon : MonoBehaviour
     public float Damage;
     public Vector2 Direction;
     public float Speed;
+    public ScriptableObject weaponSO;
 }
