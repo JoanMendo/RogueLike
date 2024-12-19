@@ -12,18 +12,25 @@ public class Cloud : MonoBehaviour
     private Coroutine coroutine;
     private bool isAtStart = true;
     private Animator animator;
+    private GameObject childArow;
 
 
 
     void Start()
     {
         animator = GetComponent<Animator>();
+        childArow = transform.GetChild(0).gameObject;
         player = GameManager.instance.player;
         initialPosition = GameManager.instance.previousLevel.GetComponent<ProceduralTilemap>().cloudStartPosition;
         finalPosition = GameManager.instance.currentLevel.GetComponent<ProceduralTilemap>().cloudEndPosition;
         Debug.Log("Initial: " + initialPosition);
         Debug.Log("Final: " + finalPosition);
         StartCoroutine(initialPlacement());
+    }
+
+    private void OnEnable()
+    {
+        
     }
 
     public IEnumerator initialPlacement()
@@ -33,6 +40,10 @@ public class Cloud : MonoBehaviour
             transform.position = Vector3.MoveTowards(transform.position, initialPosition, 0.15f);
             yield return new WaitForSeconds(0.01f);
         }
+
+        childArow.SetActive(true);
+        changeArrowDirection(finalPosition);
+
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
@@ -52,8 +63,10 @@ public class Cloud : MonoBehaviour
         player.GetComponent<SortingGroup>().sortingOrder = 4;
         GameManager.instance.disableAllClouds(gameObject);
         EventManager.OnStartLoading();
+        
         if (isAtStart)
         {
+
             while (Vector3.Distance(transform.position, finalPosition) > 0.5f)
             {
                 transform.position = Vector3.MoveTowards(transform.position, finalPosition, 0.15f);
@@ -61,6 +74,7 @@ public class Cloud : MonoBehaviour
                 yield return new WaitForSeconds(0.01f);
             }
             isAtStart = false;
+            changeArrowDirection(initialPosition);
         }
         else
         {
@@ -71,6 +85,7 @@ public class Cloud : MonoBehaviour
                 yield return new WaitForSeconds(0.01f);
             }
             isAtStart = true;
+            changeArrowDirection(finalPosition);
         }
         if ((Vector3)GameManager.instance.currentLevel.GetComponent<ProceduralTilemap>().cloudEndPosition != finalPosition)
         {
@@ -101,6 +116,14 @@ public class Cloud : MonoBehaviour
         animator.Play("cloudDisable");
         yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(false);
+
+    }
+
+    private void changeArrowDirection(Vector3 objective)
+    {
+        Vector3 direction = (objective - transform.position).normalized;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        childArow.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
 
     }
 }
