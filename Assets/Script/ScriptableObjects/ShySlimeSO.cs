@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "ShySlime", menuName = "ScriptableObjects/Enemies/Slime")]
-public class ShySlime : ScriptableObject
+public class ShySlimeSO : ScriptableObject
 {
     public float health = 100f;
     public float damage = 20f;

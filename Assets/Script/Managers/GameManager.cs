@@ -15,14 +15,23 @@ public class GameManager : MonoBehaviour
     public List<GameObject> enemyList = new List<GameObject>();
     public List<GameObject> cloudList = new List<GameObject>();
     public GameObject Cloud;
+    public GameObject[] weaponList;
     private Vector2 offset;
-
 
     void Awake()
     {
         instance = this;
     }
 
+    private void OnEnable()
+    {
+        CharacterControler.onPlayerLoad += addPlayer;
+    }
+
+    private void OnDisable()
+    {
+        CharacterControler.onPlayerLoad -= addPlayer;
+    }
     public void checkList()
     {
         if (enemyList.Count == 0)
@@ -90,5 +99,10 @@ public class GameManager : MonoBehaviour
                 cloud.GetComponent<Cloud>().disableCloud();
             }
         }
+    }
+
+    private void addPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 }

@@ -327,7 +327,12 @@ public class ProceduralTilemap : MonoBehaviour
             GameObject player = Instantiate(CharacterPrefab, playerPosition, Quaternion.identity);
             GameObject.Find("Main Camera").GetComponent<CameraFollow>().player = player.transform;
         }
-       
+        else
+        {
+            GameManager.instance.player.transform.position = playerPosition;
+        }
+    
+
         tilesNotUsed.Remove(playerPosition);
         for (int i = 0; i < Random.Range(3f, 5f); i++)
         {

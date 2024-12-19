@@ -9,6 +9,20 @@ public class CameraFollow : MonoBehaviour
     // Velocidad de seguimiento
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
+    private void OnEnable()
+    {
+        CharacterControler.onPlayerLoad += addPlayer;
+    }
+
+    private void OnDisable()
+    {
+        CharacterControler.onPlayerLoad -= addPlayer;
+    }
+
+    public void addPlayer()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+    }
 
     void LateUpdate()
     {
@@ -22,9 +36,7 @@ public class CameraFollow : MonoBehaviour
 
             transform.position = smoothedPosition;
         }
-        else
-        {
-            player = GameObject.FindGameObjectWithTag("Player").transform;
-        }
+
     }
+
 }

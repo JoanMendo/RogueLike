@@ -9,7 +9,7 @@ public class SlimeMovement : AEnemy
     private Vector2 direction;
     private float jumpForce;
     private float minDistanceFromPlayer;
-    public ShySlime[] shySlimes;
+    public ShySlimeSO[] shySlimes;
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -69,7 +69,7 @@ public class SlimeMovement : AEnemy
         }
     }
 
-    public void SetSlime(ShySlime slime)
+    public void SetSlime(ShySlimeSO slime)
     {
         health = slime.health;
         damage = slime.damage;

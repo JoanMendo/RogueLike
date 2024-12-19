@@ -1,11 +1,14 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class CharacterControler : AEntity
 {
+    public static event Action onPlayerLoad;
     private Rigidbody2D rb;
+    
     private Vector2 direction;
     public GameObject head;
     public GameObject body;
@@ -17,11 +20,13 @@ public class CharacterControler : AEntity
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        GameManager.instance.player = gameObject;
+        onPlayerLoad?.Invoke();
         movementControls = GetComponent<PlayerInput>();
         movement = movementControls.actions["CharacterMovement"];
         movement.performed += OnMovementPerformed;
         movement.canceled += OnMovementCanceled;
+
+        DontDestroyOnLoad(gameObject);
     }
 
     public void OnDisable()

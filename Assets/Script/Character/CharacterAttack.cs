@@ -62,7 +62,7 @@ public class CharacterAttack : MonoBehaviour
             if (!OnCooldown) //Si pulsa el click derecho y el cooldown no está activo
             {
                 CreateProyectile();
-                StartCoroutine(Cooldown());
+                StartCoroutine(Cooldown(AttackSpeed));
             }
         }
         else if (!isParticlePlaying)
@@ -86,6 +86,7 @@ public class CharacterAttack : MonoBehaviour
     public void CreateProyectile()
     {
         GameObject proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
+        proyectile.
         proyectile.GetComponent<AWeapon>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
     }
 
@@ -99,10 +100,10 @@ public class CharacterAttack : MonoBehaviour
         return normalized;
     }
 
-    public IEnumerator Cooldown() //Cooldown del arma
+    public IEnumerator Cooldown(float attackSpeed) //Cooldown del arma
     {
         OnCooldown = true;
-        yield return new WaitForSeconds(AttackSpeed);
+        yield return new WaitForSeconds(attackSpeed);
         OnCooldown = false;
     }
 
