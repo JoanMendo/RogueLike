@@ -1,32 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.EventSystems;
 using UnityEngine;
 
-public class augmentSizeOnMouseOverObject : MonoBehaviour
+public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
-    public float scaleMultiplier = 1.5f;
-    public float scaleTime = 0.5f;
+    public float scaleMultiplier = 1.1f;
+    public float scaleTime = 0.2f;
     private Vector3 originalScale;
     private Vector3 targetScale;
-    private bool isMouseOver = false;
     private Coroutine coroutine;
+    private bool isUIElement = false;
 
     void Start()
     {
-
-        originalScale = transform.localScale;
+        if (GetComponent<RectTransform>() != null)
+        {
+            isUIElement = true;
+        }
+        if (!isUIElement)
+        {
+            originalScale = transform.localScale;
+            targetScale = originalScale * scaleMultiplier;
+        }
+        else
+        {
+            originalScale = GetComponent<RectTransform>().localScale;
+        }
         targetScale = originalScale * scaleMultiplier;
-
-
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
 
-    }
+
 
     private void OnMouseEnter()
     {
@@ -46,11 +52,33 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour
         coroutine = StartCoroutine(reduceSize());
     }
 
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutine = StartCoroutine(augmentSize());
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
+        coroutine = StartCoroutine(reduceSize());
+    }
     public IEnumerator augmentSize()
     {
         while (Vector3.Distance(transform.localScale, targetScale) > 0.01f)
         {
+            if (!isUIElement)
             transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, (scaleMultiplier - 1) / scaleTime * Time.deltaTime);
+            else 
+            {
+                GetComponent<RectTransform>().localScale = Vector3.MoveTowards(GetComponent<RectTransform>().localScale, targetScale, (scaleMultiplier - 1) / scaleTime * Time.deltaTime);
+            }
             yield return new WaitForSeconds(0.01f);
         }
     }
@@ -59,7 +87,15 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour
     {
         while (Vector3.Distance(transform.localScale, originalScale) > 0.01f)
         {
-            transform.localScale = Vector3.MoveTowards(transform.localScale, originalScale, (scaleMultiplier - 1) / scaleTime * Time.deltaTime);
+            if (!isUIElement)
+            {
+                transform.localScale = Vector3.MoveTowards(transform.localScale, originalScale, (scaleMultiplier - 1) / scaleTime * Time.deltaTime);
+            }
+
+            else 
+            {
+                GetComponent<RectTransform>().localScale = Vector3.MoveTowards(GetComponent<RectTransform>().localScale, originalScale, (scaleMultiplier - 1) / scaleTime * Time.deltaTime);
+            }
             yield return new WaitForSeconds(0.01f);
         }
     }
