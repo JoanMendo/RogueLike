@@ -173,11 +173,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa3d4d30cf7235b43b90fc1b7831e552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 25
+  Damage: 0
   Direction: {x: 0, y: 0}
-  Speed: 30
+  Speed: 0
+  weaponSO: {fileID: 11400000, guid: 93c0dea6d8042a64f952761c983d784e, type: 2}
   TargetTag: Enemy
-  deathParticle: {fileID: 5052562978784651109, guid: 084504dc509162f41868c834490f906a, type: 3}
   Shadow: {fileID: 6772470970792517178, guid: ce26b19fb96ed8b4ba35a5c3dd0377db, type: 3}
 --- !u!95 &8953186945050893457
 Animator:
@@ -189,7 +189,7 @@ Animator:
   m_GameObject: {fileID: 3917519921938480130}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 7165576b01c4b784cb62b2f5539b8797, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

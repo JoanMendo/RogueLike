@@ -17,7 +17,6 @@ public class enableScriptOnProximity : MonoBehaviour
     {
         CharacterControler.onPlayerLoad -= addPlayer;
     }
-
     public void addPlayer()
     {
         target = GameObject.FindGameObjectWithTag("Player");
@@ -30,12 +29,12 @@ public class enableScriptOnProximity : MonoBehaviour
         }
         foreach (MonoBehaviour script in scripts)
         {
-            if (Vector3.Distance(transform.position, script.transform.position) < distance)
+            if (Vector3.Distance(transform.position, target.transform.position) < distance)
             {
                 script.enabled = true;
             }
             else
-            {
+            { 
                 script.enabled = false;
             }
         }

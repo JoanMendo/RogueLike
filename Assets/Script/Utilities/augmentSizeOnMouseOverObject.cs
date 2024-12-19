@@ -31,7 +31,14 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
         targetScale = originalScale * scaleMultiplier;
     }
 
-
+    void OnDisable()
+    {
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+            coroutine = null;
+        }
+    }
 
 
     private void OnMouseEnter()
@@ -40,7 +47,8 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
         {
             StopCoroutine(coroutine);
         }
-        coroutine = StartCoroutine(augmentSize());
+        if (enabled)
+            coroutine = StartCoroutine(augmentSize());
     }
 
     private void OnMouseExit()
@@ -49,11 +57,16 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
         {
             StopCoroutine(coroutine);
         }
-        coroutine = StartCoroutine(reduceSize());
+        if (enabled)
+            coroutine = StartCoroutine(reduceSize());
     }
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if  (!enabled)
+        {
+            return;
+        }
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
@@ -63,6 +76,10 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (!enabled)
+        {
+            return;
+        }
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
@@ -73,6 +90,7 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
     {
         while (Vector3.Distance(transform.localScale, targetScale) > 0.01f)
         {
+
             if (!isUIElement)
             transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, (scaleMultiplier - 1) / scaleTime * Time.deltaTime);
             else 
