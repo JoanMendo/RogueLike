@@ -8,6 +8,7 @@ using UnityEngine;
 public class ProyectileSO : ScriptableObject
 {
     public float Damage;
+    public float attackSpeed;
     public Vector3 Scale;
     public float proyectileSpeed;
     public GameObject deathParticle;

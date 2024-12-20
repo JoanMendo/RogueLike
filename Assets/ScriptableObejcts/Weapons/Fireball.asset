@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Fireball
   m_EditorClassIdentifier: 
   Damage: 30
+  attackSpeed: 2
   Scale: {x: 1.4, y: 1.4, z: 1}
   proyectileSpeed: 30
   deathParticle: {fileID: 5052562978784651109, guid: 084504dc509162f41868c834490f906a, type: 3}

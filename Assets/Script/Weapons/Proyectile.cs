@@ -22,7 +22,7 @@ public class Proyectile : AWeapon
         transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg);
         GameObject shadow = Instantiate(Shadow, new Vector3(transform.position.x, transform.position.y - 1, transform.position.x), transform.rotation, transform);
         shadow.transform.localScale = new Vector3(2f, 1f + Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.z * Mathf.Deg2Rad)), 1);
-        SetWeapon((ProyectileSO)weaponSO);
+
     }
 
     // Update is called once per frame
@@ -46,12 +46,14 @@ public class Proyectile : AWeapon
         }
     }
 
-    private void SetWeapon(ProyectileSO proyectile)
+    public override void SetWeapon(ScriptableObject proyectileSO)
     {
+        ProyectileSO proyectile = (ProyectileSO)proyectileSO;
         gameObject.GetComponent<SpriteRenderer>().sprite = proyectile.proyectileSprite;
         gameObject.transform.localScale = proyectile.Scale;
         animator.runtimeAnimatorController = proyectile.animatorController;
         Damage = proyectile.Damage;
+        AttackSpeed = proyectile.attackSpeed;
         Speed = proyectile.proyectileSpeed;
         deathParticle = proyectile.deathParticle;
     }

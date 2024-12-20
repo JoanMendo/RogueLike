@@ -431,9 +431,6 @@ MonoBehaviour:
   enemyList: []
   cloudList: []
   Cloud: {fileID: 5120792602394802410, guid: 0509393c171f8f343ab453e82f5a7790, type: 3}
-  weaponList:
-  - {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
-  - {fileID: 3917519921938480130, guid: 5e0c6fbf3d356ed4c8016820c79bd3df, type: 3}
 --- !u!4 &132605402
 Transform:
   m_ObjectHideFlags: 0
@@ -41396,7 +41393,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 9
+  orthographic size: 11
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -41748,7 +41745,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 587025731}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 933612594}
+        m_TargetAssemblyTypeName: weaponSelectorCanvas, Assembly-CSharp
+        m_MethodName: selectSword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1001 &597874376
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -42643,6 +42652,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590c8455b7191974b99d22a97852c4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fireball: {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
+  fireballSO: {fileID: 11400000, guid: 93c0dea6d8042a64f952761c983d784e, type: 2}
+  sword: {fileID: 3917519921938480130, guid: 5e0c6fbf3d356ed4c8016820c79bd3df, type: 3}
+  swordSO: {fileID: 11400000, guid: 6b0132324bad22b479d897042fae2cf4, type: 2}
 --- !u!1 &945338904
 GameObject:
   m_ObjectHideFlags: 0
@@ -42915,13 +42928,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 933612589}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 933612594}
+        m_TargetAssemblyTypeName: weaponSelectorCanvas, Assembly-CSharp
+        m_MethodName: selectFireball
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

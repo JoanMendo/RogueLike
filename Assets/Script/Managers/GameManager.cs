@@ -15,7 +15,6 @@ public class GameManager : MonoBehaviour
     public List<GameObject> enemyList = new List<GameObject>();
     public List<GameObject> cloudList = new List<GameObject>();
     public GameObject Cloud;
-    public GameObject[] weaponList;
     private Vector2 offset;
 
     void Awake()

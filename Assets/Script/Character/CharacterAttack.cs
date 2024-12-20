@@ -9,9 +9,8 @@ public class CharacterAttack : MonoBehaviour
     public GameObject Proyectile;
     public ParticleSystem ParticleSystem;
     public ScriptableObject weaponSO;
-    public float AttackSpeed;
     public bool OnCooldown = false;
-    public bool isParticleSystem = false;
+    public bool isFlameThrower = false;
     private bool isParticlePlaying = false;
     private PlayerInput attackControls;
     private InputAction attack;
@@ -28,7 +27,7 @@ public class CharacterAttack : MonoBehaviour
 
     private void Update()
     {
-        if (isParticleSystem)
+        if (isFlameThrower)
         {
             float flamesDirection = Mathf.Atan2(detectCursorPosition().x, detectCursorPosition().y) * Mathf.Rad2Deg - 90;
             ParticleSystem.transform.rotation = Quaternion.Euler(flamesDirection, 90, 90);
@@ -58,12 +57,12 @@ public class CharacterAttack : MonoBehaviour
     void OnAttackPerformed(InputAction.CallbackContext context)
     {
         if (context.performed)
-        if (!isParticleSystem)
+        if (!isFlameThrower)
         {
             if (!OnCooldown) //Si pulsa el click derecho y el cooldown no está activo
             {
                 CreateProyectile();
-                StartCoroutine(Cooldown(AttackSpeed));
+                
             }
         }
         else if (!isParticlePlaying)
@@ -76,7 +75,7 @@ public class CharacterAttack : MonoBehaviour
 
     private void OnAttackCanceled(InputAction.CallbackContext context)
     {
-        if (isParticleSystem)
+        if (isFlameThrower)
         {
             isParticlePlaying = false;
             ParticleSystem.Stop();
@@ -86,9 +85,13 @@ public class CharacterAttack : MonoBehaviour
 
     public void CreateProyectile()
     {
+        Proyectile.GetComponent<AWeapon>().weaponSO = weaponSO;
         GameObject proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
         proyectile.GetComponent<AWeapon>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
-        proyectile.GetComponent<AWeapon>().weaponSO = weaponSO;
+        proyectile.GetComponent<AWeapon>().SetWeapon(weaponSO); //Setea el arma
+        StartCoroutine(Cooldown(Proyectile.GetComponent<AWeapon>().AttackSpeed));
+
+
     }
 
     public Vector2 detectCursorPosition()

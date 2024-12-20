@@ -5,8 +5,8 @@ using UnityEngine;
 public class FireballCatMovement : AEnemy
 {
     public float attackDistance;
-    public GameObject fireball;
-    public float catAttackSpeed;
+    public GameObject Projectile;
+    public ProyectileSO proyectileSO;
     private bool onCooldown = false;
     private GameObject player;
     private Vector2 direction;
@@ -31,7 +31,6 @@ public class FireballCatMovement : AEnemy
             if (!onCooldown)
             {
                 Attack();
-                StartCoroutine(Cooldown(catAttackSpeed));
             }
         }
         else 
@@ -43,8 +42,11 @@ public class FireballCatMovement : AEnemy
     }
     public void Attack()
     {
-        GameObject projectile = Instantiate(fireball, transform.position + (Vector3)direction, Quaternion.identity);
+        Projectile.GetComponent<AWeapon>().weaponSO = proyectileSO;
+        GameObject projectile = Instantiate(Projectile, transform.position + (Vector3)direction, Quaternion.identity);
         projectile.GetComponent<Proyectile>().Direction = direction;
+        Projectile.GetComponent<AWeapon>().SetWeapon(proyectileSO); //Setea el arma
+        StartCoroutine(Cooldown(Projectile.GetComponent<AWeapon>().AttackSpeed));
 
     }
 
