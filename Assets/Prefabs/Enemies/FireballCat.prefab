@@ -557,6 +557,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 40
+  maxHealth: 0
   speed: 0
   isDead: 0
   onTakeDamage:
@@ -576,8 +577,8 @@ MonoBehaviour:
         m_CallState: 2
   damage: 20
   attackDistance: 12
-  fireball: {fileID: 3917519921938480130, guid: b2b2290efcaf0374c80d2d10e37f37f2, type: 3}
-  catAttackSpeed: 1
+  Projectile: {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
+  proyectileSO: {fileID: 11400000, guid: 83392408a3ee5a14d8c48e53db023048, type: 2}
 --- !u!114 &5778649075590502169
 MonoBehaviour:
   m_ObjectHideFlags: 0

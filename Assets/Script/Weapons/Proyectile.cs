@@ -6,7 +6,7 @@ using UnityEngine;
 public class Proyectile : AWeapon
 {
     
-    public string TargetTag;
+    private string TargetTag;
     private GameObject deathParticle;
     private Rigidbody2D rb;
     private Animator animator;
@@ -53,6 +53,7 @@ public class Proyectile : AWeapon
         gameObject.transform.localScale = proyectile.Scale;
         animator.runtimeAnimatorController = proyectile.animatorController;
         Damage = proyectile.Damage;
+        TargetTag = proyectile.targetTag;
         AttackSpeed = proyectile.attackSpeed;
         Speed = proyectile.proyectileSpeed;
         deathParticle = proyectile.deathParticle;

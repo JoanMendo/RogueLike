@@ -7,7 +7,7 @@ public class FireballCatMovement : AEnemy
     public float attackDistance;
     public GameObject Projectile;
     public ProyectileSO proyectileSO;
-    private bool onCooldown = false;
+    public bool onCooldown = false;
     private GameObject player;
     private Vector2 direction;
     private Animator anim;
@@ -30,6 +30,7 @@ public class FireballCatMovement : AEnemy
 
             if (!onCooldown)
             {
+                onCooldown = true;
                 Attack();
             }
         }
@@ -45,14 +46,13 @@ public class FireballCatMovement : AEnemy
         Projectile.GetComponent<AWeapon>().weaponSO = proyectileSO;
         GameObject projectile = Instantiate(Projectile, transform.position + (Vector3)direction, Quaternion.identity);
         projectile.GetComponent<Proyectile>().Direction = direction;
-        Projectile.GetComponent<AWeapon>().SetWeapon(proyectileSO); //Setea el arma
-        StartCoroutine(Cooldown(Projectile.GetComponent<AWeapon>().AttackSpeed));
+        projectile.GetComponent<AWeapon>().SetWeapon(proyectileSO); //Setea el arma
+        StartCoroutine(Cooldown(projectile.GetComponent<AWeapon>().AttackSpeed));
 
     }
 
     public IEnumerator Cooldown(float attackSpeed)
     {
-        onCooldown = true;
         yield return new WaitForSeconds(attackSpeed);
         onCooldown = false;
     }

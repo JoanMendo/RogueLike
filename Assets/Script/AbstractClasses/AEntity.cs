@@ -7,12 +7,11 @@ using UnityEngine.Events;
 public abstract class AEntity : MonoBehaviour
 {
     public float health;
+    public float maxHealth;
     public float speed;
     public bool isDead = false;
     private bool canTakeDamage = true;
     public UnityEvent onTakeDamage;
-
-
     public virtual void TakeDamage(float damage)
     {
         if (isDead || !canTakeDamage) return;

@@ -56,7 +56,6 @@ public class CharacterAttack : MonoBehaviour
 
     void OnAttackPerformed(InputAction.CallbackContext context)
     {
-        if (context.performed)
         if (!isFlameThrower)
         {
             if (!OnCooldown) //Si pulsa el click derecho y el cooldown no está activo
@@ -89,7 +88,7 @@ public class CharacterAttack : MonoBehaviour
         GameObject proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
         proyectile.GetComponent<AWeapon>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
         proyectile.GetComponent<AWeapon>().SetWeapon(weaponSO); //Setea el arma
-        StartCoroutine(Cooldown(Proyectile.GetComponent<AWeapon>().AttackSpeed));
+        StartCoroutine(Cooldown(proyectile.GetComponent<AWeapon>().AttackSpeed));
 
 
     }

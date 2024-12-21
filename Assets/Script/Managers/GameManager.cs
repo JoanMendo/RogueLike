@@ -19,7 +19,16 @@ public class GameManager : MonoBehaviour
 
     void Awake()
     {
-        instance = this;
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 
     private void OnEnable()
@@ -104,4 +113,12 @@ public class GameManager : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player");
     }
+
+    public void resetGameManager()
+    {
+        levelPositions = new List<Vector2>();
+        enemyList = new List<GameObject>();
+        cloudList = new List<GameObject>();
+    }
 }
+

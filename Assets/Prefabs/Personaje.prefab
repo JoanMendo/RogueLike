@@ -637,7 +637,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7154bc22f0fc65142bd4d2208de98879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 250000
+  health: 250
+  maxHealth: 0
   speed: 9
   isDead: 0
   onTakeDamage:
@@ -760,9 +761,8 @@ MonoBehaviour:
   Proyectile: {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
   ParticleSystem: {fileID: 4478115564396635282}
   weaponSO: {fileID: 11400000, guid: 93c0dea6d8042a64f952761c983d784e, type: 2}
-  AttackSpeed: 0.8
   OnCooldown: 0
-  isParticleSystem: 0
+  isFlameThrower: 0
 --- !u!61 &2421754605827438287
 BoxCollider2D:
   m_ObjectHideFlags: 0

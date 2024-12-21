@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
@@ -12,6 +13,7 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
     private Vector3 targetScale;
     private Coroutine coroutine;
     private bool isUIElement = false;
+    private bool isGrowing = false;
 
     void Start()
     {
@@ -36,29 +38,49 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
         if (coroutine != null)
         {
             StopCoroutine(coroutine);
-            coroutine = null;
+            if (isGrowing && gameObject.activeInHierarchy)
+            {
+                isGrowing = false;
+                StartCoroutine(reduceSize());
+            }
         }
     }
 
 
-    private void OnMouseEnter()
+    private void OnMouseOver()
     {
-        if (coroutine != null)
+        if (!isGrowing)
         {
-            StopCoroutine(coroutine);
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+            }
+            if (enabled)
+            {
+                isGrowing = true;
+                coroutine = StartCoroutine(augmentSize());
+            }
         }
-        if (enabled)
-            coroutine = StartCoroutine(augmentSize());
+       
+           
     }
+
 
     private void OnMouseExit()
     {
-        if (coroutine != null)
+        if (isGrowing)
         {
-            StopCoroutine(coroutine);
+            if (coroutine != null)
+            {
+                StopCoroutine(coroutine);
+            }
+            if (enabled && isGrowing)
+            {
+                isGrowing = false;
+                coroutine = StartCoroutine(reduceSize());
+            }
         }
-        if (enabled)
-            coroutine = StartCoroutine(reduceSize());
+            
     }
 
     public void OnPointerEnter(PointerEventData eventData)
@@ -90,7 +112,6 @@ public class augmentSizeOnMouseOverObject : MonoBehaviour, IPointerEnterHandler,
     {
         while (Vector3.Distance(transform.localScale, targetScale) > 0.01f)
         {
-
             if (!isUIElement)
             transform.localScale = Vector3.MoveTowards(transform.localScale, targetScale, (scaleMultiplier - 1) / scaleTime * Time.deltaTime);
             else 
