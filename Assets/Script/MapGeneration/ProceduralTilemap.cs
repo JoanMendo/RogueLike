@@ -87,12 +87,13 @@ public class ProceduralTilemap : MonoBehaviour
     public Vector2 cloudEndPosition;
 
     private void Start()
-    { 
+    {
+        GameManager.instance.previousLevel = GameManager.instance.currentLevel;
         GenerateTilemap();
         PlaceTiles();
         generateDecorations();
         generateEntities();
-        GameManager.instance.previousLevel = GameManager.instance.currentLevel;
+        
         GameManager.instance.currentLevel = gameObject;
         levelPrefab  = GameManager.instance.levelPrefab;
     }
@@ -327,7 +328,7 @@ public class ProceduralTilemap : MonoBehaviour
             GameObject player = Instantiate(CharacterPrefab, playerPosition, Quaternion.identity);
             GameObject.Find("Main Camera").GetComponent<CameraFollow>().player = player.transform;
         }
-        else
+        else if (GameManager.instance.previousLevel == null)
         {
             GameManager.instance.player.transform.position = playerPosition;
         }

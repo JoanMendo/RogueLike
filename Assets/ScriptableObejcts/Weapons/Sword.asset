@@ -15,7 +15,7 @@ MonoBehaviour:
   Damage: 10
   attackSpeed: 0.4
   Scale: {x: 0.75, y: 0.75, z: 1}
-  Speed: 10
-  knockbackForce: 10
+  Speed: 350
+  knockbackForce: 25
   animatorController: {fileID: 9100000, guid: fbb8ca55ce3a03f4b8efba629c17dc56, type: 2}
   swordSprite: {fileID: -1310794874, guid: b59b658e7918f6b478ce15361b798d52, type: 3}

@@ -8,8 +8,10 @@ public class movementDirection : MonoBehaviour
     public float speed = 5.0f;
     public float time = 1.2f;
 
+
+
     void Start()
-    { 
+    {
         StartCoroutine(ChangeDirection());
     }
 
@@ -24,6 +26,7 @@ public class movementDirection : MonoBehaviour
     {
         yield return new WaitForSeconds(time);
         speed = -speed;
+        if (enabled)
         yield return ChangeDirection();
     }
 }

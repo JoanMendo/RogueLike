@@ -14,8 +14,6 @@ public class Cloud : MonoBehaviour
     private Animator animator;
     private GameObject childArow;
 
-
-
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -23,16 +21,16 @@ public class Cloud : MonoBehaviour
         player = GameManager.instance.player;
         initialPosition = GameManager.instance.previousLevel.GetComponent<ProceduralTilemap>().cloudStartPosition;
         finalPosition = GameManager.instance.currentLevel.GetComponent<ProceduralTilemap>().cloudEndPosition;
-        Debug.Log("Initial: " + initialPosition);
-        Debug.Log("Final: " + finalPosition);
         StartCoroutine(initialPlacement());
     }
 
-    private void OnEnable()
+    private void OnDisable()
     {
-        
+        if (coroutine != null)
+        {
+            StopCoroutine(coroutine);
+        }
     }
-
     public IEnumerator initialPlacement()
     {
         while (Vector3.Distance(transform.position, initialPosition) > 0.5f)
@@ -47,7 +45,7 @@ public class Cloud : MonoBehaviour
     }
 
     public void OnTriggerEnter2D(Collider2D collision)
-    {
+    {        
         if (collision.gameObject.tag == "Player")
         {
             if (coroutine != null)
@@ -63,7 +61,8 @@ public class Cloud : MonoBehaviour
         player.GetComponent<SortingGroup>().sortingOrder = 4;
         GameManager.instance.disableAllClouds(gameObject);
         EventManager.OnStartLoading();
-        
+
+
         if (isAtStart)
         {
 
@@ -107,7 +106,7 @@ public class Cloud : MonoBehaviour
     public void enableCloud()
     {
         GetComponent<Collider2D>().enabled = true;
-        animator.Play("cloudEnable");
+        animator.Play("cloudEnable"); 
     }
 
     public IEnumerator disableAnimation()

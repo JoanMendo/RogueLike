@@ -35,7 +35,6 @@ public class CharacterControler : AEntity
     }
     public void OnEnable()
     {
-        Debug.Log("Enable");
         direction = Vector2.zero;
         movement.performed += OnMovementPerformed;
         movement.canceled += OnMovementCanceled;
@@ -45,23 +44,18 @@ public class CharacterControler : AEntity
     }
     public void OnDisable()
     {
-        Debug.Log("Disable");
         direction = Vector2.zero;
         movement.performed -= OnMovementPerformed;
         movement.canceled -= OnMovementCanceled;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-
-
     void Start()
     {
         maxHealth = health;
         rb = GetComponent<Rigidbody2D>();
         onPlayerLoad?.Invoke();
-    }
-
-    
+    } 
 
     private void Update()
     {
@@ -111,6 +105,7 @@ public class CharacterControler : AEntity
     {
         health = maxHealth;
         onTakeDamage.Invoke();
+        //EventManager.OnStartLoading();
         GameManager.instance.resetGameManager();
         transform.position = new Vector3(0, 0, 0);
         SceneManager.LoadScene("Lobby");

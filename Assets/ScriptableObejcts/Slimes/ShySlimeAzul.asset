@@ -15,5 +15,5 @@ MonoBehaviour:
   health: 100
   damage: 20
   jumpForce: 1500
-  minDistanceFromPlayer: 9
+  minDistanceFromPlayer: 14
   color: {r: 0.42745098, g: 0.99607843, b: 1, a: 1}

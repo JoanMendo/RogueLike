@@ -19,6 +19,7 @@ public class weaponSelectorCanvas : MonoBehaviour
     {
         if (GameManager.instance.player != null)
         {
+            GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = false;
             GameManager.instance.player.GetComponent<CharacterAttack>().Proyectile = fireball;
             GameManager.instance.player.GetComponent<CharacterAttack>().weaponSO = fireballSO;
             gameObject.SetActive(false);
@@ -29,8 +30,17 @@ public class weaponSelectorCanvas : MonoBehaviour
     {
         if (GameManager.instance.player != null)
         {
+            GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = false;
             GameManager.instance.player.GetComponent<CharacterAttack>().Proyectile = sword;
             GameManager.instance.player.GetComponent<CharacterAttack>().weaponSO = swordSO;
+            gameObject.SetActive(false);
+        }
+    }
+    public void selectFlameThrower()
+    {
+        if (GameManager.instance.player != null)
+        {
+            GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = true;
             gameObject.SetActive(false);
         }
     }

@@ -11,7 +11,7 @@ public class Sword : AWeapon
     {      
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        rb.AddForce(Direction * Speed, ForceMode2D.Impulse); 
+        
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
@@ -37,6 +37,7 @@ public class Sword : AWeapon
         AttackSpeed = sword.attackSpeed;
         knockbackForce = sword.knockbackForce;
         animator.runtimeAnimatorController = sword.animatorController;
-        
+        rb.AddForce(Direction * Speed, ForceMode2D.Force);
+
     }
 }

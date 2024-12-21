@@ -8,10 +8,6 @@ public class EventManager : MonoBehaviour
     public static event System.Action onStartLoading;
     public static event System.Action onEndLoading;
 
-    public void OnEnable()
-    {
-        StartCoroutine(StartLoading());
-    }
     public static void OnStartLoading()
     {
         onStartLoading?.Invoke();
@@ -22,10 +18,4 @@ public class EventManager : MonoBehaviour
         onEndLoading?.Invoke();
     }
 
-    public IEnumerator StartLoading()
-    {
-        OnStartLoading();
-        yield return new WaitForSeconds(4f);
-        OnEndLoading();
-    }
 }

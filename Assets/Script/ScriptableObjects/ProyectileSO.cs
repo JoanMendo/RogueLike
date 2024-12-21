@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-
-using UnityEditor.Animations;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "Projectile", menuName = "ScriptableObjects/Weapons/Proyectile")]
@@ -13,6 +11,6 @@ public class ProyectileSO : ScriptableObject
     public Vector3 Scale;
     public float proyectileSpeed;
     public GameObject deathParticle;
-    public AnimatorController animatorController;
+    public RuntimeAnimatorController animatorController;
     public Sprite proyectileSprite;
 }
