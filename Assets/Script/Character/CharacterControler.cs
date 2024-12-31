@@ -8,6 +8,7 @@ using UnityEngine.InputSystem;
 public class CharacterControler : AEntity
 {
     public static event Action onPlayerLoad;
+    public AudioClip characterDamaged;
     private Rigidbody2D rb;
     private Vector2 direction;
     public GameObject head;
@@ -99,6 +100,13 @@ public class CharacterControler : AEntity
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         onPlayerLoad?.Invoke();
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        SoundManager.instance.PlayGlobalSound(characterDamaged);
+
     }
 
     public override void Die()

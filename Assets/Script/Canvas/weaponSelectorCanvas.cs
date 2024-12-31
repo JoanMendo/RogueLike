@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class weaponSelectorCanvas : MonoBehaviour 
 {
+    public AudioClip buttonClickSound;
     public GameObject fireball;
     public ScriptableObject fireballSO;
     public GameObject sword;
@@ -13,12 +14,14 @@ public class weaponSelectorCanvas : MonoBehaviour
     public void closeCanva()
     {
         gameObject.SetActive(false);
+        SoundManager.instance.PlayGlobalSound(buttonClickSound);
     }
 
     public void selectFireball()
     {
         if (GameManager.instance.player != null)
         {
+            SoundManager.instance.PlayGlobalSound(buttonClickSound);
             GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = false;
             GameManager.instance.player.GetComponent<CharacterAttack>().Proyectile = fireball;
             GameManager.instance.player.GetComponent<CharacterAttack>().weaponSO = fireballSO;
@@ -30,6 +33,7 @@ public class weaponSelectorCanvas : MonoBehaviour
     {
         if (GameManager.instance.player != null)
         {
+            SoundManager.instance.PlayGlobalSound(buttonClickSound);
             GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = false;
             GameManager.instance.player.GetComponent<CharacterAttack>().Proyectile = sword;
             GameManager.instance.player.GetComponent<CharacterAttack>().weaponSO = swordSO;
@@ -40,6 +44,7 @@ public class weaponSelectorCanvas : MonoBehaviour
     {
         if (GameManager.instance.player != null)
         {
+            SoundManager.instance.PlayGlobalSound(buttonClickSound);
             GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = true;
             gameObject.SetActive(false);
         }

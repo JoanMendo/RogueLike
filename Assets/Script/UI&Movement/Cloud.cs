@@ -6,6 +6,7 @@ using UnityEngine.Rendering;
 
 public class Cloud : MonoBehaviour
 {
+    private AudioSource audioSource;
     public Vector3 initialPosition;
     public Vector3 finalPosition;
     private GameObject player;
@@ -17,6 +18,7 @@ public class Cloud : MonoBehaviour
     void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
         childArow = transform.GetChild(0).gameObject;
         player = GameManager.instance.player;
         initialPosition = GameManager.instance.previousLevel.GetComponent<ProceduralTilemap>().cloudStartPosition;
@@ -33,6 +35,7 @@ public class Cloud : MonoBehaviour
     }
     public IEnumerator initialPlacement()
     {
+        audioSource.Play();
         while (Vector3.Distance(transform.position, initialPosition) > 0.5f)
         {
             transform.position = Vector3.MoveTowards(transform.position, initialPosition, 0.15f);
@@ -41,6 +44,7 @@ public class Cloud : MonoBehaviour
 
         childArow.SetActive(true);
         changeArrowDirection(finalPosition);
+        audioSource.Stop();
 
     }
 
@@ -62,7 +66,7 @@ public class Cloud : MonoBehaviour
         GameManager.instance.disableAllClouds(gameObject);
         EventManager.OnStartLoading();
 
-
+        audioSource.Play();
         if (isAtStart)
         {
 
@@ -94,6 +98,7 @@ public class Cloud : MonoBehaviour
         {
             disableCloud();
         }
+        audioSource.Stop();
         player.GetComponent<SortingGroup>().sortingOrder = 3;
         EventManager.OnEndLoading();
     }
