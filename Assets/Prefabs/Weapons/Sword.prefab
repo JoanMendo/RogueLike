@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6886878405407798577}
   - component: {fileID: 8093057516783746536}
   - component: {fileID: 1590573432018691326}
-  - component: {fileID: -8361974168377874278}
   - component: {fileID: 902475512076019605}
   - component: {fileID: 3200179057450206613}
   m_Layer: 0
@@ -180,7 +179,6 @@ MonoBehaviour:
   Speed: 0
   AttackSpeed: 0
   weaponSO: {fileID: 0}
-  knockbackForce: 10
 --- !u!95 &1590573432018691326
 Animator:
   serializedVersion: 5
@@ -202,18 +200,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &-8361974168377874278
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3917519921938480130}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c28678c348a3e324bbf37093481151b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &902475512076019605
 MonoBehaviour:
   m_ObjectHideFlags: 0

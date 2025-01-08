@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/EscenaInicial.unity
     guid: e90fd9e2608a87e4c8ed0f365de04b57
   - enabled: 1
-    path: Assets/Scenes/Lobby.unity
+    path: Assets/Scenes/lobby.unity
     guid: 6db3b7bf61550874babf0fbe561c2a9e
   - enabled: 1
     path: Assets/Scenes/ProceduralRun.unity

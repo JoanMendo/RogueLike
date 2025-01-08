@@ -10,19 +10,23 @@ public class Proyectile : AWeapon
     private GameObject deathParticle;
     private Rigidbody2D rb;
     private Animator animator;
-    public GameObject Shadow;
+    public GameObject ShadowPrefab;
+    private GameObject shadow;
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
-    private void Start()
-    {
-        //Se hace esto para que la sombra quede bien posicionada, independientemente de la rotación del proyectil
-        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg);
-        GameObject shadow = Instantiate(Shadow, new Vector3(transform.position.x, transform.position.y - 1, transform.position.x), transform.rotation, transform);
-        shadow.transform.localScale = new Vector3(2f, 1f + Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.z * Mathf.Deg2Rad)), 1);
 
+    public void OnEnable()
+    {
+        StartCoroutine(disableAfterTime(5));
+        
+    }
+
+    public void OnDisable()
+    {
+        Destroy(shadow);
     }
 
     // Update is called once per frame
@@ -37,12 +41,14 @@ public class Proyectile : AWeapon
         {
             collision.gameObject.GetComponent<AEntity>().TakeDamage(Damage);
             Instantiate(deathParticle, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            StopAllCoroutines();
+            gameObject.SetActive(false);
         }
         if (collision.gameObject.tag == "Collider" )
         {
             Instantiate(deathParticle, transform.position, Quaternion.identity);
-            Destroy(gameObject);
+            StopAllCoroutines();
+            gameObject.SetActive(false);
         }
     }
 
@@ -57,5 +63,14 @@ public class Proyectile : AWeapon
         AttackSpeed = proyectile.attackSpeed;
         Speed = proyectile.proyectileSpeed;
         deathParticle = proyectile.deathParticle;
+        transform.rotation = Quaternion.Euler(0, 0, Mathf.Atan2(Direction.y, Direction.x) * Mathf.Rad2Deg);
+        shadow = Instantiate(ShadowPrefab, new Vector3(transform.position.x, transform.position.y - 1, transform.position.x), transform.rotation, transform);
+        shadow.transform.localScale = new Vector3(2f, 1f + Mathf.Abs(Mathf.Sin(transform.rotation.eulerAngles.z * Mathf.Deg2Rad)), 1);
+    }
+
+    public IEnumerator disableAfterTime(float time)
+    {
+        yield return new WaitForSeconds(time);
+        gameObject.SetActive(false);
     }
 }

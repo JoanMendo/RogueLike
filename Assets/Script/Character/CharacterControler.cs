@@ -99,6 +99,7 @@ public class CharacterControler : AEntity
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        Debug.Log("Scene loaded");
         onPlayerLoad?.Invoke();
     }
 

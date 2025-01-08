@@ -25,6 +25,7 @@ public class weaponSelectorCanvas : MonoBehaviour
             GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = false;
             GameManager.instance.player.GetComponent<CharacterAttack>().Proyectile = fireball;
             GameManager.instance.player.GetComponent<CharacterAttack>().weaponSO = fireballSO;
+            GameManager.instance.player.GetComponent<CharacterAttack>().proyectilesQueue.Clear();
             gameObject.SetActive(false);
         }
     }
@@ -37,6 +38,7 @@ public class weaponSelectorCanvas : MonoBehaviour
             GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = false;
             GameManager.instance.player.GetComponent<CharacterAttack>().Proyectile = sword;
             GameManager.instance.player.GetComponent<CharacterAttack>().weaponSO = swordSO;
+            GameManager.instance.player.GetComponent<CharacterAttack>().proyectilesQueue.Clear();
             gameObject.SetActive(false);
         }
     }
@@ -46,6 +48,7 @@ public class weaponSelectorCanvas : MonoBehaviour
         {
             SoundManager.instance.PlayGlobalSound(buttonClickSound);
             GameManager.instance.player.GetComponent<CharacterAttack>().isFlameThrower = true;
+            GameManager.instance.player.GetComponent<CharacterAttack>().proyectilesQueue.Clear();
             gameObject.SetActive(false);
         }
     }

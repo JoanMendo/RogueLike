@@ -1,6 +1,8 @@
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
 
 public class CharacterAttack : MonoBehaviour
@@ -14,6 +16,7 @@ public class CharacterAttack : MonoBehaviour
     private bool isParticlePlaying = false;
     private PlayerInput attackControls;
     private InputAction attack;
+    public Queue<GameObject> proyectilesQueue = new Queue<GameObject>();
 
     // Update is called once per frame
 
@@ -25,7 +28,7 @@ public class CharacterAttack : MonoBehaviour
         attack.canceled += OnAttackCanceled;
     }
 
-    private void Update()
+    public void Update()
     {
         if (isFlameThrower)
         {
@@ -35,7 +38,15 @@ public class CharacterAttack : MonoBehaviour
         }
     }
 
-    private void OnDisable()
+    public void OnEnable()
+    {
+        CharacterControler.onPlayerLoad += OnPlayerLoad;
+        attack.performed += OnAttackPerformed;
+        attack.canceled += OnAttackCanceled;
+        
+
+    }
+    public void OnDisable()
     {
         if (isParticlePlaying)
         {
@@ -43,15 +54,14 @@ public class CharacterAttack : MonoBehaviour
             ParticleSystem.Stop();
             ParticleSystem.GetComponentInChildren<Collider2D>().enabled = false;
         }
+        CharacterControler.onPlayerLoad -= OnPlayerLoad;
         attack.performed -= OnAttackPerformed;
         attack.canceled -= OnAttackCanceled;
+        
+
     }
 
-    private void OnEnable()
-    {
-        attack.performed += OnAttackPerformed;
-        attack.canceled += OnAttackCanceled;
-    }
+    
 
 
     void OnAttackPerformed(InputAction.CallbackContext context)
@@ -84,13 +94,22 @@ public class CharacterAttack : MonoBehaviour
 
     public void CreateProyectile()
     {
+        GameObject proyectile;
         Proyectile.GetComponent<AWeapon>().weaponSO = weaponSO;
-        GameObject proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
+        if (proyectilesQueue.Count == 0 || proyectilesQueue.Peek().activeInHierarchy)
+        {
+            proyectile = Instantiate(Proyectile, transform.position, Quaternion.identity);
+        }
+        else
+        {
+            proyectile = proyectilesQueue.Dequeue();
+            proyectile.transform.position = transform.position;
+            proyectile.SetActive(true); 
+        }
         proyectile.GetComponent<AWeapon>().Direction = detectCursorPosition(); //Direcciona el proyectil hacia donde apunte el ratón
         proyectile.GetComponent<AWeapon>().SetWeapon(weaponSO); //Setea el arma
+        proyectilesQueue.Enqueue(proyectile);
         StartCoroutine(Cooldown(proyectile.GetComponent<AWeapon>().AttackSpeed));
-
-
     }
 
     public Vector2 detectCursorPosition()
@@ -113,7 +132,12 @@ public class CharacterAttack : MonoBehaviour
     public Vector2 randomizeDirection(Vector2 direction)
     {
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        angle += Random.Range(-35, 35);
+        angle += UnityEngine.Random.Range(-35, 35);
         return new Vector2(Mathf.Cos(angle * Mathf.Deg2Rad), Mathf.Sin(angle * Mathf.Deg2Rad));
+    }
+    public void OnPlayerLoad()
+    {
+        Debug.Log("Player loaded");
+        proyectilesQueue.Clear();
     }
 }

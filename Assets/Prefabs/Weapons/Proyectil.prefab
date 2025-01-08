@@ -177,8 +177,8 @@ MonoBehaviour:
   Direction: {x: 0, y: 0}
   Speed: 0
   AttackSpeed: 0
-  weaponSO: {fileID: 0}
-  Shadow: {fileID: 6772470970792517178, guid: ce26b19fb96ed8b4ba35a5c3dd0377db, type: 3}
+  weaponSO: {fileID: 11400000, guid: 93c0dea6d8042a64f952761c983d784e, type: 2}
+  ShadowPrefab: {fileID: 6772470970792517178, guid: ce26b19fb96ed8b4ba35a5c3dd0377db, type: 3}
 --- !u!95 &8953186945050893457
 Animator:
   serializedVersion: 5

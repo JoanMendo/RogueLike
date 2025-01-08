@@ -13,6 +13,11 @@ public class Sword : AWeapon
         animator = GetComponent<Animator>();
         
     }
+
+    public void OnEnable()
+    {
+        StartCoroutine(disableOnAnimationEnd());
+    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")
@@ -39,5 +44,12 @@ public class Sword : AWeapon
         animator.runtimeAnimatorController = sword.animatorController;
         rb.AddForce(Direction * Speed, ForceMode2D.Force);
 
+    }
+
+    public IEnumerator disableOnAnimationEnd() 
+    {
+
+        yield return new WaitForSeconds(0.5f);
+        gameObject.SetActive(false);
     }
 }
