@@ -18,6 +18,7 @@ public class AEnemy : AEntity
         if (!isDead)
         {
             isDead = true;
+            GameManager.instance.coins += Random.Range(1, 3);
             GameManager.instance.enemyList.Remove(gameObject);
             Destroy(gameObject);
             GameManager.instance.checkList();

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125fa8ec8ffd5694eacd3a54fbdec742, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  Damage: 10
+  Damage: 15
   attackSpeed: 0.4
   Scale: {x: 0.75, y: 0.75, z: 1}
   Speed: 350

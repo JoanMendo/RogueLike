@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Rendering;
+using TMPro;
 using System;
 
 public class GameManager : MonoBehaviour
@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
     public List<GameObject> cloudList = new List<GameObject>();
     public GameObject Cloud;
     private Vector2 offset;
+    private Canvas coinCanvas;
+    public int coins = 0;
 
     void Awake()
     {
@@ -42,6 +44,14 @@ public class GameManager : MonoBehaviour
     }
     public void checkList()
     {
+        if (coinCanvas == null)
+        {
+            coinCanvas = GameObject.FindGameObjectWithTag("CoinCanvas").GetComponent<Canvas>();
+        }
+        if ( coinCanvas != null)
+        {
+            coinCanvas.GetComponentInChildren<TextMeshProUGUI>().text = ($"00{coins.ToString()}");
+        }
         if (enemyList.Count == 0)
         {
             createRandomOffset();
@@ -119,6 +129,8 @@ public class GameManager : MonoBehaviour
         levelPositions = new List<Vector2>();
         enemyList = new List<GameObject>();
         cloudList = new List<GameObject>();
+        coinCanvas = null;
+        coins = 0;
     }
 }
 

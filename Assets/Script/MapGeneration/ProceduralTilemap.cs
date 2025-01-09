@@ -335,10 +335,15 @@ public class ProceduralTilemap : MonoBehaviour
     
 
         tilesNotUsed.Remove(playerPosition);
-        for (int i = 0; i < Random.Range(3f, 5f); i++)
+        for (int i = 0; i < Random.Range(2f, 6f); i++)
         {
             Vector2 enemyPosition = tilesNotUsed[Random.Range(0, tilesNotUsed.Count)];
             enemyPosition += (Vector2)tilemap.transform.position;
+            if (Vector3.Distance(enemyPosition, playerPosition) < 5f)
+            {
+                i--;
+                continue;
+            }
             GameObject enemy = Instantiate(enemiesPrefabs[Random.Range(0, enemiesPrefabs.Length)], enemyPosition, Quaternion.identity);
             GameManager.instance.enemyList.Add(enemy);
             tilesNotUsed.Remove(enemyPosition);
