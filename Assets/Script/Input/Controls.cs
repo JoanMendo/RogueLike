@@ -44,6 +44,15 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""CharacterDash"",
+                    ""type"": ""Button"",
+                    ""id"": ""e3e56dba-e082-4cb5-aa9a-7b9edfbfb3fa"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -167,6 +176,28 @@ public partial class @Controls: IInputActionCollection2, IDisposable
                     ""action"": ""CharacterAttack"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3bd2882d-1e1e-4209-b2f0-d13d8b8bf231"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CharacterDash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a89a3073-885b-40cc-a992-b8db1fa5f54e"",
+                    ""path"": ""<Keyboard>/shift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""CharacterDash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -177,6 +208,7 @@ public partial class @Controls: IInputActionCollection2, IDisposable
         m_Move = asset.FindActionMap("Move", throwIfNotFound: true);
         m_Move_CharacterMovement = m_Move.FindAction("CharacterMovement", throwIfNotFound: true);
         m_Move_CharacterAttack = m_Move.FindAction("CharacterAttack", throwIfNotFound: true);
+        m_Move_CharacterDash = m_Move.FindAction("CharacterDash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -240,12 +272,14 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     private List<IMoveActions> m_MoveActionsCallbackInterfaces = new List<IMoveActions>();
     private readonly InputAction m_Move_CharacterMovement;
     private readonly InputAction m_Move_CharacterAttack;
+    private readonly InputAction m_Move_CharacterDash;
     public struct MoveActions
     {
         private @Controls m_Wrapper;
         public MoveActions(@Controls wrapper) { m_Wrapper = wrapper; }
         public InputAction @CharacterMovement => m_Wrapper.m_Move_CharacterMovement;
         public InputAction @CharacterAttack => m_Wrapper.m_Move_CharacterAttack;
+        public InputAction @CharacterDash => m_Wrapper.m_Move_CharacterDash;
         public InputActionMap Get() { return m_Wrapper.m_Move; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -261,6 +295,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CharacterAttack.started += instance.OnCharacterAttack;
             @CharacterAttack.performed += instance.OnCharacterAttack;
             @CharacterAttack.canceled += instance.OnCharacterAttack;
+            @CharacterDash.started += instance.OnCharacterDash;
+            @CharacterDash.performed += instance.OnCharacterDash;
+            @CharacterDash.canceled += instance.OnCharacterDash;
         }
 
         private void UnregisterCallbacks(IMoveActions instance)
@@ -271,6 +308,9 @@ public partial class @Controls: IInputActionCollection2, IDisposable
             @CharacterAttack.started -= instance.OnCharacterAttack;
             @CharacterAttack.performed -= instance.OnCharacterAttack;
             @CharacterAttack.canceled -= instance.OnCharacterAttack;
+            @CharacterDash.started -= instance.OnCharacterDash;
+            @CharacterDash.performed -= instance.OnCharacterDash;
+            @CharacterDash.canceled -= instance.OnCharacterDash;
         }
 
         public void RemoveCallbacks(IMoveActions instance)
@@ -292,5 +332,6 @@ public partial class @Controls: IInputActionCollection2, IDisposable
     {
         void OnCharacterMovement(InputAction.CallbackContext context);
         void OnCharacterAttack(InputAction.CallbackContext context);
+        void OnCharacterDash(InputAction.CallbackContext context);
     }
 }

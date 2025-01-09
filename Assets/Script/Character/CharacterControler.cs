@@ -16,6 +16,9 @@ public class CharacterControler : AEntity
     public Sprite [] heads;
     private PlayerInput movementControls;
     private InputAction movement;
+    private InputAction dash;
+    private bool isDashing = false;
+    private Coroutine dashCoroutine;
     private static CharacterControler instance;
 
 
@@ -33,12 +36,15 @@ public class CharacterControler : AEntity
         }
         movementControls = GetComponent<PlayerInput>();
         movement = movementControls.actions["CharacterMovement"];
+        dash = movementControls.actions["CharacterDash"];
+
     }
     public void OnEnable()
     {
         direction = Vector2.zero;
         movement.performed += OnMovementPerformed;
         movement.canceled += OnMovementCanceled;
+        dash.performed += OnDashPerformed;
         SceneManager.sceneLoaded += OnSceneLoaded;
         
         
@@ -48,6 +54,7 @@ public class CharacterControler : AEntity
         direction = Vector2.zero;
         movement.performed -= OnMovementPerformed;
         movement.canceled -= OnMovementCanceled;
+        dash.performed -= OnDashPerformed;
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
@@ -60,7 +67,10 @@ public class CharacterControler : AEntity
 
     private void Update()
     {
+        if (!isDashing)
         rb.velocity = direction.normalized * speed;
+        else
+            rb.velocity = direction.normalized * speed * 2.5f;
     }
 
     public void OnMovementPerformed(InputAction.CallbackContext context)
@@ -77,6 +87,24 @@ public class CharacterControler : AEntity
         UpdateDirectionSprite();
     }
 
+    public void OnDashPerformed(InputAction.CallbackContext context)
+    {
+        Debug.Log("Dash");
+        if (dashCoroutine == null)
+        {
+            dashCoroutine = StartCoroutine(Dash());
+        }
+
+    }
+
+    private IEnumerator Dash()
+    {
+        isDashing = true;
+        yield return new WaitForSeconds(0.15f);
+        isDashing = false;
+        yield return new WaitForSeconds(0.5f);
+        dashCoroutine = null;
+    }
     private void UpdateDirectionSprite()
     {
         if (direction.x > 0) // Movimiento a la derecha

@@ -15,7 +15,7 @@ public abstract class AEntity : MonoBehaviour
     {
         if (isDead || !canTakeDamage) return;
         
-        health = Mathf.Clamp(health -= damage, 0, maxHealth);
+        health = Mathf.Clamp(health -= damage, -10, maxHealth);
         onTakeDamage.Invoke();
         canTakeDamage = false;
         StartCoroutine(damageCooldown());
@@ -35,6 +35,7 @@ public abstract class AEntity : MonoBehaviour
     {
         if (!isDead)
         {
+            Debug.Log("Dead");
             isDead = true;
             Destroy(gameObject);
         }
