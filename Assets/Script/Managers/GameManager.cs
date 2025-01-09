@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public GameObject levelPrefab;
+    public GameObject shopPrefab;
     public GameObject player;
     public List<Vector2> levelPositions;
     public GameObject currentLevel;
@@ -50,10 +51,11 @@ public class GameManager : MonoBehaviour
         }
         if ( coinCanvas != null)
         {
-            coinCanvas.GetComponentInChildren<TextMeshProUGUI>().text = ($"00{coins.ToString()}");
+            coinCanvas.GetComponentInChildren<TextMeshProUGUI>().text = coins.ToString("D3");
         }
         if (enemyList.Count == 0)
         {
+            player.GetComponent<CharacterControler>().TakeDamage(-50);
             createRandomOffset();
             enableAllClouds();
         }
@@ -94,6 +96,14 @@ public class GameManager : MonoBehaviour
 
         } while (isRepeated);
 
+        /*if (UnityEngine.Random.Range(0, 80) < 10)
+        {
+
+        }
+        else
+        {
+            currentLevel.GetComponent<ProceduralTilemap>().makeNewLevel(offset);
+        }*/
         currentLevel.GetComponent<ProceduralTilemap>().makeNewLevel(offset);
         GameObject cloud = Instantiate(Cloud, new Vector3(player.transform.position.x, player.transform.position.y + 15, 0), Quaternion.identity);
         cloudList.Add(cloud);

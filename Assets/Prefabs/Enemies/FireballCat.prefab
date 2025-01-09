@@ -556,8 +556,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc7702de95731414abdcfc78a765f567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 40
-  maxHealth: 0
+  health: 60
+  maxHealth: 60
   speed: 0
   isDead: 0
   onTakeDamage:
@@ -579,6 +579,7 @@ MonoBehaviour:
   attackDistance: 12
   Projectile: {fileID: 3917519921938480130, guid: a8e587a0fb54c1d46a49acf82bfc74bc, type: 3}
   proyectileSO: {fileID: 11400000, guid: 83392408a3ee5a14d8c48e53db023048, type: 2}
+  onCooldown: 0
 --- !u!114 &5778649075590502169
 MonoBehaviour:
   m_ObjectHideFlags: 0

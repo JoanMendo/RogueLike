@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a55f6376830c4c418a296e8033335d4, type: 3}
   m_Name: Fireball
   m_EditorClassIdentifier: 
-  Damage: 30
+  Damage: 50
   targetTag: Enemy
   attackSpeed: 1.2
   Scale: {x: 1.4, y: 1.4, z: 1}
-  proyectileSpeed: 40
+  proyectileSpeed: 35
   deathParticle: {fileID: 5052562978784651109, guid: 084504dc509162f41868c834490f906a, type: 3}
   animatorController: {fileID: 9100000, guid: 7165576b01c4b784cb62b2f5539b8797, type: 2}
   proyectileSprite: {fileID: -525426646, guid: 24fdab03f0abb17488d9432aab07341c, type: 3}

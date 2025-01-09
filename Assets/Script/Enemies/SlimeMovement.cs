@@ -76,6 +76,7 @@ public class SlimeMovement : AEnemy
         jumpForce = slime.jumpForce;
         minDistanceFromPlayer = slime.minDistanceFromPlayer;
         sr.color = slime.color;
+        maxHealth = health;
     }
 
 

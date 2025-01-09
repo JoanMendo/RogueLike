@@ -183,7 +183,7 @@ MonoBehaviour:
     de dano a un unico enemigo
 
 
-    40 de dano, alto alcance'
+    50 de dano, alto alcance'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -1514,75 +1514,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 79727667}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &351109712
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 784440404236561264, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: characterDamaged
-      value: 
-      objectReference: {fileID: 8300000, guid: 6b7c98f6340254746a2561fa02226958, type: 3}
-    - target: {fileID: 2421754605827438287, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_Size.y
-      value: 1.0896084
-      objectReference: {fileID: 0}
-    - target: {fileID: 2421754605827438287, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_Offset.y
-      value: 0.24655563
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.36216068
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.10557079
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8479267826887906556, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
-      propertyPath: m_Name
-      value: Personaje
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
 --- !u!1 &371433672
 GameObject:
   m_ObjectHideFlags: 0
@@ -9256,7 +9187,7 @@ MonoBehaviour:
   m_text: 'Lanzallamas que inflinge dano de manera rapida y constante
 
 
-    20 de
+    30 de
     dano por segundo, medio alcance'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -42204,6 +42135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levelPrefab: {fileID: 1332445938349526750, guid: 4bc597d5e00c1a74084b07b736ed1c87, type: 3}
+  shopPrefab: {fileID: 0}
   player: {fileID: 0}
   levelPositions: []
   currentLevel: {fileID: 0}
@@ -43474,6 +43406,63 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 945338904}
   m_CullTransparentMesh: 1
+--- !u!1001 &981254692
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.506315
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.1679964
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4404445155999953902, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8479267826887906556, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
+      propertyPath: m_Name
+      value: Personaje
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b72f450fb87b9eb41b32c838258a12ca, type: 3}
 --- !u!1 &985863500
 GameObject:
   m_ObjectHideFlags: 0
@@ -83308,7 +83297,7 @@ MonoBehaviour:
   m_text: 'Onda de calor que inflinge dano en area a cotro alcance rapidamente
 
 
-    15
+    25
     de dano, corto alcance'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -83771,4 +83760,4 @@ SceneRoots:
   - {fileID: 1745809514}
   - {fileID: 79727667}
   - {fileID: 933612593}
-  - {fileID: 351109712}
+  - {fileID: 981254692}

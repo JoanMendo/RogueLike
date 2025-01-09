@@ -14,7 +14,8 @@ public abstract class AEntity : MonoBehaviour
     public virtual void TakeDamage(float damage)
     {
         if (isDead || !canTakeDamage) return;
-        health -= damage;
+        
+        health = Mathf.Clamp(health -= damage, 0, maxHealth);
         onTakeDamage.Invoke();
         canTakeDamage = false;
         StartCoroutine(damageCooldown());

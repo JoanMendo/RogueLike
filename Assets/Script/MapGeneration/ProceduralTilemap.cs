@@ -12,6 +12,7 @@ public class ProceduralTilemap : MonoBehaviour
     public Tilemap groundDecoration;
     public Tilemap collider;
     public GameObject levelPrefab;
+    public GameObject shopPrefab;
 
     [Header("Grass Tiles")]
     public TileBase[] centerGrassDecoration;

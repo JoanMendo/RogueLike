@@ -114,7 +114,6 @@ public class CharacterControler : AEntity
     {
         health = maxHealth;
         onTakeDamage.Invoke();
-        //EventManager.OnStartLoading();
         GameManager.instance.resetGameManager();
         transform.position = new Vector3(0, 0, 0);
         SceneManager.LoadScene("Lobby");
